@@ -4,6 +4,8 @@ import time
 import re
 from pathlib import Path
 
+import audio_to_subtitle
+
 def extract_video_id(url):
     """从YouTube URL中提取视频ID"""
     # 尝试匹配常见的YouTube URL格式
@@ -62,7 +64,7 @@ def download_youtube(url, content_type="video", quality="best", audio_format="mp
         command.extend([
             "-x",  # 提取音频
             "--audio-format", audio_format,
-            "--audio-quality", audio_quality
+            "--audio-quality", str(audio_quality)  # 确保 audio_quality 被转换为字符串
         ])
         output_dir = "resources/audios"
         file_path = f"{output_dir}/{video_id}.{audio_format}"
@@ -109,18 +111,6 @@ def download_youtube(url, content_type="video", quality="best", audio_format="mp
     except Exception as e:
         return f"发生错误: {str(e)}"
 
-# 使用示例
-if __name__ == "__main__":
-    video_url = "https://www.youtube.com/watch?v=A_5Nd3vAG9k"
     
-    # 下载音频
-    audio_result = download_youtube(video_url, content_type="audio", audio_format="mp3")
-    print(audio_result)
-    
-    # 下载视频
-    video_result = download_youtube(video_url, content_type="video")
-    print(video_result)
-    
-
 
     

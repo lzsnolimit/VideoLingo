@@ -1,7 +1,6 @@
 import re
 import os
 import logging
-import datetime
 from fish_audio_sdk import Prosody, ReferenceAudio, Session, TTSRequest
 from pydub import AudioSegment
 import time
@@ -39,8 +38,8 @@ def parse_subtitle(subtitle_file):
         logger.error(f"读取字幕文件失败: {e}")
         raise
     
-    # 匹配 [00:00:00.000 --> 00:00:00.000] 格式的时间戳和后面的文本
-    pattern = r'\[(\d{2}:\d{2}:\d{2}\.\d{3}) --> (\d{2}:\d{2}:\d{2}\.\d{3})\]\s*(.*?)(?=\n\[|\Z)'
+    # 匹配标准SRT格式: 数字序号 + 时间戳 + 文本
+    pattern = r'(?:\d+\s*)?\n(\d{2}:\d{2}:\d{2},\d{3})\s*-->\s*(\d{2}:\d{2}:\d{2},\d{3})\s*\n(.*?)(?=\n\d+\s*\n|$)'
     matches = re.findall(pattern, content, re.DOTALL)
     
     logger.info(f"找到 {len(matches)} 个字幕片段")
@@ -71,6 +70,8 @@ def parse_subtitle(subtitle_file):
 def time_to_ms(time_str):
     """将时间字符串 (HH:MM:SS.mmm) 转换为毫秒"""
     try:
+        # 替换逗号为点，以便于处理
+        time_str = time_str.replace(',', '.')
         h, m, s = time_str.split(':')
         return int(h) * 3600000 + int(m) * 60000 + int(float(s) * 1000)
     except Exception as e:
@@ -107,7 +108,7 @@ def text_to_speech(
         
         # 准备TTS请求
         request = TTSRequest(
-            prosody=Prosody(speed=0.8),  # 速度提高50%
+            prosody=Prosody(speed=1.0),  # 控制音频速度
             text=text,
             references=[
                 ReferenceAudio(
@@ -176,7 +177,7 @@ def create_silence(duration, output_path=None):
         silence.export(output_path, format="mp3", bitrate="320k")
     return silence
 
-def process_subtitles(subtitle_file, output_dir="output_audio"):
+def process_subtitles(subtitle_file, output_dir="resources/audio"):
     """
     处理字幕文件，生成对应的语音文件
     1. 解析字幕
@@ -254,9 +255,10 @@ def process_subtitles(subtitle_file, output_dir="output_audio"):
             text_to_speech(
                 text=text,
                 api_key=api_key,
-                reference_audio_path="luyin.mp3",
+                reference_audio_path="resources/audios/clip-TechVoice-2025_03_30.wav",
                 output_path=audio_file,
-                reference_text="当苏联将坦克与南极洲的冰原相结合，会发生什么？你将得到可能是人类史上最疯狂的陆地载具。它能在零下57摄氏度（-70华氏度）的环境中工作，穿越暴风雪运输大宗货物，同时为乘员提供舒适的居住空间。与早期美国征服南极的尝试不同，俄罗斯人实际研发了多个迭代版本，其最新型号甚至在本世纪仍在服役。这就是苏联南极坦克的故事——在美国人失败的地方，他们成功了。来自哈尔科夫的传奇——哈尔科夫尚卡。"
+                reference_text="Through a sunlit forest, a curious fox with a fluffy tail and bright, glimmering eyes darted between the trees, its tiny paws leaving soft imprints on the mossy ground. Pausing to sniff a patch of wildflowers, it tilted its head, listening to the distant chirp of a bird, as if the entire forest were a melody it alone could understand."
+                # reference_text="当苏联将坦克与南极洲的冰原相结合，会发生什么？你将得到可能是人类史上最疯狂的陆地载具。它能在零下57摄氏度（-70华氏度）的环境中工作，穿越暴风雪运输大宗货物，同时为乘员提供舒适的居住空间。与早期美国征服南极的尝试不同，俄罗斯人实际研发了多个迭代版本，其最新型号甚至在本世纪仍在服役。这就是苏联南极坦克的故事——在美国人失败的地方，他们成功了。来自哈尔科夫的传奇——哈尔科夫尚卡。"
             )
             
             # 获取生成的语音长度
@@ -462,26 +464,3 @@ def process_subtitles(subtitle_file, output_dir="output_audio"):
         logger.error(f"最终合并失败: {e}")
         logger.error("处理未完成")
         return None
-
-if __name__ == "__main__":
-    # 记录开始时间
-    start_datetime = datetime.datetime.now()
-    logger.info(f"程序开始执行: {start_datetime}")
-    
-    try:
-        # 字幕文件路径
-        subtitle_file = "output/Kharkovchanka-chinese.txt"
-        
-        # 处理字幕并生成语音
-        final_audio = process_subtitles(subtitle_file)
-        
-        if final_audio:
-            logger.info(f"任务成功完成，生成文件: {final_audio}")
-        else:
-            logger.error("任务未能完成")
-    except Exception as e:
-        logger.critical(f"程序执行出错: {e}")
-    finally:
-        end_datetime = datetime.datetime.now()
-        duration = end_datetime - start_datetime
-        logger.info(f"程序结束: {end_datetime}, 总运行时间: {duration}") 

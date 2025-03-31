@@ -1,0 +1,1829 @@
+2025-03-29 14:21:54,746 - INFO - HTTP Request: POST https://api.assemblyai.com/v2/upload "HTTP/1.1 200 OK"
+2025-03-29 14:21:54,904 - INFO - HTTP Request: POST https://api.assemblyai.com/v2/transcript "HTTP/1.1 200 OK"
+2025-03-29 14:21:54,956 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/eb595b4c-f2e2-40fb-87ad-277e1d064cf0 "HTTP/1.1 200 OK"
+2025-03-29 14:21:58,023 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/eb595b4c-f2e2-40fb-87ad-277e1d064cf0 "HTTP/1.1 200 OK"
+2025-03-29 14:22:01,091 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/eb595b4c-f2e2-40fb-87ad-277e1d064cf0 "HTTP/1.1 200 OK"
+2025-03-29 14:22:04,167 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/eb595b4c-f2e2-40fb-87ad-277e1d064cf0 "HTTP/1.1 200 OK"
+2025-03-29 14:22:07,224 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/eb595b4c-f2e2-40fb-87ad-277e1d064cf0 "HTTP/1.1 200 OK"
+2025-03-29 14:22:10,280 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/eb595b4c-f2e2-40fb-87ad-277e1d064cf0 "HTTP/1.1 200 OK"
+2025-03-29 14:22:13,428 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/eb595b4c-f2e2-40fb-87ad-277e1d064cf0 "HTTP/1.1 200 OK"
+2025-03-29 14:22:13,551 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/eb595b4c-f2e2-40fb-87ad-277e1d064cf0/srt "HTTP/1.1 200 OK"
+2025-03-30 20:04:02,047 - INFO - HTTP Request: POST https://api.assemblyai.com/v2/upload "HTTP/1.1 200 OK"
+2025-03-30 20:04:02,207 - INFO - HTTP Request: POST https://api.assemblyai.com/v2/transcript "HTTP/1.1 200 OK"
+2025-03-30 20:04:02,264 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/87ee989e-0ed2-40d7-96f1-0c34a3933b80 "HTTP/1.1 200 OK"
+2025-03-30 20:04:05,334 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/87ee989e-0ed2-40d7-96f1-0c34a3933b80 "HTTP/1.1 200 OK"
+2025-03-30 20:04:08,410 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/87ee989e-0ed2-40d7-96f1-0c34a3933b80 "HTTP/1.1 200 OK"
+2025-03-30 20:04:11,477 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/87ee989e-0ed2-40d7-96f1-0c34a3933b80 "HTTP/1.1 200 OK"
+2025-03-30 20:04:14,546 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/87ee989e-0ed2-40d7-96f1-0c34a3933b80 "HTTP/1.1 200 OK"
+2025-03-30 20:04:17,894 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/87ee989e-0ed2-40d7-96f1-0c34a3933b80 "HTTP/1.1 200 OK"
+2025-03-30 20:04:43,092 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/87ee989e-0ed2-40d7-96f1-0c34a3933b80/srt "HTTP/1.1 200 OK"
+2025-03-30 20:05:30,361 - INFO - ================================================================================
+2025-03-30 20:05:30,362 - INFO - 开始处理字幕转语音任务
+2025-03-30 20:05:30,362 - INFO - 字幕文件: resources/transcripts/merger_A_5Nd3vAG9k.srt
+2025-03-30 20:05:30,362 - INFO - 输出目录: resources/audios
+2025-03-30 20:05:30,363 - INFO - 输出目录已准备: resources/audios
+2025-03-30 20:05:30,363 - INFO - 开始解析字幕文件: resources/transcripts/merger_A_5Nd3vAG9k.srt
+2025-03-30 20:05:30,363 - INFO - 成功读取字幕文件，大小: 10739 字节
+2025-03-30 20:05:30,368 - INFO - 找到 0 个字幕片段
+2025-03-30 20:05:30,368 - INFO - 字幕解析完成，耗时: 0.00 秒
+2025-03-30 20:05:30,368 - INFO - 共有 0 个字幕段落需要处理
+2025-03-30 20:05:30,368 - INFO - ==================================================
+2025-03-30 20:05:30,368 - INFO - 第一步：生成所有TTS音频
+2025-03-30 20:05:30,368 - INFO - ==================================================
+2025-03-30 20:05:30,369 - INFO - 第二步：根据字幕时长添加空白并合并
+2025-03-30 20:05:30,369 - INFO - 开始最终合并
+2025-03-30 20:05:30,369 - ERROR - 最终合并失败: 'int' object has no attribute 'frame_rate'
+2025-03-30 20:05:30,369 - ERROR - 处理未完成
+2025-03-30 20:11:57,188 - INFO - ================================================================================
+2025-03-30 20:11:57,189 - INFO - 开始处理字幕转语音任务
+2025-03-30 20:11:57,189 - INFO - 字幕文件: resources/transcripts/merger_A_5Nd3vAG9k.srt
+2025-03-30 20:11:57,190 - INFO - 输出目录: resources/audios
+2025-03-30 20:11:57,190 - INFO - 输出目录已准备: resources/audios
+2025-03-30 20:11:57,190 - INFO - 开始解析字幕文件: resources/transcripts/merger_A_5Nd3vAG9k.srt
+2025-03-30 20:11:57,191 - INFO - 成功读取字幕文件，大小: 10739 字节
+2025-03-30 20:11:57,197 - INFO - 找到 96 个字幕片段
+2025-03-30 20:11:57,199 - INFO - 字幕解析完成，耗时: 0.01 秒
+2025-03-30 20:11:57,199 - INFO - 共有 96 个字幕段落需要处理
+2025-03-30 20:11:57,199 - INFO - ==================================================
+2025-03-30 20:11:57,199 - INFO - 第一步：生成所有TTS音频
+2025-03-30 20:11:57,200 - INFO - 处理第 1/96 段字幕 [1.0%]:
+2025-03-30 20:11:57,200 - INFO - 时间: 1200ms -> 18660ms (持续 17460ms)
+2025-03-30 20:11:57,200 - INFO - 文本: We are on the hunt for the rarest, most remote and most abusive waterfalls in the world. Here at the very top of the planet, deep in the Arctic Circle. These magical ice waterfalls run straight off the glacier surface into the ocean and will be a whole new kayaking experience.
+2025-03-30 20:11:57,201 - INFO - 开始文本转语音: resources/audios/segment_0000.mp3
+2025-03-30 20:11:57,201 - INFO - 处理文本: We are on the hunt for the rarest, most remote and...
+2025-03-30 20:11:57,250 - INFO - 发送TTS请求并保存到: resources/audios/segment_0000.mp3
+2025-03-30 20:11:58,823 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 20:12:01,780 - INFO - TTS完成，耗时: 4.58 秒
+2025-03-30 20:12:02,017 - INFO - 语音长度: 17868ms, 字幕长度: 17460ms
+2025-03-30 20:12:02,017 - INFO - 段落处理完成，耗时: 4.82 秒
+2025-03-30 20:12:02,017 - INFO - --------------------------------------------------
+2025-03-30 20:12:02,017 - INFO - 处理第 2/96 段字幕 [2.1%]:
+2025-03-30 20:12:02,017 - INFO - 时间: 25840ms -> 30900ms (持续 5060ms)
+2025-03-30 20:12:02,018 - INFO - 文本: There are several challenges to overcome before we can even think about running them.
+2025-03-30 20:12:02,018 - INFO - 开始文本转语音: resources/audios/segment_0001.mp3
+2025-03-30 20:12:02,018 - INFO - 处理文本: There are several challenges to overcome before we...
+2025-03-30 20:12:02,052 - INFO - 发送TTS请求并保存到: resources/audios/segment_0001.mp3
+2025-03-30 20:12:03,324 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 20:12:03,722 - INFO - TTS完成，耗时: 1.70 秒
+2025-03-30 20:12:03,959 - INFO - 语音长度: 4545ms, 字幕长度: 5060ms
+2025-03-30 20:12:03,959 - INFO - 段落处理完成，耗时: 1.94 秒
+2025-03-30 20:12:03,959 - INFO - --------------------------------------------------
+2025-03-30 20:12:03,959 - INFO - 处理第 3/96 段字幕 [3.1%]:
+2025-03-30 20:12:03,959 - INFO - 时间: 33500ms -> 40052ms (持续 6552ms)
+2025-03-30 20:12:03,960 - INFO - 文本: But first we have to find them. First we travel to the very top of Norway and mainland Europe.
+2025-03-30 20:12:03,960 - INFO - 开始文本转语音: resources/audios/segment_0002.mp3
+2025-03-30 20:12:03,960 - INFO - 处理文本: But first we have to find them. First we travel to...
+2025-03-30 20:12:03,993 - INFO - 发送TTS请求并保存到: resources/audios/segment_0002.mp3
+2025-03-30 20:12:05,579 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 20:12:06,028 - INFO - TTS完成，耗时: 2.07 秒
+2025-03-30 20:12:06,251 - INFO - 语音长度: 6269ms, 字幕长度: 6552ms
+2025-03-30 20:12:06,251 - INFO - 段落处理完成，耗时: 2.29 秒
+2025-03-30 20:12:06,252 - INFO - --------------------------------------------------
+2025-03-30 20:12:06,252 - INFO - 处理第 4/96 段字幕 [4.2%]:
+2025-03-30 20:12:06,252 - INFO - 时间: 40236ms -> 57428ms (持续 17192ms)
+2025-03-30 20:12:06,252 - INFO - 文本: And from there we headed north to the remote islands of Svalbard, deep inside the Arctic Circle. We have just left the world's most northerly town, Longyearbyen, and are now sailing even further north aboard this polar research vessel.
+2025-03-30 20:12:06,252 - INFO - 开始文本转语音: resources/audios/segment_0003.mp3
+2025-03-30 20:12:06,252 - INFO - 处理文本: And from there we headed north to the remote islan...
+2025-03-30 20:12:06,286 - INFO - 发送TTS请求并保存到: resources/audios/segment_0003.mp3
+2025-03-30 20:12:10,003 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 20:12:12,324 - INFO - TTS完成，耗时: 6.07 秒
+2025-03-30 20:12:12,558 - INFO - 语音长度: 14629ms, 字幕长度: 17192ms
+2025-03-30 20:12:12,558 - INFO - 段落处理完成，耗时: 6.31 秒
+2025-03-30 20:12:12,558 - INFO - --------------------------------------------------
+2025-03-30 20:12:12,559 - INFO - 处理第 5/96 段字幕 [5.2%]:
+2025-03-30 20:12:12,559 - INFO - 时间: 57604ms -> 59880ms (持续 2276ms)
+2025-03-30 20:12:12,559 - INFO - 文本: Oh, that one's spinning.
+2025-03-30 20:12:12,559 - INFO - 开始文本转语音: resources/audios/segment_0004.mp3
+2025-03-30 20:12:12,559 - INFO - 处理文本: Oh, that one's spinning.
+2025-03-30 20:12:12,594 - INFO - 发送TTS请求并保存到: resources/audios/segment_0004.mp3
+2025-03-30 20:12:13,719 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 20:12:14,017 - INFO - TTS完成，耗时: 1.46 秒
+2025-03-30 20:12:14,227 - INFO - 语音长度: 1933ms, 字幕长度: 2276ms
+2025-03-30 20:12:14,228 - INFO - 段落处理完成，耗时: 1.67 秒
+2025-03-30 20:12:14,228 - INFO - --------------------------------------------------
+2025-03-30 20:12:14,228 - INFO - 处理第 6/96 段字幕 [6.2%]:
+2025-03-30 20:12:14,228 - INFO - 时间: 61820ms -> 63080ms (持续 1260ms)
+2025-03-30 20:12:14,228 - INFO - 文本: Oh my God.
+2025-03-30 20:12:14,228 - INFO - 开始文本转语音: resources/audios/segment_0005.mp3
+2025-03-30 20:12:14,229 - INFO - 处理文本: Oh my God.
+2025-03-30 20:12:14,263 - INFO - 发送TTS请求并保存到: resources/audios/segment_0005.mp3
+2025-03-30 20:12:15,410 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 20:12:15,824 - INFO - TTS完成，耗时: 1.60 秒
+2025-03-30 20:12:16,044 - INFO - 语音长度: 1280ms, 字幕长度: 1260ms
+2025-03-30 20:12:16,045 - INFO - 段落处理完成，耗时: 1.82 秒
+2025-03-30 20:12:16,045 - INFO - --------------------------------------------------
+2025-03-30 20:12:16,045 - INFO - 处理第 7/96 段字幕 [7.3%]:
+2025-03-30 20:12:16,045 - INFO - 时间: 64680ms -> 68752ms (持续 4072ms)
+2025-03-30 20:12:16,045 - INFO - 文本: We are aiming for the uninhabited glacial islands in the east.
+2025-03-30 20:12:16,045 - INFO - 开始文本转语音: resources/audios/segment_0006.mp3
+2025-03-30 20:12:16,045 - INFO - 处理文本: We are aiming for the uninhabited glacial islands ...
+2025-03-30 20:12:16,080 - INFO - 发送TTS请求并保存到: resources/audios/segment_0006.mp3
+2025-03-30 20:12:19,712 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 20:12:19,742 - INFO - TTS完成，耗时: 3.70 秒
+2025-03-30 20:12:19,971 - INFO - 语音长度: 4127ms, 字幕长度: 4072ms
+2025-03-30 20:12:19,971 - INFO - 段落处理完成，耗时: 3.93 秒
+2025-03-30 20:12:19,971 - INFO - --------------------------------------------------
+2025-03-30 20:12:19,971 - INFO - 处理第 8/96 段字幕 [8.3%]:
+2025-03-30 20:12:19,971 - INFO - 时间: 68896ms -> 74592ms (持续 5696ms)
+2025-03-30 20:12:19,972 - INFO - 文本: We have a rough idea of where they will be, but we don't know for sure what we're gonna find.
+2025-03-30 20:12:19,972 - INFO - 开始文本转语音: resources/audios/segment_0007.mp3
+2025-03-30 20:12:19,972 - INFO - 处理文本: We have a rough idea of where they will be, but we...
+2025-03-30 20:12:20,007 - INFO - 发送TTS请求并保存到: resources/audios/segment_0007.mp3
+2025-03-30 20:12:21,346 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 20:12:22,180 - INFO - TTS完成，耗时: 2.21 秒
+2025-03-30 20:12:22,430 - INFO - 语音长度: 5329ms, 字幕长度: 5696ms
+2025-03-30 20:12:22,431 - INFO - 段落处理完成，耗时: 2.46 秒
+2025-03-30 20:12:22,431 - INFO - --------------------------------------------------
+2025-03-30 20:12:22,431 - INFO - 处理第 9/96 段字幕 [9.4%]:
+2025-03-30 20:12:22,431 - INFO - 时间: 74776ms -> 81980ms (持续 7204ms)
+2025-03-30 20:12:22,431 - INFO - 文本: Into the fog. Wow. It's so thick. It's impressive that Captain Benny can sail through this. He's the man.
+2025-03-30 20:12:22,432 - INFO - 开始文本转语音: resources/audios/segment_0008.mp3
+2025-03-30 20:12:22,432 - INFO - 处理文本: Into the fog. Wow. It's so thick. It's impressive ...
+2025-03-30 20:12:22,469 - INFO - 发送TTS请求并保存到: resources/audios/segment_0008.mp3
+2025-03-30 20:12:23,605 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 20:12:24,472 - INFO - TTS完成，耗时: 2.04 秒
+2025-03-30 20:12:24,713 - INFO - 语音长度: 7654ms, 字幕长度: 7204ms
+2025-03-30 20:12:24,714 - INFO - 段落处理完成，耗时: 2.28 秒
+2025-03-30 20:12:24,714 - INFO - --------------------------------------------------
+2025-03-30 20:12:24,714 - INFO - 处理第 10/96 段字幕 [10.4%]:
+2025-03-30 20:12:24,714 - INFO - 时间: 83480ms -> 86540ms (持续 3060ms)
+2025-03-30 20:12:24,714 - INFO - 文本: If something go wrong, it's me to.
+2025-03-30 20:12:24,714 - INFO - 开始文本转语音: resources/audios/segment_0009.mp3
+2025-03-30 20:12:24,714 - INFO - 处理文本: If something go wrong, it's me to.
+2025-03-30 20:12:24,749 - INFO - 发送TTS请求并保存到: resources/audios/segment_0009.mp3
+2025-03-30 20:12:26,035 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 20:12:26,265 - INFO - TTS完成，耗时: 1.55 秒
+2025-03-30 20:12:26,472 - INFO - 语音长度: 2691ms, 字幕长度: 3060ms
+2025-03-30 20:12:26,473 - INFO - 段落处理完成，耗时: 1.76 秒
+2025-03-30 20:12:26,473 - INFO - --------------------------------------------------
+2025-03-30 20:12:26,473 - INFO - 处理第 11/96 段字幕 [11.5%]:
+2025-03-30 20:12:26,474 - INFO - 时间: 97140ms -> 98480ms (持续 1340ms)
+2025-03-30 20:12:26,474 - INFO - 文本: Where is the wall?
+2025-03-30 20:12:26,474 - INFO - 开始文本转语音: resources/audios/segment_0010.mp3
+2025-03-30 20:12:26,474 - INFO - 处理文本: Where is the wall?
+2025-03-30 20:12:26,509 - INFO - 发送TTS请求并保存到: resources/audios/segment_0010.mp3
+2025-03-30 20:12:27,761 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 20:12:27,849 - INFO - TTS完成，耗时: 1.38 秒
+2025-03-30 20:12:28,085 - INFO - 语音长度: 1254ms, 字幕长度: 1340ms
+2025-03-30 20:12:28,086 - INFO - 段落处理完成，耗时: 1.61 秒
+2025-03-30 20:12:28,086 - INFO - --------------------------------------------------
+2025-03-30 20:12:28,086 - INFO - 处理第 12/96 段字幕 [12.5%]:
+2025-03-30 20:12:28,086 - INFO - 时间: 101620ms -> 102520ms (持续 900ms)
+2025-03-30 20:12:28,086 - INFO - 文本: Are you?
+2025-03-30 20:12:28,086 - INFO - 开始文本转语音: resources/audios/segment_0011.mp3
+2025-03-30 20:12:28,086 - INFO - 处理文本: Are you?
+2025-03-30 20:12:28,121 - INFO - 发送TTS请求并保存到: resources/audios/segment_0011.mp3
+2025-03-30 20:51:57,232 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 400 Bad Request"
+2025-03-30 20:51:57,838 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-03-30 20:54:03,011 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-03-30 20:54:20,587 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-03-30 20:56:16,994 - INFO - 开始处理字幕文件: resources/transcripts/merger_A_5Nd3vAG9k.srt
+2025-03-30 20:56:16,994 - INFO - 输出文件路径: resources/transcripts/merger_A_5Nd3vAG9k_cn.srt
+2025-03-30 20:56:16,994 - INFO - 开始解析SRT文件: resources/transcripts/merger_A_5Nd3vAG9k.srt
+2025-03-30 20:56:16,994 - INFO - 成功解析 96 条字幕
+2025-03-30 20:56:16,995 - INFO - 成功解析到 96 条字幕
+2025-03-30 20:56:16,995 - INFO - 开始分析字幕内容...
+2025-03-30 20:56:16,995 - INFO - 开始分析字幕内容
+2025-03-30 20:56:17,566 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-03-30 20:56:35,559 - INFO - 内容分析完成
+2025-03-30 20:56:35,559 - INFO - 内容分析完成
+2025-03-30 20:56:35,559 - INFO - 开始翻译字幕...
+2025-03-30 20:56:35,559 - INFO - 开始翻译 96 条字幕
+2025-03-30 20:56:35,958 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-03-30 20:57:33,382 - INFO - 开始解析翻译结果，预期字幕数: 96
+2025-03-30 20:57:33,383 - WARNING - 有 9 条字幕未成功匹配
+2025-03-30 20:57:33,383 - WARNING - 使用正则表达式解析失败，尝试按行分割
+2025-03-30 20:57:33,383 - ERROR - 无法正确解析翻译结果，预期96条字幕，实际解析出87条
+2025-03-30 20:57:33,383 - INFO - 翻译完成，获得 96 条翻译结果
+2025-03-30 20:57:33,383 - INFO - 翻译完成!
+2025-03-30 20:57:33,383 - INFO - 开始创建翻译后的SRT文件: resources/transcripts/merger_A_5Nd3vAG9k_cn.srt
+2025-03-30 20:57:33,384 - INFO - 翻译后的SRT文件已保存: resources/transcripts/merger_A_5Nd3vAG9k_cn.srt
+2025-03-30 20:57:33,384 - INFO - 翻译后的字幕已保存至: resources/transcripts/merger_A_5Nd3vAG9k_cn.srt
+2025-03-30 20:57:33,384 - INFO - 保存翻译日志到: resources/transcripts/merger_A_5Nd3vAG9k_translation_log.txt
+2025-03-30 20:57:33,385 - INFO - 翻译日志保存成功
+2025-03-30 20:57:33,385 - INFO - 翻译日志已保存至: resources/transcripts/merger_A_5Nd3vAG9k_translation_log.txt
+2025-03-30 20:59:51,342 - INFO - HTTP Request: POST https://api.assemblyai.com/v2/upload "HTTP/1.1 200 OK"
+2025-03-30 20:59:51,527 - INFO - HTTP Request: POST https://api.assemblyai.com/v2/transcript "HTTP/1.1 200 OK"
+2025-03-30 20:59:51,591 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/e78f5354-a1d4-4db7-bfe8-5bb86978cf22 "HTTP/1.1 200 OK"
+2025-03-30 20:59:54,652 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/e78f5354-a1d4-4db7-bfe8-5bb86978cf22 "HTTP/1.1 200 OK"
+2025-03-30 20:59:57,738 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/e78f5354-a1d4-4db7-bfe8-5bb86978cf22 "HTTP/1.1 200 OK"
+2025-03-30 21:00:00,798 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/e78f5354-a1d4-4db7-bfe8-5bb86978cf22 "HTTP/1.1 200 OK"
+2025-03-30 21:00:03,862 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/e78f5354-a1d4-4db7-bfe8-5bb86978cf22 "HTTP/1.1 200 OK"
+2025-03-30 21:00:07,110 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/e78f5354-a1d4-4db7-bfe8-5bb86978cf22 "HTTP/1.1 200 OK"
+2025-03-30 21:00:07,512 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/e78f5354-a1d4-4db7-bfe8-5bb86978cf22/srt "HTTP/1.1 200 OK"
+2025-03-30 21:00:07,519 - INFO - 开始处理字幕文件: resources/transcripts/merger_A_5Nd3vAG9k.srt
+2025-03-30 21:00:07,519 - INFO - 输出文件路径: resources/transcripts/merger_A_5Nd3vAG9k_cn.srt
+2025-03-30 21:00:07,519 - INFO - 开始解析SRT文件: resources/transcripts/merger_A_5Nd3vAG9k.srt
+2025-03-30 21:00:07,520 - INFO - 成功解析 98 条字幕
+2025-03-30 21:00:07,520 - INFO - 成功解析到 98 条字幕
+2025-03-30 21:00:07,520 - INFO - 开始分析字幕内容...
+2025-03-30 21:00:07,520 - INFO - 开始分析字幕内容
+2025-03-30 21:00:07,951 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-03-30 21:00:26,602 - INFO - 内容分析完成
+2025-03-30 21:00:26,603 - INFO - 内容分析完成
+2025-03-30 21:00:26,603 - INFO - 开始翻译字幕...
+2025-03-30 21:00:26,603 - INFO - 开始翻译 98 条字幕
+2025-03-30 21:00:26,980 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-03-30 21:01:25,346 - INFO - 开始解析翻译结果，预期字幕数: 98
+2025-03-30 21:01:25,347 - WARNING - 有 1 条字幕未成功匹配
+2025-03-30 21:01:25,347 - WARNING - 使用正则表达式解析失败，尝试按行分割
+2025-03-30 21:01:25,348 - ERROR - 无法正确解析翻译结果，预期98条字幕，实际解析出97条
+2025-03-30 21:01:25,348 - INFO - 翻译完成，获得 98 条翻译结果
+2025-03-30 21:01:25,348 - INFO - 翻译完成!
+2025-03-30 21:01:25,348 - INFO - 开始创建翻译后的SRT文件: resources/transcripts/merger_A_5Nd3vAG9k_cn.srt
+2025-03-30 21:01:25,349 - INFO - 翻译后的SRT文件已保存: resources/transcripts/merger_A_5Nd3vAG9k_cn.srt
+2025-03-30 21:01:25,349 - INFO - 翻译后的字幕已保存至: resources/transcripts/merger_A_5Nd3vAG9k_cn.srt
+2025-03-30 21:01:25,349 - INFO - 保存翻译日志到: resources/transcripts/merger_A_5Nd3vAG9k_translation_log.txt
+2025-03-30 21:01:25,350 - INFO - 翻译日志保存成功
+2025-03-30 21:01:25,350 - INFO - 翻译日志已保存至: resources/transcripts/merger_A_5Nd3vAG9k_translation_log.txt
+2025-03-30 21:01:25,350 - INFO - ================================================================================
+2025-03-30 21:01:25,350 - INFO - 开始处理字幕转语音任务
+2025-03-30 21:01:25,350 - INFO - 字幕文件: resources/transcripts/merger_A_5Nd3vAG9k_cn.srt
+2025-03-30 21:01:25,350 - INFO - 输出目录: resources/audios
+2025-03-30 21:01:25,350 - INFO - 输出目录已准备: resources/audios
+2025-03-30 21:01:25,350 - INFO - 开始解析字幕文件: resources/transcripts/merger_A_5Nd3vAG9k_cn.srt
+2025-03-30 21:01:25,350 - INFO - 成功读取字幕文件，大小: 4009 字节
+2025-03-30 21:01:25,351 - INFO - 找到 98 个字幕片段
+2025-03-30 21:01:25,352 - INFO - 字幕解析完成，耗时: 0.00 秒
+2025-03-30 21:01:25,352 - INFO - 共有 98 个字幕段落需要处理
+2025-03-30 21:01:25,352 - INFO - ==================================================
+2025-03-30 21:01:25,352 - INFO - 第一步：生成所有TTS音频
+2025-03-30 21:01:25,352 - INFO - 处理第 1/98 段字幕 [1.0%]:
+2025-03-30 21:01:25,352 - INFO - 时间: 1200ms -> 11288ms (持续 10088ms)
+2025-03-30 21:01:25,352 - INFO - 文本: 无法正确翻译
+2025-03-30 21:01:25,352 - INFO - 开始文本转语音: resources/audios/segment_0000.mp3
+2025-03-30 21:01:25,352 - INFO - 处理文本: 无法正确翻译
+2025-03-30 21:01:25,405 - INFO - 发送TTS请求并保存到: resources/audios/segment_0000.mp3
+2025-03-30 21:01:26,428 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:01:26,605 - INFO - TTS完成，耗时: 1.25 秒
+2025-03-30 21:01:26,822 - INFO - 语音长度: 1750ms, 字幕长度: 10088ms
+2025-03-30 21:01:26,822 - INFO - TTS音频统计: 6个汉字, 平均每个汉字291.67ms
+2025-03-30 21:01:26,822 - INFO - 段落处理完成，耗时: 1.47 秒
+2025-03-30 21:01:26,822 - INFO - --------------------------------------------------
+2025-03-30 21:01:26,822 - INFO - 处理第 2/98 段字幕 [2.0%]:
+2025-03-30 21:01:26,822 - INFO - 时间: 11464ms -> 18660ms (持续 7196ms)
+2025-03-30 21:01:26,822 - INFO - 文本: 无法正确翻译
+2025-03-30 21:01:26,822 - INFO - 开始文本转语音: resources/audios/segment_0001.mp3
+2025-03-30 21:01:26,822 - INFO - 处理文本: 无法正确翻译
+2025-03-30 21:01:26,856 - INFO - 发送TTS请求并保存到: resources/audios/segment_0001.mp3
+2025-03-30 21:01:27,981 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:01:28,174 - INFO - TTS完成，耗时: 1.35 秒
+2025-03-30 21:01:28,412 - INFO - 语音长度: 2220ms, 字幕长度: 7196ms
+2025-03-30 21:01:28,412 - INFO - TTS音频统计: 6个汉字, 平均每个汉字370.00ms
+2025-03-30 21:01:28,412 - INFO - 段落处理完成，耗时: 1.59 秒
+2025-03-30 21:01:28,412 - INFO - --------------------------------------------------
+2025-03-30 21:01:28,412 - INFO - 处理第 3/98 段字幕 [3.1%]:
+2025-03-30 21:01:28,412 - INFO - 时间: 25840ms -> 30900ms (持续 5060ms)
+2025-03-30 21:01:28,412 - INFO - 文本: 无法正确翻译
+2025-03-30 21:01:28,413 - INFO - 开始文本转语音: resources/audios/segment_0002.mp3
+2025-03-30 21:01:28,413 - INFO - 处理文本: 无法正确翻译
+2025-03-30 21:01:28,446 - INFO - 发送TTS请求并保存到: resources/audios/segment_0002.mp3
+2025-03-30 21:01:29,644 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:01:29,660 - INFO - TTS完成，耗时: 1.25 秒
+2025-03-30 21:01:29,887 - INFO - 语音长度: 1750ms, 字幕长度: 5060ms
+2025-03-30 21:01:29,887 - INFO - TTS音频统计: 6个汉字, 平均每个汉字291.67ms
+2025-03-30 21:01:29,887 - INFO - 段落处理完成，耗时: 1.47 秒
+2025-03-30 21:01:29,887 - INFO - --------------------------------------------------
+2025-03-30 21:01:29,887 - INFO - 处理第 4/98 段字幕 [4.1%]:
+2025-03-30 21:01:29,887 - INFO - 时间: 33500ms -> 76560ms (持续 43060ms)
+2025-03-30 21:01:29,887 - INFO - 文本: 无法正确翻译
+2025-03-30 21:01:29,887 - INFO - 开始文本转语音: resources/audios/segment_0003.mp3
+2025-03-30 21:01:29,887 - INFO - 处理文本: 无法正确翻译
+2025-03-30 21:01:29,921 - INFO - 发送TTS请求并保存到: resources/audios/segment_0003.mp3
+2025-03-30 21:01:31,076 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:01:31,172 - INFO - TTS完成，耗时: 1.28 秒
+2025-03-30 21:01:31,390 - INFO - 语音长度: 1855ms, 字幕长度: 43060ms
+2025-03-30 21:01:31,390 - INFO - TTS音频统计: 6个汉字, 平均每个汉字309.17ms
+2025-03-30 21:01:31,390 - INFO - 段落处理完成，耗时: 1.50 秒
+2025-03-30 21:01:31,390 - INFO - --------------------------------------------------
+2025-03-30 21:01:31,390 - INFO - 处理第 5/98 段字幕 [5.1%]:
+2025-03-30 21:01:31,390 - INFO - 时间: 76640ms -> 81980ms (持续 5340ms)
+2025-03-30 21:01:31,390 - INFO - 文本: 无法正确翻译
+2025-03-30 21:01:31,390 - INFO - 开始文本转语音: resources/audios/segment_0004.mp3
+2025-03-30 21:01:31,390 - INFO - 处理文本: 无法正确翻译
+2025-03-30 21:01:31,424 - INFO - 发送TTS请求并保存到: resources/audios/segment_0004.mp3
+2025-03-30 21:01:33,331 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:01:33,428 - INFO - TTS完成，耗时: 2.04 秒
+2025-03-30 21:01:33,658 - INFO - 语音长度: 1933ms, 字幕长度: 5340ms
+2025-03-30 21:01:33,659 - INFO - TTS音频统计: 6个汉字, 平均每个汉字322.17ms
+2025-03-30 21:01:33,659 - INFO - 段落处理完成，耗时: 2.27 秒
+2025-03-30 21:01:33,659 - INFO - --------------------------------------------------
+2025-03-30 21:01:33,659 - INFO - 处理第 6/98 段字幕 [6.1%]:
+2025-03-30 21:01:33,659 - INFO - 时间: 83480ms -> 86540ms (持续 3060ms)
+2025-03-30 21:01:33,659 - INFO - 文本: 无法正确翻译
+2025-03-30 21:01:33,659 - INFO - 开始文本转语音: resources/audios/segment_0005.mp3
+2025-03-30 21:01:33,659 - INFO - 处理文本: 无法正确翻译
+2025-03-30 21:01:33,692 - INFO - 发送TTS请求并保存到: resources/audios/segment_0005.mp3
+2025-03-30 21:01:34,784 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:01:35,029 - INFO - TTS完成，耗时: 1.37 秒
+2025-03-30 21:01:35,267 - INFO - 语音长度: 1698ms, 字幕长度: 3060ms
+2025-03-30 21:01:35,267 - INFO - TTS音频统计: 6个汉字, 平均每个汉字283.00ms
+2025-03-30 21:01:35,267 - INFO - 段落处理完成，耗时: 1.61 秒
+2025-03-30 21:01:35,267 - INFO - --------------------------------------------------
+2025-03-30 21:01:35,267 - INFO - 处理第 7/98 段字幕 [7.1%]:
+2025-03-30 21:01:35,267 - INFO - 时间: 97140ms -> 98480ms (持续 1340ms)
+2025-03-30 21:01:35,267 - INFO - 文本: 无法正确翻译
+2025-03-30 21:01:35,267 - INFO - 开始文本转语音: resources/audios/segment_0006.mp3
+2025-03-30 21:01:35,267 - INFO - 处理文本: 无法正确翻译
+2025-03-30 21:01:35,301 - INFO - 发送TTS请求并保存到: resources/audios/segment_0006.mp3
+2025-03-30 21:01:36,813 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:01:36,871 - INFO - TTS完成，耗时: 1.60 秒
+2025-03-30 21:01:37,103 - INFO - 语音长度: 1620ms, 字幕长度: 1340ms
+2025-03-30 21:01:37,103 - INFO - TTS音频统计: 6个汉字, 平均每个汉字270.00ms
+2025-03-30 21:01:37,103 - INFO - 段落处理完成，耗时: 1.84 秒
+2025-03-30 21:01:37,103 - INFO - --------------------------------------------------
+2025-03-30 21:01:37,103 - INFO - 处理第 8/98 段字幕 [8.2%]:
+2025-03-30 21:01:37,103 - INFO - 时间: 101620ms -> 102520ms (持续 900ms)
+2025-03-30 21:01:37,103 - INFO - 文本: 无法正确翻译
+2025-03-30 21:01:37,103 - INFO - 开始文本转语音: resources/audios/segment_0007.mp3
+2025-03-30 21:01:37,103 - INFO - 处理文本: 无法正确翻译
+2025-03-30 21:01:37,137 - INFO - 发送TTS请求并保存到: resources/audios/segment_0007.mp3
+2025-03-30 21:01:38,200 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:01:38,308 - INFO - TTS完成，耗时: 1.20 秒
+2025-03-30 21:01:38,553 - INFO - 语音长度: 1698ms, 字幕长度: 900ms
+2025-03-30 21:01:38,553 - INFO - TTS音频统计: 6个汉字, 平均每个汉字283.00ms
+2025-03-30 21:01:38,553 - INFO - 段落处理完成，耗时: 1.45 秒
+2025-03-30 21:01:38,553 - INFO - --------------------------------------------------
+2025-03-30 21:01:38,553 - INFO - 处理第 9/98 段字幕 [9.2%]:
+2025-03-30 21:01:38,554 - INFO - 时间: 105300ms -> 108812ms (持续 3512ms)
+2025-03-30 21:01:38,554 - INFO - 文本: 无法正确翻译
+2025-03-30 21:01:38,554 - INFO - 开始文本转语音: resources/audios/segment_0008.mp3
+2025-03-30 21:01:38,554 - INFO - 处理文本: 无法正确翻译
+2025-03-30 21:01:38,587 - INFO - 发送TTS请求并保存到: resources/audios/segment_0008.mp3
+2025-03-30 21:12:13,953 - INFO - HTTP Request: POST https://api.assemblyai.com/v2/upload "HTTP/1.1 200 OK"
+2025-03-30 21:12:14,149 - INFO - HTTP Request: POST https://api.assemblyai.com/v2/transcript "HTTP/1.1 200 OK"
+2025-03-30 21:12:14,199 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/fcaeefa7-38c6-47aa-aad4-ecf441ed2f20 "HTTP/1.1 200 OK"
+2025-03-30 21:12:17,296 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/fcaeefa7-38c6-47aa-aad4-ecf441ed2f20 "HTTP/1.1 200 OK"
+2025-03-30 21:12:20,365 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/fcaeefa7-38c6-47aa-aad4-ecf441ed2f20 "HTTP/1.1 200 OK"
+2025-03-30 21:12:23,431 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/fcaeefa7-38c6-47aa-aad4-ecf441ed2f20 "HTTP/1.1 200 OK"
+2025-03-30 21:12:26,494 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/fcaeefa7-38c6-47aa-aad4-ecf441ed2f20 "HTTP/1.1 200 OK"
+2025-03-30 21:12:29,723 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/fcaeefa7-38c6-47aa-aad4-ecf441ed2f20 "HTTP/1.1 200 OK"
+2025-03-30 21:12:30,211 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/fcaeefa7-38c6-47aa-aad4-ecf441ed2f20/srt "HTTP/1.1 200 OK"
+2025-03-30 21:12:49,020 - INFO - 开始处理字幕文件: resources/transcripts/merger_A_5Nd3vAG9k.srt
+2025-03-30 21:12:49,021 - INFO - 输出文件路径: resources/transcripts/merger_A_5Nd3vAG9k_cn.srt
+2025-03-30 21:12:49,021 - INFO - 开始解析SRT文件: resources/transcripts/merger_A_5Nd3vAG9k.srt
+2025-03-30 21:12:49,022 - INFO - 成功解析 91 条字幕
+2025-03-30 21:12:49,022 - INFO - 成功解析到 91 条字幕
+2025-03-30 21:12:49,023 - INFO - 开始分析字幕内容...
+2025-03-30 21:12:49,023 - INFO - 开始分析字幕内容
+2025-03-30 21:12:49,788 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-03-30 21:13:04,766 - INFO - 内容分析完成
+2025-03-30 21:13:04,767 - INFO - 内容分析完成
+2025-03-30 21:13:04,767 - INFO - 开始翻译字幕...
+2025-03-30 21:13:04,767 - INFO - 开始翻译 91 条字幕
+2025-03-30 21:13:05,357 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-03-30 21:13:58,201 - INFO - 开始解析翻译结果，预期字幕数: 91
+2025-03-30 21:13:58,205 - INFO - 翻译结果解析完成
+2025-03-30 21:13:58,206 - INFO - 翻译完成，获得 91 条翻译结果
+2025-03-30 21:13:58,206 - INFO - 翻译完成!
+2025-03-30 21:13:58,206 - INFO - 开始创建翻译后的SRT文件: resources/transcripts/merger_A_5Nd3vAG9k_cn.srt
+2025-03-30 21:13:58,208 - INFO - 翻译后的SRT文件已保存: resources/transcripts/merger_A_5Nd3vAG9k_cn.srt
+2025-03-30 21:13:58,208 - INFO - 翻译后的字幕已保存至: resources/transcripts/merger_A_5Nd3vAG9k_cn.srt
+2025-03-30 21:13:58,209 - INFO - 保存翻译日志到: resources/transcripts/merger_A_5Nd3vAG9k_translation_log.txt
+2025-03-30 21:13:58,210 - INFO - 翻译日志保存成功
+2025-03-30 21:13:58,210 - INFO - 翻译日志已保存至: resources/transcripts/merger_A_5Nd3vAG9k_translation_log.txt
+2025-03-30 21:14:21,030 - INFO - ================================================================================
+2025-03-30 21:14:21,031 - INFO - 开始处理字幕转语音任务
+2025-03-30 21:14:21,031 - INFO - 字幕文件: resources/transcripts/merger_A_5Nd3vAG9k_cn.srt
+2025-03-30 21:14:21,031 - INFO - 输出目录: resources/audios
+2025-03-30 21:14:21,032 - INFO - 输出目录已准备: resources/audios
+2025-03-30 21:14:21,032 - INFO - 开始解析字幕文件: resources/transcripts/merger_A_5Nd3vAG9k_cn.srt
+2025-03-30 21:14:21,032 - INFO - 成功读取字幕文件，大小: 4770 字节
+2025-03-30 21:14:21,038 - INFO - 找到 91 个字幕片段
+2025-03-30 21:14:21,039 - INFO - 字幕解析完成，耗时: 0.01 秒
+2025-03-30 21:14:21,039 - INFO - 共有 91 个字幕段落需要处理
+2025-03-30 21:14:21,039 - INFO - ==================================================
+2025-03-30 21:14:21,040 - INFO - 第一步：生成所有TTS音频
+2025-03-30 21:14:21,040 - INFO - 处理第 1/91 段字幕 [1.1%]:
+2025-03-30 21:14:21,040 - INFO - 时间: 1200ms -> 18660ms (持续 17460ms)
+2025-03-30 21:14:21,040 - INFO - 文本: 我们正在寻找世界上最罕见、最偏远也最险峻的瀑布。此刻我们在地球最顶端，深入北极圈腹地。这些神奇的冰瀑从冰川表面直泻入海，将带来前所未有的皮划艇挑战体验。
+2025-03-30 21:14:21,041 - INFO - 开始文本转语音: resources/audios/segment_0000.mp3
+2025-03-30 21:14:21,041 - INFO - 处理文本: 我们正在寻找世界上最罕见、最偏远也最险峻的瀑布。此刻我们在地球最顶端，深入北极圈腹地。这些神奇的冰瀑...
+2025-03-30 21:14:21,119 - INFO - 发送TTS请求并保存到: resources/audios/segment_0000.mp3
+2025-03-30 21:14:22,563 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:14:25,243 - INFO - TTS完成，耗时: 4.20 秒
+2025-03-30 21:14:25,580 - INFO - 语音长度: 15412ms, 字幕长度: 17460ms
+2025-03-30 21:14:25,581 - INFO - TTS音频统计: 70个汉字, 平均每个汉字220.17ms
+2025-03-30 21:14:25,581 - INFO - 段落处理完成，耗时: 4.54 秒
+2025-03-30 21:14:25,581 - INFO - --------------------------------------------------
+2025-03-30 21:14:25,581 - INFO - 处理第 2/91 段字幕 [2.2%]:
+2025-03-30 21:14:25,581 - INFO - 时间: 25840ms -> 30900ms (持续 5060ms)
+2025-03-30 21:14:25,581 - INFO - 文本: 在考虑征服它们之前，我们还要克服诸多困难。
+2025-03-30 21:14:25,581 - INFO - 开始文本转语音: resources/audios/segment_0001.mp3
+2025-03-30 21:14:25,581 - INFO - 处理文本: 在考虑征服它们之前，我们还要克服诸多困难。
+2025-03-30 21:14:25,615 - INFO - 发送TTS请求并保存到: resources/audios/segment_0001.mp3
+2025-03-30 21:14:26,976 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:14:27,392 - INFO - TTS完成，耗时: 1.81 秒
+2025-03-30 21:14:27,614 - INFO - 语音长度: 4441ms, 字幕长度: 5060ms
+2025-03-30 21:14:27,615 - INFO - TTS音频统计: 19个汉字, 平均每个汉字233.74ms
+2025-03-30 21:14:27,615 - INFO - 段落处理完成，耗时: 2.03 秒
+2025-03-30 21:14:27,615 - INFO - --------------------------------------------------
+2025-03-30 21:14:27,615 - INFO - 处理第 3/91 段字幕 [3.3%]:
+2025-03-30 21:14:27,615 - INFO - 时间: 33500ms -> 36500ms (持续 3000ms)
+2025-03-30 21:14:27,615 - INFO - 文本: 但首先，我们得找到它们。
+2025-03-30 21:14:27,615 - INFO - 开始文本转语音: resources/audios/segment_0002.mp3
+2025-03-30 21:14:27,615 - INFO - 处理文本: 但首先，我们得找到它们。
+2025-03-30 21:14:27,648 - INFO - 发送TTS请求并保存到: resources/audios/segment_0002.mp3
+2025-03-30 21:14:28,707 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:14:29,322 - INFO - TTS完成，耗时: 1.71 秒
+2025-03-30 21:14:29,540 - INFO - 语音长度: 2586ms, 字幕长度: 3000ms
+2025-03-30 21:14:29,540 - INFO - TTS音频统计: 10个汉字, 平均每个汉字258.60ms
+2025-03-30 21:14:29,541 - INFO - 段落处理完成，耗时: 1.93 秒
+2025-03-30 21:14:29,541 - INFO - --------------------------------------------------
+2025-03-30 21:14:29,541 - INFO - 处理第 4/91 段字幕 [4.4%]:
+2025-03-30 21:14:29,541 - INFO - 时间: 36620ms -> 40052ms (持续 3432ms)
+2025-03-30 21:14:29,541 - INFO - 文本: 我们先抵达挪威乃至欧洲大陆的最北端。
+2025-03-30 21:14:29,541 - INFO - 开始文本转语音: resources/audios/segment_0003.mp3
+2025-03-30 21:14:29,541 - INFO - 处理文本: 我们先抵达挪威乃至欧洲大陆的最北端。
+2025-03-30 21:14:29,575 - INFO - 发送TTS请求并保存到: resources/audios/segment_0003.mp3
+2025-03-30 21:14:30,963 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:14:31,117 - INFO - TTS完成，耗时: 1.58 秒
+2025-03-30 21:14:31,358 - INFO - 语音长度: 3579ms, 字幕长度: 3432ms
+2025-03-30 21:14:31,359 - INFO - TTS音频统计: 17个汉字, 平均每个汉字210.53ms
+2025-03-30 21:14:31,359 - INFO - 段落处理完成，耗时: 1.82 秒
+2025-03-30 21:14:31,359 - INFO - --------------------------------------------------
+2025-03-30 21:14:31,359 - INFO - 处理第 5/91 段字幕 [5.5%]:
+2025-03-30 21:14:31,359 - INFO - 时间: 40236ms -> 47000ms (持续 6764ms)
+2025-03-30 21:14:31,359 - INFO - 文本: 再从那里向北进发，前往北极圈深处的斯瓦尔巴群岛。
+2025-03-30 21:14:31,359 - INFO - 开始文本转语音: resources/audios/segment_0004.mp3
+2025-03-30 21:14:31,359 - INFO - 处理文本: 再从那里向北进发，前往北极圈深处的斯瓦尔巴群岛。
+2025-03-30 21:14:31,393 - INFO - 发送TTS请求并保存到: resources/audios/segment_0004.mp3
+2025-03-30 21:14:32,597 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:14:33,228 - INFO - TTS完成，耗时: 1.87 秒
+2025-03-30 21:14:33,461 - INFO - 语音长度: 5251ms, 字幕长度: 6764ms
+2025-03-30 21:14:33,462 - INFO - TTS音频统计: 22个汉字, 平均每个汉字238.68ms
+2025-03-30 21:14:33,462 - INFO - 段落处理完成，耗时: 2.10 秒
+2025-03-30 21:14:33,462 - INFO - --------------------------------------------------
+2025-03-30 21:14:33,462 - INFO - 处理第 6/91 段字幕 [6.6%]:
+2025-03-30 21:14:33,462 - INFO - 时间: 47340ms -> 76560ms (持续 29220ms)
+2025-03-30 21:14:33,462 - INFO - 文本: 刚离开世界最北小镇朗伊尔城，此刻我们乘着极地考察船继续北行。天啊，那个在旋转！我们的目标是东部无人冰川岛。虽然大致知道方位，但前方充满未知。驶入迷雾了，太壮观了。
+2025-03-30 21:14:33,462 - INFO - 开始文本转语音: resources/audios/segment_0005.mp3
+2025-03-30 21:14:33,462 - INFO - 处理文本: 刚离开世界最北小镇朗伊尔城，此刻我们乘着极地考察船继续北行。天啊，那个在旋转！我们的目标是东部无人冰...
+2025-03-30 21:14:33,497 - INFO - 发送TTS请求并保存到: resources/audios/segment_0005.mp3
+2025-03-30 21:14:34,600 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:14:38,149 - INFO - TTS完成，耗时: 4.69 秒
+2025-03-30 21:14:38,379 - INFO - 语音长度: 15882ms, 字幕长度: 29220ms
+2025-03-30 21:14:38,379 - INFO - TTS音频统计: 72个汉字, 平均每个汉字220.58ms
+2025-03-30 21:14:38,379 - INFO - 段落处理完成，耗时: 4.92 秒
+2025-03-30 21:14:38,379 - INFO - --------------------------------------------------
+2025-03-30 21:14:38,379 - INFO - 处理第 7/91 段字幕 [7.7%]:
+2025-03-30 21:14:38,379 - INFO - 时间: 76640ms -> 86540ms (持续 9900ms)
+2025-03-30 21:14:38,379 - INFO - 文本: 雾太浓了！本尼船长能在这种环境下航行真了不起。他可是行家——要是出问题就全指望他了。
+2025-03-30 21:14:38,379 - INFO - 开始文本转语音: resources/audios/segment_0006.mp3
+2025-03-30 21:14:38,380 - INFO - 处理文本: 雾太浓了！本尼船长能在这种环境下航行真了不起。他可是行家——要是出问题就全指望他了。
+2025-03-30 21:14:38,414 - INFO - 发送TTS请求并保存到: resources/audios/segment_0006.mp3
+2025-03-30 21:14:39,561 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:14:40,299 - INFO - TTS完成，耗时: 1.92 秒
+2025-03-30 21:14:40,525 - INFO - 语音长度: 8725ms, 字幕长度: 9900ms
+2025-03-30 21:14:40,526 - INFO - TTS音频统计: 37个汉字, 平均每个汉字235.81ms
+2025-03-30 21:14:40,526 - INFO - 段落处理完成，耗时: 2.15 秒
+2025-03-30 21:14:40,526 - INFO - --------------------------------------------------
+2025-03-30 21:14:40,526 - INFO - 处理第 8/91 段字幕 [8.8%]:
+2025-03-30 21:14:40,526 - INFO - 时间: 97140ms -> 98480ms (持续 1340ms)
+2025-03-30 21:14:40,526 - INFO - 文本: 冰墙在哪？
+2025-03-30 21:14:40,526 - INFO - 开始文本转语音: resources/audios/segment_0007.mp3
+2025-03-30 21:14:40,526 - INFO - 处理文本: 冰墙在哪？
+2025-03-30 21:14:40,560 - INFO - 发送TTS请求并保存到: resources/audios/segment_0007.mp3
+2025-03-30 21:14:41,817 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:14:41,833 - INFO - TTS完成，耗时: 1.31 秒
+2025-03-30 21:14:42,052 - INFO - 语音长度: 1515ms, 字幕长度: 1340ms
+2025-03-30 21:14:42,052 - INFO - TTS音频统计: 4个汉字, 平均每个汉字378.75ms
+2025-03-30 21:14:42,052 - INFO - 段落处理完成，耗时: 1.53 秒
+2025-03-30 21:14:42,052 - INFO - --------------------------------------------------
+2025-03-30 21:14:42,052 - INFO - 处理第 9/91 段字幕 [9.9%]:
+2025-03-30 21:14:42,052 - INFO - 时间: 101620ms -> 102520ms (持续 900ms)
+2025-03-30 21:14:42,052 - INFO - 文本: 是你吗？
+2025-03-30 21:14:42,052 - INFO - 开始文本转语音: resources/audios/segment_0008.mp3
+2025-03-30 21:14:42,052 - INFO - 处理文本: 是你吗？
+2025-03-30 21:14:42,088 - INFO - 发送TTS请求并保存到: resources/audios/segment_0008.mp3
+2025-03-30 21:14:43,252 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:14:43,271 - INFO - TTS完成，耗时: 1.22 秒
+2025-03-30 21:14:43,484 - INFO - 语音长度: 1672ms, 字幕长度: 900ms
+2025-03-30 21:14:43,485 - INFO - TTS音频统计: 3个汉字, 平均每个汉字557.33ms
+2025-03-30 21:14:43,485 - INFO - 段落处理完成，耗时: 1.43 秒
+2025-03-30 21:14:43,485 - INFO - --------------------------------------------------
+2025-03-30 21:14:43,485 - INFO - 处理第 10/91 段字幕 [11.0%]:
+2025-03-30 21:14:43,485 - INFO - 时间: 105300ms -> 108812ms (持续 3512ms)
+2025-03-30 21:14:43,485 - INFO - 文本: 不，这不是主冰墙兄弟。那边才是！
+2025-03-30 21:14:43,485 - INFO - 开始文本转语音: resources/audios/segment_0009.mp3
+2025-03-30 21:14:43,485 - INFO - 处理文本: 不，这不是主冰墙兄弟。那边才是！
+2025-03-30 21:14:43,520 - INFO - 发送TTS请求并保存到: resources/audios/segment_0009.mp3
+2025-03-30 21:14:44,479 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:14:44,907 - INFO - TTS完成，耗时: 1.42 秒
+2025-03-30 21:14:45,122 - INFO - 语音长度: 3527ms, 字幕长度: 3512ms
+2025-03-30 21:14:45,123 - INFO - TTS音频统计: 13个汉字, 平均每个汉字271.31ms
+2025-03-30 21:14:45,123 - INFO - 段落处理完成，耗时: 1.64 秒
+2025-03-30 21:14:45,123 - INFO - --------------------------------------------------
+2025-03-30 21:14:45,123 - INFO - 处理第 11/91 段字幕 [12.1%]:
+2025-03-30 21:14:45,123 - INFO - 时间: 108876ms -> 110520ms (持续 1644ms)
+2025-03-30 21:14:45,123 - INFO - 文本: 就在那儿，快看！
+2025-03-30 21:14:45,123 - INFO - 开始文本转语音: resources/audios/segment_0010.mp3
+2025-03-30 21:14:45,123 - INFO - 处理文本: 就在那儿，快看！
+2025-03-30 21:14:45,158 - INFO - 发送TTS请求并保存到: resources/audios/segment_0010.mp3
+2025-03-30 21:14:46,530 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:14:46,942 - INFO - TTS完成，耗时: 1.82 秒
+2025-03-30 21:14:47,180 - INFO - 语音长度: 1750ms, 字幕长度: 1644ms
+2025-03-30 21:14:47,180 - INFO - TTS音频统计: 6个汉字, 平均每个汉字291.67ms
+2025-03-30 21:14:47,180 - INFO - 段落处理完成，耗时: 2.06 秒
+2025-03-30 21:14:47,180 - INFO - --------------------------------------------------
+2025-03-30 21:14:47,180 - INFO - 处理第 12/91 段字幕 [13.2%]:
+2025-03-30 21:14:47,180 - INFO - 时间: 111700ms -> 118760ms (持续 7060ms)
+2025-03-30 21:14:47,180 - INFO - 文本: 没错，终于到了。
+2025-03-30 21:14:47,181 - INFO - 开始文本转语音: resources/audios/segment_0011.mp3
+2025-03-30 21:14:47,181 - INFO - 处理文本: 没错，终于到了。
+2025-03-30 21:14:47,215 - INFO - 发送TTS请求并保存到: resources/audios/segment_0011.mp3
+2025-03-30 21:14:48,388 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:14:48,593 - INFO - TTS完成，耗时: 1.41 秒
+2025-03-30 21:14:48,832 - INFO - 语音长度: 2090ms, 字幕长度: 7060ms
+2025-03-30 21:14:48,832 - INFO - TTS音频统计: 6个汉字, 平均每个汉字348.33ms
+2025-03-30 21:14:48,832 - INFO - 段落处理完成，耗时: 1.65 秒
+2025-03-30 21:14:48,832 - INFO - --------------------------------------------------
+2025-03-30 21:14:48,832 - INFO - 处理第 13/91 段字幕 [14.3%]:
+2025-03-30 21:14:48,832 - INFO - 时间: 121460ms -> 122320ms (持续 860ms)
+2025-03-30 21:14:48,832 - INFO - 文本: 哇！
+2025-03-30 21:14:48,832 - INFO - 开始文本转语音: resources/audios/segment_0012.mp3
+2025-03-30 21:14:48,833 - INFO - 处理文本: 哇！
+2025-03-30 21:14:48,867 - INFO - 发送TTS请求并保存到: resources/audios/segment_0012.mp3
+2025-03-30 21:14:50,212 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:14:50,216 - INFO - TTS完成，耗时: 1.38 秒
+2025-03-30 21:14:50,440 - INFO - 语音长度: 731ms, 字幕长度: 860ms
+2025-03-30 21:14:50,440 - INFO - TTS音频统计: 1个汉字, 平均每个汉字731.00ms
+2025-03-30 21:14:50,440 - INFO - 段落处理完成，耗时: 1.61 秒
+2025-03-30 21:14:50,440 - INFO - --------------------------------------------------
+2025-03-30 21:14:50,440 - INFO - 处理第 14/91 段字幕 [15.4%]:
+2025-03-30 21:14:50,440 - INFO - 时间: 125060ms -> 128820ms (持续 3760ms)
+2025-03-30 21:14:50,440 - INFO - 文本: 但这...这也太高了。比预想的更壮观。
+2025-03-30 21:14:50,440 - INFO - 开始文本转语音: resources/audios/segment_0013.mp3
+2025-03-30 21:14:50,440 - INFO - 处理文本: 但这...这也太高了。比预想的更壮观。
+2025-03-30 21:14:50,475 - INFO - 发送TTS请求并保存到: resources/audios/segment_0013.mp3
+2025-03-30 21:14:51,644 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:14:52,074 - INFO - TTS完成，耗时: 1.63 秒
+2025-03-30 21:14:52,286 - INFO - 语音长度: 4180ms, 字幕长度: 3760ms
+2025-03-30 21:14:52,286 - INFO - TTS音频统计: 14个汉字, 平均每个汉字298.57ms
+2025-03-30 21:14:52,286 - INFO - 段落处理完成，耗时: 1.85 秒
+2025-03-30 21:14:52,286 - INFO - --------------------------------------------------
+2025-03-30 21:14:52,286 - INFO - 处理第 15/91 段字幕 [16.5%]:
+2025-03-30 21:14:52,286 - INFO - 时间: 129520ms -> 138860ms (持续 9340ms)
+2025-03-30 21:14:52,286 - INFO - 文本: 确实高耸。今天我们先侦察寻找瀑布，再规划安全路线。
+2025-03-30 21:14:52,287 - INFO - 开始文本转语音: resources/audios/segment_0014.mp3
+2025-03-30 21:14:52,287 - INFO - 处理文本: 确实高耸。今天我们先侦察寻找瀑布，再规划安全路线。
+2025-03-30 21:14:52,320 - INFO - 发送TTS请求并保存到: resources/audios/segment_0014.mp3
+2025-03-30 21:14:53,693 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:14:54,043 - INFO - TTS完成，耗时: 1.76 秒
+2025-03-30 21:14:54,254 - INFO - 语音长度: 5878ms, 字幕长度: 9340ms
+2025-03-30 21:14:54,254 - INFO - TTS音频统计: 22个汉字, 平均每个汉字267.18ms
+2025-03-30 21:14:54,254 - INFO - 段落处理完成，耗时: 1.97 秒
+2025-03-30 21:14:54,254 - INFO - --------------------------------------------------
+2025-03-30 21:14:54,255 - INFO - 处理第 16/91 段字幕 [17.6%]:
+2025-03-30 21:14:54,255 - INFO - 时间: 151600ms -> 170260ms (持续 18660ms)
+2025-03-30 21:14:54,255 - INFO - 文本: 刚目睹巨冰崩塌激起骇人浪涌，不禁设想若我们在下方划艇会怎样。毕竟要在那里停留很久...想想就发怵。
+2025-03-30 21:14:54,255 - INFO - 开始文本转语音: resources/audios/segment_0015.mp3
+2025-03-30 21:14:54,255 - INFO - 处理文本: 刚目睹巨冰崩塌激起骇人浪涌，不禁设想若我们在下方划艇会怎样。毕竟要在那里停留很久...想想就发怵。
+2025-03-30 21:14:54,289 - INFO - 发送TTS请求并保存到: resources/audios/segment_0015.mp3
+2025-03-30 21:14:55,408 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:14:56,353 - INFO - TTS完成，耗时: 2.10 秒
+2025-03-30 21:14:56,604 - INFO - 语音长度: 9456ms, 字幕长度: 18660ms
+2025-03-30 21:14:56,604 - INFO - TTS音频统计: 43个汉字, 平均每个汉字219.91ms
+2025-03-30 21:14:56,604 - INFO - 段落处理完成，耗时: 2.35 秒
+2025-03-30 21:14:56,604 - INFO - --------------------------------------------------
+2025-03-30 21:14:56,604 - INFO - 处理第 17/91 段字幕 [18.7%]:
+2025-03-30 21:14:56,604 - INFO - 时间: 172040ms -> 180340ms (持续 8300ms)
+2025-03-30 21:14:56,604 - INFO - 文本: 真是个庞然大物。必须乘小艇近距离勘察，肯定能找到理想瀑布。
+2025-03-30 21:14:56,604 - INFO - 开始文本转语音: resources/audios/segment_0016.mp3
+2025-03-30 21:14:56,605 - INFO - 处理文本: 真是个庞然大物。必须乘小艇近距离勘察，肯定能找到理想瀑布。
+2025-03-30 21:14:56,639 - INFO - 发送TTS请求并保存到: resources/audios/segment_0016.mp3
+2025-03-30 21:14:57,706 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:14:58,451 - INFO - TTS完成，耗时: 1.85 秒
+2025-03-30 21:14:58,690 - INFO - 语音长度: 6400ms, 字幕长度: 8300ms
+2025-03-30 21:14:58,690 - INFO - TTS音频统计: 26个汉字, 平均每个汉字246.15ms
+2025-03-30 21:14:58,690 - INFO - 段落处理完成，耗时: 2.09 秒
+2025-03-30 21:14:58,690 - INFO - --------------------------------------------------
+2025-03-30 21:14:58,690 - INFO - 处理第 18/91 段字幕 [19.8%]:
+2025-03-30 21:14:58,690 - INFO - 时间: 183080ms -> 183860ms (持续 780ms)
+2025-03-30 21:14:58,690 - INFO - 文本: 哇！
+2025-03-30 21:14:58,691 - INFO - 开始文本转语音: resources/audios/segment_0017.mp3
+2025-03-30 21:14:58,691 - INFO - 处理文本: 哇！
+2025-03-30 21:14:58,725 - INFO - 发送TTS请求并保存到: resources/audios/segment_0017.mp3
+2025-03-30 21:15:00,042 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:00,046 - INFO - TTS完成，耗时: 1.36 秒
+2025-03-30 21:15:00,266 - INFO - 语音长度: 731ms, 字幕长度: 780ms
+2025-03-30 21:15:00,266 - INFO - TTS音频统计: 1个汉字, 平均每个汉字731.00ms
+2025-03-30 21:15:00,266 - INFO - 段落处理完成，耗时: 1.58 秒
+2025-03-30 21:15:00,267 - INFO - --------------------------------------------------
+2025-03-30 21:15:00,267 - INFO - 处理第 19/91 段字幕 [20.9%]:
+2025-03-30 21:15:00,267 - INFO - 时间: 190820ms -> 201692ms (持续 10872ms)
+2025-03-30 21:15:00,267 - INFO - 文本: 看水流冲刷出的沟壑！整片冰层迟早会崩塌。美得惊心。
+2025-03-30 21:15:00,267 - INFO - 开始文本转语音: resources/audios/segment_0018.mp3
+2025-03-30 21:15:00,267 - INFO - 处理文本: 看水流冲刷出的沟壑！整片冰层迟早会崩塌。美得惊心。
+2025-03-30 21:15:00,301 - INFO - 发送TTS请求并保存到: resources/audios/segment_0018.mp3
+2025-03-30 21:15:01,528 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:02,249 - INFO - TTS完成，耗时: 1.98 秒
+2025-03-30 21:15:02,471 - INFO - 语音长度: 6713ms, 字幕长度: 10872ms
+2025-03-30 21:15:02,471 - INFO - TTS音频统计: 22个汉字, 平均每个汉字305.14ms
+2025-03-30 21:15:02,471 - INFO - 段落处理完成，耗时: 2.20 秒
+2025-03-30 21:15:02,471 - INFO - --------------------------------------------------
+2025-03-30 21:15:02,471 - INFO - 处理第 20/91 段字幕 [22.0%]:
+2025-03-30 21:15:02,471 - INFO - 时间: 201756ms -> 208908ms (持续 7152ms)
+2025-03-30 21:15:02,471 - INFO - 文本: 理想落点需要底部有充足水流作为缓冲。
+2025-03-30 21:15:02,471 - INFO - 开始文本转语音: resources/audios/segment_0019.mp3
+2025-03-30 21:15:02,472 - INFO - 处理文本: 理想落点需要底部有充足水流作为缓冲。
+2025-03-30 21:15:02,505 - INFO - 发送TTS请求并保存到: resources/audios/segment_0019.mp3
+2025-03-30 21:15:03,734 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:04,360 - INFO - TTS完成，耗时: 1.89 秒
+2025-03-30 21:15:04,597 - INFO - 语音长度: 4728ms, 字幕长度: 7152ms
+2025-03-30 21:15:04,597 - INFO - TTS音频统计: 17个汉字, 平均每个汉字278.12ms
+2025-03-30 21:15:04,598 - INFO - 段落处理完成，耗时: 2.13 秒
+2025-03-30 21:15:04,598 - INFO - --------------------------------------------------
+2025-03-30 21:15:04,598 - INFO - 处理第 21/91 段字幕 [23.1%]:
+2025-03-30 21:15:04,598 - INFO - 时间: 209084ms -> 213800ms (持续 4716ms)
+2025-03-30 21:15:04,598 - INFO - 文本: 瀑布不少，但难觅水量充沛的。
+2025-03-30 21:15:04,598 - INFO - 开始文本转语音: resources/audios/segment_0020.mp3
+2025-03-30 21:15:04,598 - INFO - 处理文本: 瀑布不少，但难觅水量充沛的。
+2025-03-30 21:15:04,632 - INFO - 发送TTS请求并保存到: resources/audios/segment_0020.mp3
+2025-03-30 21:15:05,777 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:06,227 - INFO - TTS完成，耗时: 1.63 秒
+2025-03-30 21:15:06,471 - INFO - 语音长度: 3161ms, 字幕长度: 4716ms
+2025-03-30 21:15:06,471 - INFO - TTS音频统计: 12个汉字, 平均每个汉字263.42ms
+2025-03-30 21:15:06,471 - INFO - 段落处理完成，耗时: 1.87 秒
+2025-03-30 21:15:06,471 - INFO - --------------------------------------------------
+2025-03-30 21:15:06,471 - INFO - 处理第 22/91 段字幕 [24.2%]:
+2025-03-30 21:15:06,472 - INFO - 时间: 221120ms -> 223740ms (持续 2620ms)
+2025-03-30 21:15:06,472 - INFO - 文本: 都是些小型险峻的。
+2025-03-30 21:15:06,472 - INFO - 开始文本转语音: resources/audios/segment_0021.mp3
+2025-03-30 21:15:06,472 - INFO - 处理文本: 都是些小型险峻的。
+2025-03-30 21:15:06,506 - INFO - 发送TTS请求并保存到: resources/audios/segment_0021.mp3
+2025-03-30 21:15:07,817 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:08,025 - INFO - TTS完成，耗时: 1.55 秒
+2025-03-30 21:15:08,238 - INFO - 语音长度: 2090ms, 字幕长度: 2620ms
+2025-03-30 21:15:08,238 - INFO - TTS音频统计: 8个汉字, 平均每个汉字261.25ms
+2025-03-30 21:15:08,238 - INFO - 段落处理完成，耗时: 1.77 秒
+2025-03-30 21:15:08,238 - INFO - --------------------------------------------------
+2025-03-30 21:15:08,238 - INFO - 处理第 23/91 段字幕 [25.3%]:
+2025-03-30 21:15:08,238 - INFO - 时间: 225360ms -> 231380ms (持续 6020ms)
+2025-03-30 21:15:08,238 - INFO - 文本: 还有160公里海岸线待探索，肯定会有收获。
+2025-03-30 21:15:08,238 - INFO - 开始文本转语音: resources/audios/segment_0022.mp3
+2025-03-30 21:15:08,239 - INFO - 处理文本: 还有160公里海岸线待探索，肯定会有收获。
+2025-03-30 21:15:08,273 - INFO - 发送TTS请求并保存到: resources/audios/segment_0022.mp3
+2025-03-30 21:15:09,381 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:09,849 - INFO - TTS完成，耗时: 1.61 秒
+2025-03-30 21:15:10,091 - INFO - 语音长度: 4911ms, 字幕长度: 6020ms
+2025-03-30 21:15:10,091 - INFO - TTS音频统计: 16个汉字, 平均每个汉字306.94ms
+2025-03-30 21:15:10,091 - INFO - 段落处理完成，耗时: 1.85 秒
+2025-03-30 21:15:10,091 - INFO - --------------------------------------------------
+2025-03-30 21:15:10,091 - INFO - 处理第 24/91 段字幕 [26.4%]:
+2025-03-30 21:15:10,091 - INFO - 时间: 239760ms -> 241020ms (持续 1260ms)
+2025-03-30 21:15:10,091 - INFO - 文本: 我的天！
+2025-03-30 21:15:10,091 - INFO - 开始文本转语音: resources/audios/segment_0023.mp3
+2025-03-30 21:15:10,092 - INFO - 处理文本: 我的天！
+2025-03-30 21:15:10,126 - INFO - 发送TTS请求并保存到: resources/audios/segment_0023.mp3
+2025-03-30 21:15:11,307 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:11,332 - INFO - TTS完成，耗时: 1.24 秒
+2025-03-30 21:15:11,558 - INFO - 语音长度: 1071ms, 字幕长度: 1260ms
+2025-03-30 21:15:11,558 - INFO - TTS音频统计: 3个汉字, 平均每个汉字357.00ms
+2025-03-30 21:15:11,558 - INFO - 段落处理完成，耗时: 1.47 秒
+2025-03-30 21:15:11,558 - INFO - --------------------------------------------------
+2025-03-30 21:15:11,558 - INFO - 处理第 25/91 段字幕 [27.5%]:
+2025-03-30 21:15:11,558 - INFO - 时间: 243760ms -> 244740ms (持续 980ms)
+2025-03-30 21:15:11,558 - INFO - 文本: 这是...
+2025-03-30 21:15:11,558 - INFO - 开始文本转语音: resources/audios/segment_0024.mp3
+2025-03-30 21:15:11,558 - INFO - 处理文本: 这是...
+2025-03-30 21:15:11,592 - INFO - 发送TTS请求并保存到: resources/audios/segment_0024.mp3
+2025-03-30 21:15:12,744 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:12,748 - INFO - TTS完成，耗时: 1.19 秒
+2025-03-30 21:15:12,975 - INFO - 语音长度: 679ms, 字幕长度: 980ms
+2025-03-30 21:15:12,975 - INFO - TTS音频统计: 2个汉字, 平均每个汉字339.50ms
+2025-03-30 21:15:12,976 - INFO - 段落处理完成，耗时: 1.42 秒
+2025-03-30 21:15:12,976 - INFO - --------------------------------------------------
+2025-03-30 21:15:12,976 - INFO - 处理第 26/91 段字幕 [28.6%]:
+2025-03-30 21:15:12,976 - INFO - 时间: 246790ms -> 248930ms (持续 2140ms)
+2025-03-30 21:15:12,976 - INFO - 文本: 太震撼了！
+2025-03-30 21:15:12,976 - INFO - 开始文本转语音: resources/audios/segment_0025.mp3
+2025-03-30 21:15:12,976 - INFO - 处理文本: 太震撼了！
+2025-03-30 21:15:13,011 - INFO - 发送TTS请求并保存到: resources/audios/segment_0025.mp3
+2025-03-30 21:15:14,177 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:14,254 - INFO - TTS完成，耗时: 1.28 秒
+2025-03-30 21:15:14,489 - INFO - 语音长度: 1254ms, 字幕长度: 2140ms
+2025-03-30 21:15:14,489 - INFO - TTS音频统计: 4个汉字, 平均每个汉字313.50ms
+2025-03-30 21:15:14,489 - INFO - 段落处理完成，耗时: 1.51 秒
+2025-03-30 21:15:14,489 - INFO - --------------------------------------------------
+2025-03-30 21:15:14,490 - INFO - 处理第 27/91 段字幕 [29.7%]:
+2025-03-30 21:15:14,490 - INFO - 时间: 254230ms -> 280204ms (持续 25974ms)
+2025-03-30 21:15:14,490 - INFO - 文本: 我们可能找到了生平所见最美的瀑布。现在关键是登顶。这边冰墙较低适合作为入口，比瀑布区容易接近。主冰墙高达20米无法靠近。
+2025-03-30 21:15:14,490 - INFO - 开始文本转语音: resources/audios/segment_0026.mp3
+2025-03-30 21:15:14,490 - INFO - 处理文本: 我们可能找到了生平所见最美的瀑布。现在关键是登顶。这边冰墙较低适合作为入口，比瀑布区容易接近。主冰墙...
+2025-03-30 21:15:14,524 - INFO - 发送TTS请求并保存到: resources/audios/segment_0026.mp3
+2025-03-30 21:15:15,899 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:17,009 - INFO - TTS完成，耗时: 2.52 秒
+2025-03-30 21:15:17,253 - INFO - 语音长度: 11886ms, 字幕长度: 25974ms
+2025-03-30 21:15:17,253 - INFO - TTS音频统计: 53个汉字, 平均每个汉字224.26ms
+2025-03-30 21:15:17,253 - INFO - 段落处理完成，耗时: 2.76 秒
+2025-03-30 21:15:17,253 - INFO - --------------------------------------------------
+2025-03-30 21:15:17,253 - INFO - 处理第 28/91 段字幕 [30.8%]:
+2025-03-30 21:15:17,253 - INFO - 时间: 280332ms -> 293404ms (持续 13072ms)
+2025-03-30 21:15:17,253 - INFO - 文本: 得在冰原徒步近10公里。向导制定了巧妙的登冰方案，还需征得本尼船长同意。
+2025-03-30 21:15:17,254 - INFO - 开始文本转语音: resources/audios/segment_0027.mp3
+2025-03-30 21:15:17,254 - INFO - 处理文本: 得在冰原徒步近10公里。向导制定了巧妙的登冰方案，还需征得本尼船长同意。
+2025-03-30 21:15:17,288 - INFO - 发送TTS请求并保存到: resources/audios/segment_0027.mp3
+2025-03-30 21:15:18,484 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:19,119 - INFO - TTS完成，耗时: 1.86 秒
+2025-03-30 21:15:19,347 - INFO - 语音长度: 8176ms, 字幕长度: 13072ms
+2025-03-30 21:15:19,348 - INFO - TTS音频统计: 31个汉字, 平均每个汉字263.74ms
+2025-03-30 21:15:19,348 - INFO - 段落处理完成，耗时: 2.09 秒
+2025-03-30 21:15:19,348 - INFO - --------------------------------------------------
+2025-03-30 21:15:19,348 - INFO - 处理第 29/91 段字幕 [31.9%]:
+2025-03-30 21:15:19,348 - INFO - 时间: 293572ms -> 306522ms (持续 12950ms)
+2025-03-30 21:15:19,348 - INFO - 文本: 但愿顺利。之前说的就是那个露台方向的冰量对吧？基本吻合。你们需要很多装备吗？
+2025-03-30 21:15:19,348 - INFO - 开始文本转语音: resources/audios/segment_0028.mp3
+2025-03-30 21:15:19,348 - INFO - 处理文本: 但愿顺利。之前说的就是那个露台方向的冰量对吧？基本吻合。你们需要很多装备吗？
+2025-03-30 21:15:19,383 - INFO - 发送TTS请求并保存到: resources/audios/segment_0028.mp3
+2025-03-30 21:15:20,347 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:21,159 - INFO - TTS完成，耗时: 1.81 秒
+2025-03-30 21:15:21,381 - INFO - 语音长度: 6531ms, 字幕长度: 12950ms
+2025-03-30 21:15:21,382 - INFO - TTS音频统计: 34个汉字, 平均每个汉字192.09ms
+2025-03-30 21:15:21,382 - INFO - 段落处理完成，耗时: 2.03 秒
+2025-03-30 21:15:21,382 - INFO - --------------------------------------------------
+2025-03-30 21:15:21,382 - INFO - 处理第 30/91 段字幕 [33.0%]:
+2025-03-30 21:15:21,382 - INFO - 时间: 306626ms -> 310270ms (持续 3644ms)
+2025-03-30 21:15:21,382 - INFO - 文本: 对，要无杖雪绳。
+2025-03-30 21:15:21,382 - INFO - 开始文本转语音: resources/audios/segment_0029.mp3
+2025-03-30 21:15:21,382 - INFO - 处理文本: 对，要无杖雪绳。
+2025-03-30 21:15:21,416 - INFO - 发送TTS请求并保存到: resources/audios/segment_0029.mp3
+2025-03-30 21:15:22,576 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:22,596 - INFO - TTS完成，耗时: 1.21 秒
+2025-03-30 21:15:22,829 - INFO - 语音长度: 2586ms, 字幕长度: 3644ms
+2025-03-30 21:15:22,829 - INFO - TTS音频统计: 6个汉字, 平均每个汉字431.00ms
+2025-03-30 21:15:22,829 - INFO - 段落处理完成，耗时: 1.45 秒
+2025-03-30 21:15:22,830 - INFO - --------------------------------------------------
+2025-03-30 21:15:22,830 - INFO - 处理第 31/91 段字幕 [34.1%]:
+2025-03-30 21:15:22,830 - INFO - 时间: 312770ms -> 323674ms (持续 10904ms)
+2025-03-30 21:15:22,830 - INFO - 文本: 计划是用梯子登冰。菲利普先上去固定绳索，再把我们拉上去。
+2025-03-30 21:15:22,830 - INFO - 开始文本转语音: resources/audios/segment_0030.mp3
+2025-03-30 21:15:22,830 - INFO - 处理文本: 计划是用梯子登冰。菲利普先上去固定绳索，再把我们拉上去。
+2025-03-30 21:15:22,864 - INFO - 发送TTS请求并保存到: resources/audios/segment_0030.mp3
+2025-03-30 21:15:23,973 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:24,689 - INFO - TTS完成，耗时: 1.86 秒
+2025-03-30 21:15:24,927 - INFO - 语音长度: 6400ms, 字幕长度: 10904ms
+2025-03-30 21:15:24,927 - INFO - TTS音频统计: 25个汉字, 平均每个汉字256.00ms
+2025-03-30 21:15:24,927 - INFO - 段落处理完成，耗时: 2.10 秒
+2025-03-30 21:15:24,927 - INFO - --------------------------------------------------
+2025-03-30 21:15:24,927 - INFO - 处理第 32/91 段字幕 [35.2%]:
+2025-03-30 21:15:24,927 - INFO - 时间: 323762ms -> 334430ms (持续 10668ms)
+2025-03-30 21:15:24,927 - INFO - 文本: 冰下区域很危险，必须速战速决。无人机侦察显示前路艰难。
+2025-03-30 21:15:24,928 - INFO - 开始文本转语音: resources/audios/segment_0031.mp3
+2025-03-30 21:15:24,928 - INFO - 处理文本: 冰下区域很危险，必须速战速决。无人机侦察显示前路艰难。
+2025-03-30 21:15:24,962 - INFO - 发送TTS请求并保存到: resources/audios/segment_0031.mp3
+2025-03-30 21:15:26,259 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:27,520 - INFO - TTS完成，耗时: 2.59 秒
+2025-03-30 21:15:27,743 - INFO - 语音长度: 6531ms, 字幕长度: 10668ms
+2025-03-30 21:15:27,744 - INFO - TTS音频统计: 24个汉字, 平均每个汉字272.12ms
+2025-03-30 21:15:27,744 - INFO - 段落处理完成，耗时: 2.82 秒
+2025-03-30 21:15:27,744 - INFO - --------------------------------------------------
+2025-03-30 21:15:27,744 - INFO - 处理第 33/91 段字幕 [36.3%]:
+2025-03-30 21:15:27,744 - INFO - 时间: 334760ms -> 352180ms (持续 17420ms)
+2025-03-30 21:15:27,744 - INFO - 文本: 除常规皮划艇装备外，还带了攀冰工具、补给、GPS无线电、防熊装备甚至点火器——要应对冰河、裂隙等重重挑战。
+2025-03-30 21:15:27,744 - INFO - 开始文本转语音: resources/audios/segment_0032.mp3
+2025-03-30 21:15:27,744 - INFO - 处理文本: 除常规皮划艇装备外，还带了攀冰工具、补给、GPS无线电、防熊装备甚至点火器——要应对冰河、裂隙等重重...
+2025-03-30 21:15:27,779 - INFO - 发送TTS请求并保存到: resources/audios/segment_0032.mp3
+2025-03-30 21:15:28,792 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:30,371 - INFO - TTS完成，耗时: 2.63 秒
+2025-03-30 21:15:30,605 - INFO - 语音长度: 11703ms, 字幕长度: 17420ms
+2025-03-30 21:15:30,605 - INFO - TTS音频统计: 42个汉字, 平均每个汉字278.64ms
+2025-03-30 21:15:30,605 - INFO - 段落处理完成，耗时: 2.86 秒
+2025-03-30 21:15:30,605 - INFO - --------------------------------------------------
+2025-03-30 21:15:30,605 - INFO - 处理第 34/91 段字幕 [37.4%]:
+2025-03-30 21:15:30,605 - INFO - 时间: 353320ms -> 355940ms (持续 2620ms)
+2025-03-30 21:15:30,606 - INFO - 文本: 埃德，把火点上。常有的事。
+2025-03-30 21:15:30,606 - INFO - 开始文本转语音: resources/audios/segment_0033.mp3
+2025-03-30 21:15:30,606 - INFO - 处理文本: 埃德，把火点上。常有的事。
+2025-03-30 21:15:30,640 - INFO - 发送TTS请求并保存到: resources/audios/segment_0033.mp3
+2025-03-30 21:15:31,992 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:32,099 - INFO - TTS完成，耗时: 1.49 秒
+2025-03-30 21:15:32,309 - INFO - 语音长度: 3657ms, 字幕长度: 2620ms
+2025-03-30 21:15:32,309 - INFO - TTS音频统计: 10个汉字, 平均每个汉字365.70ms
+2025-03-30 21:15:32,309 - INFO - 段落处理完成，耗时: 1.70 秒
+2025-03-30 21:15:32,309 - INFO - --------------------------------------------------
+2025-03-30 21:15:32,309 - INFO - 处理第 35/91 段字幕 [38.5%]:
+2025-03-30 21:15:32,309 - INFO - 时间: 365240ms -> 367520ms (持续 2280ms)
+2025-03-30 21:15:32,309 - INFO - 文本: 现在离冰壁多远？
+2025-03-30 21:15:32,309 - INFO - 开始文本转语音: resources/audios/segment_0034.mp3
+2025-03-30 21:15:32,309 - INFO - 处理文本: 现在离冰壁多远？
+2025-03-30 21:15:32,343 - INFO - 发送TTS请求并保存到: resources/audios/segment_0034.mp3
+2025-03-30 21:15:34,244 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:34,332 - INFO - TTS完成，耗时: 2.02 秒
+2025-03-30 21:15:34,557 - INFO - 语音长度: 2038ms, 字幕长度: 2280ms
+2025-03-30 21:15:34,557 - INFO - TTS音频统计: 7个汉字, 平均每个汉字291.14ms
+2025-03-30 21:15:34,558 - INFO - 段落处理完成，耗时: 2.25 秒
+2025-03-30 21:15:34,558 - INFO - --------------------------------------------------
+2025-03-30 21:15:34,558 - INFO - 处理第 36/91 段字幕 [39.6%]:
+2025-03-30 21:15:34,558 - INFO - 时间: 368900ms -> 373196ms (持续 4296ms)
+2025-03-30 21:15:34,558 - INFO - 文本: 10米。持续接近中。
+2025-03-30 21:15:34,558 - INFO - 开始文本转语音: resources/audios/segment_0035.mp3
+2025-03-30 21:15:34,558 - INFO - 处理文本: 10米。持续接近中。
+2025-03-30 21:15:34,593 - INFO - 发送TTS请求并保存到: resources/audios/segment_0035.mp3
+2025-03-30 21:15:35,685 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:35,926 - INFO - TTS完成，耗时: 1.37 秒
+2025-03-30 21:15:36,158 - INFO - 语音长度: 2273ms, 字幕长度: 4296ms
+2025-03-30 21:15:36,158 - INFO - TTS音频统计: 6个汉字, 平均每个汉字378.83ms
+2025-03-30 21:15:36,158 - INFO - 段落处理完成，耗时: 1.60 秒
+2025-03-30 21:15:36,158 - INFO - --------------------------------------------------
+2025-03-30 21:15:36,158 - INFO - 处理第 37/91 段字幕 [40.7%]:
+2025-03-30 21:15:36,158 - INFO - 时间: 373308ms -> 376620ms (持续 3312ms)
+2025-03-30 21:15:36,158 - INFO - 文本: 5米。持续接近。
+2025-03-30 21:15:36,158 - INFO - 开始文本转语音: resources/audios/segment_0036.mp3
+2025-03-30 21:15:36,159 - INFO - 处理文本: 5米。持续接近。
+2025-03-30 21:15:36,193 - INFO - 发送TTS请求并保存到: resources/audios/segment_0036.mp3
+2025-03-30 21:15:37,523 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:37,808 - INFO - TTS完成，耗时: 1.65 秒
+2025-03-30 21:15:38,047 - INFO - 语音长度: 3161ms, 字幕长度: 3312ms
+2025-03-30 21:15:38,047 - INFO - TTS音频统计: 5个汉字, 平均每个汉字632.20ms
+2025-03-30 21:15:38,047 - INFO - 段落处理完成，耗时: 1.89 秒
+2025-03-30 21:15:38,047 - INFO - --------------------------------------------------
+2025-03-30 21:15:38,047 - INFO - 处理第 38/91 段字幕 [41.8%]:
+2025-03-30 21:15:38,047 - INFO - 时间: 376700ms -> 393250ms (持续 16550ms)
+2025-03-30 21:15:38,047 - INFO - 文本: 3米。继续...橡皮艇碰到冰壁了。可以行动了吗？看起来没问题。开始作业！
+2025-03-30 21:15:38,047 - INFO - 开始文本转语音: resources/audios/segment_0037.mp3
+2025-03-30 21:15:38,048 - INFO - 处理文本: 3米。继续...橡皮艇碰到冰壁了。可以行动了吗？看起来没问题。开始作业！
+2025-03-30 21:15:38,082 - INFO - 发送TTS请求并保存到: resources/audios/segment_0037.mp3
+2025-03-30 21:15:39,250 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:39,933 - INFO - TTS完成，耗时: 1.89 秒
+2025-03-30 21:15:40,169 - INFO - 语音长度: 7340ms, 字幕长度: 16550ms
+2025-03-30 21:15:40,169 - INFO - TTS音频统计: 27个汉字, 平均每个汉字271.85ms
+2025-03-30 21:15:40,169 - INFO - 段落处理完成，耗时: 2.12 秒
+2025-03-30 21:15:40,169 - INFO - --------------------------------------------------
+2025-03-30 21:15:40,169 - INFO - 处理第 39/91 段字幕 [42.9%]:
+2025-03-30 21:15:40,169 - INFO - 时间: 407950ms -> 437570ms (持续 29620ms)
+2025-03-30 21:15:40,169 - INFO - 文本: 警戒！收梯撤离。本尼，开始后撤。现在该我们登冰了。
+2025-03-30 21:15:40,170 - INFO - 开始文本转语音: resources/audios/segment_0038.mp3
+2025-03-30 21:15:40,170 - INFO - 处理文本: 警戒！收梯撤离。本尼，开始后撤。现在该我们登冰了。
+2025-03-30 21:15:40,204 - INFO - 发送TTS请求并保存到: resources/audios/segment_0038.mp3
+2025-03-30 21:15:41,419 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:41,939 - INFO - TTS完成，耗时: 1.77 秒
+2025-03-30 21:15:42,180 - INFO - 语音长度: 6113ms, 字幕长度: 29620ms
+2025-03-30 21:15:42,180 - INFO - TTS音频统计: 20个汉字, 平均每个汉字305.65ms
+2025-03-30 21:15:42,180 - INFO - 段落处理完成，耗时: 2.01 秒
+2025-03-30 21:15:42,180 - INFO - --------------------------------------------------
+2025-03-30 21:15:42,180 - INFO - 处理第 40/91 段字幕 [44.0%]:
+2025-03-30 21:15:42,180 - INFO - 时间: 438590ms -> 449370ms (持续 10780ms)
+2025-03-30 21:15:42,180 - INFO - 文本: 梯子已架好。菲利普在上方做保护，我们将徒步至瀑布。若条件允许就直接划艇顺瀑而下。
+2025-03-30 21:15:42,181 - INFO - 开始文本转语音: resources/audios/segment_0039.mp3
+2025-03-30 21:15:42,181 - INFO - 处理文本: 梯子已架好。菲利普在上方做保护，我们将徒步至瀑布。若条件允许就直接划艇顺瀑而下。
+2025-03-30 21:15:42,215 - INFO - 发送TTS请求并保存到: resources/audios/segment_0039.mp3
+2025-03-30 21:15:43,462 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:44,169 - INFO - TTS完成，耗时: 1.99 秒
+2025-03-30 21:15:44,396 - INFO - 语音长度: 8908ms, 字幕长度: 10780ms
+2025-03-30 21:15:44,397 - INFO - TTS音频统计: 36个汉字, 平均每个汉字247.44ms
+2025-03-30 21:15:44,397 - INFO - 段落处理完成，耗时: 2.22 秒
+2025-03-30 21:15:44,397 - INFO - --------------------------------------------------
+2025-03-30 21:15:44,397 - INFO - 处理第 41/91 段字幕 [45.1%]:
+2025-03-30 21:15:44,397 - INFO - 时间: 450200ms -> 452460ms (持续 2260ms)
+2025-03-30 21:15:44,397 - INFO - 文本: 行动开始，没有退路。
+2025-03-30 21:15:44,397 - INFO - 开始文本转语音: resources/audios/segment_0040.mp3
+2025-03-30 21:15:44,397 - INFO - 处理文本: 行动开始，没有退路。
+2025-03-30 21:15:44,431 - INFO - 发送TTS请求并保存到: resources/audios/segment_0040.mp3
+2025-03-30 21:15:45,718 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:46,136 - INFO - TTS完成，耗时: 1.74 秒
+2025-03-30 21:15:46,372 - INFO - 语音长度: 2586ms, 字幕长度: 2260ms
+2025-03-30 21:15:46,372 - INFO - TTS音频统计: 8个汉字, 平均每个汉字323.25ms
+2025-03-30 21:15:46,373 - INFO - 段落处理完成，耗时: 1.98 秒
+2025-03-30 21:15:46,373 - INFO - --------------------------------------------------
+2025-03-30 21:15:46,373 - INFO - 处理第 42/91 段字幕 [46.2%]:
+2025-03-30 21:15:46,373 - INFO - 时间: 454760ms -> 458580ms (持续 3820ms)
+2025-03-30 21:15:46,373 - INFO - 文本: 出发了，祝好运！
+2025-03-30 21:15:46,373 - INFO - 开始文本转语音: resources/audios/segment_0041.mp3
+2025-03-30 21:15:46,373 - INFO - 处理文本: 出发了，祝好运！
+2025-03-30 21:15:46,407 - INFO - 发送TTS请求并保存到: resources/audios/segment_0041.mp3
+2025-03-30 21:15:47,376 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:47,621 - INFO - TTS完成，耗时: 1.25 秒
+2025-03-30 21:15:47,843 - INFO - 语音长度: 1985ms, 字幕长度: 3820ms
+2025-03-30 21:15:47,843 - INFO - TTS音频统计: 6个汉字, 平均每个汉字330.83ms
+2025-03-30 21:15:47,843 - INFO - 段落处理完成，耗时: 1.47 秒
+2025-03-30 21:15:47,843 - INFO - --------------------------------------------------
+2025-03-30 21:15:47,843 - INFO - 处理第 43/91 段字幕 [47.3%]:
+2025-03-30 21:15:47,844 - INFO - 时间: 469320ms -> 471180ms (持续 1860ms)
+2025-03-30 21:15:47,844 - INFO - 文本: 真庆幸不用我打头阵。
+2025-03-30 21:15:47,844 - INFO - 开始文本转语音: resources/audios/segment_0042.mp3
+2025-03-30 21:15:47,844 - INFO - 处理文本: 真庆幸不用我打头阵。
+2025-03-30 21:15:47,878 - INFO - 发送TTS请求并保存到: resources/audios/segment_0042.mp3
+2025-03-30 21:15:49,009 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:49,275 - INFO - TTS完成，耗时: 1.43 秒
+2025-03-30 21:15:49,516 - INFO - 语音长度: 2534ms, 字幕长度: 1860ms
+2025-03-30 21:15:49,517 - INFO - TTS音频统计: 9个汉字, 平均每个汉字281.56ms
+2025-03-30 21:15:49,517 - INFO - 段落处理完成，耗时: 1.67 秒
+2025-03-30 21:15:49,517 - INFO - --------------------------------------------------
+2025-03-30 21:15:49,517 - INFO - 处理第 44/91 段字幕 [48.4%]:
+2025-03-30 21:15:49,517 - INFO - 时间: 496980ms -> 499680ms (持续 2700ms)
+2025-03-30 21:15:49,517 - INFO - 文本: 终于开始了！我们登陆冰原了。
+2025-03-30 21:15:49,517 - INFO - 开始文本转语音: resources/audios/segment_0043.mp3
+2025-03-30 21:15:49,517 - INFO - 处理文本: 终于开始了！我们登陆冰原了。
+2025-03-30 21:15:49,551 - INFO - 发送TTS请求并保存到: resources/audios/segment_0043.mp3
+2025-03-30 21:15:50,773 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:51,273 - INFO - TTS完成，耗时: 1.76 秒
+2025-03-30 21:15:51,501 - INFO - 语音长度: 2769ms, 字幕长度: 2700ms
+2025-03-30 21:15:51,501 - INFO - TTS音频统计: 12个汉字, 平均每个汉字230.75ms
+2025-03-30 21:15:51,501 - INFO - 段落处理完成，耗时: 1.98 秒
+2025-03-30 21:15:51,501 - INFO - --------------------------------------------------
+2025-03-30 21:15:51,501 - INFO - 处理第 45/91 段字幕 [49.5%]:
+2025-03-30 21:15:51,501 - INFO - 时间: 502260ms -> 509400ms (持续 7140ms)
+2025-03-30 21:15:51,501 - INFO - 文本: 怎么样？我再走几米探路。虽不轻松但可行。
+2025-03-30 21:15:51,502 - INFO - 开始文本转语音: resources/audios/segment_0044.mp3
+2025-03-30 21:15:51,502 - INFO - 处理文本: 怎么样？我再走几米探路。虽不轻松但可行。
+2025-03-30 21:15:51,535 - INFO - 发送TTS请求并保存到: resources/audios/segment_0044.mp3
+2025-03-30 21:15:52,883 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:53,026 - INFO - TTS完成，耗时: 1.52 秒
+2025-03-30 21:15:53,254 - INFO - 语音长度: 3840ms, 字幕长度: 7140ms
+2025-03-30 21:15:53,255 - INFO - TTS音频统计: 17个汉字, 平均每个汉字225.88ms
+2025-03-30 21:15:53,255 - INFO - 段落处理完成，耗时: 1.75 秒
+2025-03-30 21:15:53,255 - INFO - --------------------------------------------------
+2025-03-30 21:15:53,255 - INFO - 处理第 46/91 段字幕 [50.5%]:
+2025-03-30 21:15:53,255 - INFO - 时间: 509780ms -> 513724ms (持续 3944ms)
+2025-03-30 21:15:53,255 - INFO - 文本: 这绝对是史无前例的探险。
+2025-03-30 21:15:53,255 - INFO - 开始文本转语音: resources/audios/segment_0045.mp3
+2025-03-30 21:15:53,255 - INFO - 处理文本: 这绝对是史无前例的探险。
+2025-03-30 21:15:53,289 - INFO - 发送TTS请求并保存到: resources/audios/segment_0045.mp3
+2025-03-30 21:15:54,523 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:54,576 - INFO - TTS完成，耗时: 1.32 秒
+2025-03-30 21:15:54,807 - INFO - 语音长度: 2586ms, 字幕长度: 3944ms
+2025-03-30 21:15:54,807 - INFO - TTS音频统计: 11个汉字, 平均每个汉字235.09ms
+2025-03-30 21:15:54,807 - INFO - 段落处理完成，耗时: 1.55 秒
+2025-03-30 21:15:54,807 - INFO - --------------------------------------------------
+2025-03-30 21:15:54,807 - INFO - 处理第 47/91 段字幕 [51.6%]:
+2025-03-30 21:15:54,807 - INFO - 时间: 513812ms -> 517200ms (持续 3388ms)
+2025-03-30 21:15:54,808 - INFO - 文本: 好，做冰面标记。
+2025-03-30 21:15:54,808 - INFO - 开始文本转语音: resources/audios/segment_0046.mp3
+2025-03-30 21:15:54,808 - INFO - 处理文本: 好，做冰面标记。
+2025-03-30 21:15:54,842 - INFO - 发送TTS请求并保存到: resources/audios/segment_0046.mp3
+2025-03-30 21:15:56,163 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:56,408 - INFO - TTS完成，耗时: 1.60 秒
+2025-03-30 21:15:56,650 - INFO - 语音长度: 2325ms, 字幕长度: 3388ms
+2025-03-30 21:15:56,651 - INFO - TTS音频统计: 6个汉字, 平均每个汉字387.50ms
+2025-03-30 21:15:56,651 - INFO - 段落处理完成，耗时: 1.84 秒
+2025-03-30 21:15:56,651 - INFO - --------------------------------------------------
+2025-03-30 21:15:56,651 - INFO - 处理第 48/91 段字幕 [52.7%]:
+2025-03-30 21:15:56,651 - INFO - 时间: 520260ms -> 525200ms (持续 4940ms)
+2025-03-30 21:15:56,651 - INFO - 文本: 就我、艾尔和菲利普三人行动以提高效率。
+2025-03-30 21:15:56,651 - INFO - 开始文本转语音: resources/audios/segment_0047.mp3
+2025-03-30 21:15:56,651 - INFO - 处理文本: 就我、艾尔和菲利普三人行动以提高效率。
+2025-03-30 21:15:56,685 - INFO - 发送TTS请求并保存到: resources/audios/segment_0047.mp3
+2025-03-30 21:15:57,795 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:58,215 - INFO - TTS完成，耗时: 1.56 秒
+2025-03-30 21:15:58,456 - INFO - 语音长度: 4441ms, 字幕长度: 4940ms
+2025-03-30 21:15:58,456 - INFO - TTS音频统计: 17个汉字, 平均每个汉字261.24ms
+2025-03-30 21:15:58,456 - INFO - 段落处理完成，耗时: 1.80 秒
+2025-03-30 21:15:58,456 - INFO - --------------------------------------------------
+2025-03-30 21:15:58,456 - INFO - 处理第 49/91 段字幕 [53.8%]:
+2025-03-30 21:15:58,456 - INFO - 时间: 535460ms -> 537520ms (持续 2060ms)
+2025-03-30 21:15:58,456 - INFO - 文本: 我帮你拿电池。
+2025-03-30 21:15:58,456 - INFO - 开始文本转语音: resources/audios/segment_0048.mp3
+2025-03-30 21:15:58,456 - INFO - 处理文本: 我帮你拿电池。
+2025-03-30 21:15:58,491 - INFO - 发送TTS请求并保存到: resources/audios/segment_0048.mp3
+2025-03-30 21:15:59,643 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:15:59,650 - INFO - TTS完成，耗时: 1.19 秒
+2025-03-30 21:15:59,870 - INFO - 语音长度: 1384ms, 字幕长度: 2060ms
+2025-03-30 21:15:59,870 - INFO - TTS音频统计: 6个汉字, 平均每个汉字230.67ms
+2025-03-30 21:15:59,870 - INFO - 段落处理完成，耗时: 1.41 秒
+2025-03-30 21:15:59,870 - INFO - --------------------------------------------------
+2025-03-30 21:15:59,870 - INFO - 处理第 50/91 段字幕 [54.9%]:
+2025-03-30 21:15:59,870 - INFO - 时间: 548320ms -> 550740ms (持续 2420ms)
+2025-03-30 21:15:59,870 - INFO - 文本: 真沉。谢了。
+2025-03-30 21:15:59,870 - INFO - 开始文本转语音: resources/audios/segment_0049.mp3
+2025-03-30 21:15:59,870 - INFO - 处理文本: 真沉。谢了。
+2025-03-30 21:15:59,904 - INFO - 发送TTS请求并保存到: resources/audios/segment_0049.mp3
+2025-03-30 21:16:01,075 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:01,094 - INFO - TTS完成，耗时: 1.22 秒
+2025-03-30 21:16:01,326 - INFO - 语音长度: 1855ms, 字幕长度: 2420ms
+2025-03-30 21:16:01,327 - INFO - TTS音频统计: 4个汉字, 平均每个汉字463.75ms
+2025-03-30 21:16:01,327 - INFO - 段落处理完成，耗时: 1.46 秒
+2025-03-30 21:16:01,327 - INFO - --------------------------------------------------
+2025-03-30 21:16:01,327 - INFO - 处理第 51/91 段字幕 [56.0%]:
+2025-03-30 21:16:01,327 - INFO - 时间: 553440ms -> 561528ms (持续 8088ms)
+2025-03-30 21:16:01,327 - INFO - 文本: 还要走很远。冰面全是裂缝太耗时了。
+2025-03-30 21:16:01,327 - INFO - 开始文本转语音: resources/audios/segment_0050.mp3
+2025-03-30 21:16:01,328 - INFO - 处理文本: 还要走很远。冰面全是裂缝太耗时了。
+2025-03-30 21:16:01,362 - INFO - 发送TTS请求并保存到: resources/audios/segment_0050.mp3
+2025-03-30 21:16:02,506 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:02,791 - INFO - TTS完成，耗时: 1.46 秒
+2025-03-30 21:16:03,033 - INFO - 语音长度: 3422ms, 字幕长度: 8088ms
+2025-03-30 21:16:03,033 - INFO - TTS音频统计: 15个汉字, 平均每个汉字228.13ms
+2025-03-30 21:16:03,033 - INFO - 段落处理完成，耗时: 1.71 秒
+2025-03-30 21:16:03,033 - INFO - --------------------------------------------------
+2025-03-30 21:16:03,033 - INFO - 处理第 52/91 段字幕 [57.1%]:
+2025-03-30 21:16:03,034 - INFO - 时间: 561624ms -> 576860ms (持续 15236ms)
+2025-03-30 21:16:03,034 - INFO - 文本: 估计要四五小时。按这速度八公里算快了。现在才移动十米。你们走了多少？
+2025-03-30 21:16:03,034 - INFO - 开始文本转语音: resources/audios/segment_0051.mp3
+2025-03-30 21:16:03,034 - INFO - 处理文本: 估计要四五小时。按这速度八公里算快了。现在才移动十米。你们走了多少？
+2025-03-30 21:16:03,068 - INFO - 发送TTS请求并保存到: resources/audios/segment_0051.mp3
+2025-03-30 21:16:04,379 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:05,410 - INFO - TTS完成，耗时: 2.38 秒
+2025-03-30 21:16:05,648 - INFO - 语音长度: 6818ms, 字幕长度: 15236ms
+2025-03-30 21:16:05,648 - INFO - TTS音频统计: 30个汉字, 平均每个汉字227.27ms
+2025-03-30 21:16:05,648 - INFO - 段落处理完成，耗时: 2.61 秒
+2025-03-30 21:16:05,648 - INFO - --------------------------------------------------
+2025-03-30 21:16:05,648 - INFO - 处理第 53/91 段字幕 [58.2%]:
+2025-03-30 21:16:05,649 - INFO - 时间: 596380ms -> 603172ms (持续 6792ms)
+2025-03-30 21:16:05,649 - INFO - 文本: 要帮忙吗？他跳起舞来了。真是绝妙的远征。
+2025-03-30 21:16:05,649 - INFO - 开始文本转语音: resources/audios/segment_0052.mp3
+2025-03-30 21:16:05,649 - INFO - 处理文本: 要帮忙吗？他跳起舞来了。真是绝妙的远征。
+2025-03-30 21:16:05,683 - INFO - 发送TTS请求并保存到: resources/audios/segment_0052.mp3
+2025-03-30 21:16:07,224 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:07,624 - INFO - TTS完成，耗时: 1.98 秒
+2025-03-30 21:16:07,856 - INFO - 语音长度: 4676ms, 字幕长度: 6792ms
+2025-03-30 21:16:07,856 - INFO - TTS音频统计: 17个汉字, 平均每个汉字275.06ms
+2025-03-30 21:16:07,856 - INFO - 段落处理完成，耗时: 2.21 秒
+2025-03-30 21:16:07,856 - INFO - --------------------------------------------------
+2025-03-30 21:16:07,856 - INFO - 处理第 54/91 段字幕 [59.3%]:
+2025-03-30 21:16:07,856 - INFO - 时间: 603236ms -> 604400ms (持续 1164ms)
+2025-03-30 21:16:07,856 - INFO - 文本: 只为抵达那片水域。
+2025-03-30 21:16:07,856 - INFO - 开始文本转语音: resources/audios/segment_0053.mp3
+2025-03-30 21:16:07,856 - INFO - 处理文本: 只为抵达那片水域。
+2025-03-30 21:16:07,891 - INFO - 发送TTS请求并保存到: resources/audios/segment_0053.mp3
+2025-03-30 21:16:09,038 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:09,362 - INFO - TTS完成，耗时: 1.51 秒
+2025-03-30 21:16:09,593 - INFO - 语音长度: 2220ms, 字幕长度: 1164ms
+2025-03-30 21:16:09,594 - INFO - TTS音频统计: 8个汉字, 平均每个汉字277.50ms
+2025-03-30 21:16:09,594 - INFO - 段落处理完成，耗时: 1.74 秒
+2025-03-30 21:16:09,594 - INFO - --------------------------------------------------
+2025-03-30 21:16:09,594 - INFO - 处理第 55/91 段字幕 [60.4%]:
+2025-03-30 21:16:09,594 - INFO - 时间: 609980ms -> 618160ms (持续 8180ms)
+2025-03-30 21:16:09,594 - INFO - 文本: 有意思。遇到第一条大河。菲利普正在找渡河点。
+2025-03-30 21:16:09,594 - INFO - 开始文本转语音: resources/audios/segment_0054.mp3
+2025-03-30 21:16:09,594 - INFO - 处理文本: 有意思。遇到第一条大河。菲利普正在找渡河点。
+2025-03-30 21:16:09,628 - INFO - 发送TTS请求并保存到: resources/audios/segment_0054.mp3
+2025-03-30 21:16:10,715 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:11,149 - INFO - TTS完成，耗时: 1.56 秒
+2025-03-30 21:16:11,398 - INFO - 语音长度: 5146ms, 字幕长度: 8180ms
+2025-03-30 21:16:11,399 - INFO - TTS音频统计: 19个汉字, 平均每个汉字270.84ms
+2025-03-30 21:16:11,399 - INFO - 段落处理完成，耗时: 1.80 秒
+2025-03-30 21:16:11,399 - INFO - --------------------------------------------------
+2025-03-30 21:16:11,399 - INFO - 处理第 56/91 段字幕 [61.5%]:
+2025-03-30 21:16:11,399 - INFO - 时间: 620940ms -> 634270ms (持续 13330ms)
+2025-03-30 21:16:11,399 - INFO - 文本: 已跨过三十多条冰河，这算顺利了。继续前进。
+2025-03-30 21:16:11,399 - INFO - 开始文本转语音: resources/audios/segment_0055.mp3
+2025-03-30 21:16:11,399 - INFO - 处理文本: 已跨过三十多条冰河，这算顺利了。继续前进。
+2025-03-30 21:16:11,433 - INFO - 发送TTS请求并保存到: resources/audios/segment_0055.mp3
+2025-03-30 21:16:12,556 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:12,993 - INFO - TTS完成，耗时: 1.59 秒
+2025-03-30 21:16:13,241 - INFO - 语音长度: 5146ms, 字幕长度: 13330ms
+2025-03-30 21:16:13,241 - INFO - TTS音频统计: 18个汉字, 平均每个汉字285.89ms
+2025-03-30 21:16:13,242 - INFO - 段落处理完成，耗时: 1.84 秒
+2025-03-30 21:16:13,242 - INFO - --------------------------------------------------
+2025-03-30 21:16:13,242 - INFO - 处理第 57/91 段字幕 [62.6%]:
+2025-03-30 21:16:13,242 - INFO - 时间: 648490ms -> 650190ms (持续 1700ms)
+2025-03-30 21:16:13,242 - INFO - 文本: 这斜坡够呛。
+2025-03-30 21:16:13,242 - INFO - 开始文本转语音: resources/audios/segment_0056.mp3
+2025-03-30 21:16:13,242 - INFO - 处理文本: 这斜坡够呛。
+2025-03-30 21:16:13,277 - INFO - 发送TTS请求并保存到: resources/audios/segment_0056.mp3
+2025-03-30 21:16:14,536 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:16,460 - INFO - TTS完成，耗时: 3.22 秒
+2025-03-30 21:16:16,692 - INFO - 语音长度: 1855ms, 字幕长度: 1700ms
+2025-03-30 21:16:16,692 - INFO - TTS音频统计: 5个汉字, 平均每个汉字371.00ms
+2025-03-30 21:16:16,692 - INFO - 段落处理完成，耗时: 3.45 秒
+2025-03-30 21:16:16,692 - INFO - --------------------------------------------------
+2025-03-30 21:16:16,692 - INFO - 处理第 58/91 段字幕 [63.7%]:
+2025-03-30 21:16:16,692 - INFO - 时间: 655450ms -> 663330ms (持续 7880ms)
+2025-03-30 21:16:16,692 - INFO - 文本: 至少装备没白带。看吧，这种规模的河都费时，抓紧行动。
+2025-03-30 21:16:16,693 - INFO - 开始文本转语音: resources/audios/segment_0057.mp3
+2025-03-30 21:16:16,693 - INFO - 处理文本: 至少装备没白带。看吧，这种规模的河都费时，抓紧行动。
+2025-03-30 21:16:16,727 - INFO - 发送TTS请求并保存到: resources/audios/segment_0057.mp3
+2025-03-30 21:16:17,741 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:18,338 - INFO - TTS完成，耗时: 1.64 秒
+2025-03-30 21:16:18,573 - INFO - 语音长度: 5982ms, 字幕长度: 7880ms
+2025-03-30 21:16:18,574 - INFO - TTS音频统计: 22个汉字, 平均每个汉字271.91ms
+2025-03-30 21:16:18,574 - INFO - 段落处理完成，耗时: 1.88 秒
+2025-03-30 21:16:18,574 - INFO - --------------------------------------------------
+2025-03-30 21:16:18,574 - INFO - 处理第 59/91 段字幕 [64.8%]:
+2025-03-30 21:16:18,574 - INFO - 时间: 665670ms -> 669930ms (持续 4260ms)
+2025-03-30 21:16:18,574 - INFO - 文本: 从那边...我跳浅水区。
+2025-03-30 21:16:18,574 - INFO - 开始文本转语音: resources/audios/segment_0058.mp3
+2025-03-30 21:16:18,574 - INFO - 处理文本: 从那边...我跳浅水区。
+2025-03-30 21:16:18,610 - INFO - 发送TTS请求并保存到: resources/audios/segment_0058.mp3
+2025-03-30 21:16:19,727 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:20,160 - INFO - TTS完成，耗时: 1.59 秒
+2025-03-30 21:16:20,395 - INFO - 语音长度: 2691ms, 字幕长度: 4260ms
+2025-03-30 21:16:20,395 - INFO - TTS音频统计: 8个汉字, 平均每个汉字336.38ms
+2025-03-30 21:16:20,395 - INFO - 段落处理完成，耗时: 1.82 秒
+2025-03-30 21:16:20,395 - INFO - --------------------------------------------------
+2025-03-30 21:16:20,395 - INFO - 处理第 60/91 段字幕 [65.9%]:
+2025-03-30 21:16:20,396 - INFO - 时间: 677190ms -> 681250ms (持续 4060ms)
+2025-03-30 21:16:20,396 - INFO - 文本: 太浅了！改跳中间。
+2025-03-30 21:16:20,396 - INFO - 开始文本转语音: resources/audios/segment_0059.mp3
+2025-03-30 21:16:20,396 - INFO - 处理文本: 太浅了！改跳中间。
+2025-03-30 21:16:20,431 - INFO - 发送TTS请求并保存到: resources/audios/segment_0059.mp3
+2025-03-30 21:16:21,583 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:21,636 - INFO - TTS完成，耗时: 1.24 秒
+2025-03-30 21:16:21,864 - INFO - 语音长度: 2508ms, 字幕长度: 4060ms
+2025-03-30 21:16:21,865 - INFO - TTS音频统计: 7个汉字, 平均每个汉字358.29ms
+2025-03-30 21:16:21,865 - INFO - 段落处理完成，耗时: 1.47 秒
+2025-03-30 21:16:21,865 - INFO - --------------------------------------------------
+2025-03-30 21:16:21,865 - INFO - 处理第 61/91 段字幕 [67.0%]:
+2025-03-30 21:16:21,865 - INFO - 时间: 699330ms -> 701670ms (持续 2340ms)
+2025-03-30 21:16:21,865 - INFO - 文本: 还没完。
+2025-03-30 21:16:21,865 - INFO - 开始文本转语音: resources/audios/segment_0060.mp3
+2025-03-30 21:16:21,865 - INFO - 处理文本: 还没完。
+2025-03-30 21:16:21,899 - INFO - 发送TTS请求并保存到: resources/audios/segment_0060.mp3
+2025-03-30 21:16:23,017 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:23,044 - INFO - TTS完成，耗时: 1.18 秒
+2025-03-30 21:16:23,271 - INFO - 语音长度: 836ms, 字幕长度: 2340ms
+2025-03-30 21:16:23,271 - INFO - TTS音频统计: 3个汉字, 平均每个汉字278.67ms
+2025-03-30 21:16:23,271 - INFO - 段落处理完成，耗时: 1.41 秒
+2025-03-30 21:16:23,272 - INFO - --------------------------------------------------
+2025-03-30 21:16:23,272 - INFO - 处理第 62/91 段字幕 [68.1%]:
+2025-03-30 21:16:23,272 - INFO - 时间: 709170ms -> 713030ms (持续 3860ms)
+2025-03-30 21:16:23,272 - INFO - 文本: 恨死这梯子。给你记一功。
+2025-03-30 21:16:23,272 - INFO - 开始文本转语音: resources/audios/segment_0061.mp3
+2025-03-30 21:16:23,272 - INFO - 处理文本: 恨死这梯子。给你记一功。
+2025-03-30 21:16:23,306 - INFO - 发送TTS请求并保存到: resources/audios/segment_0061.mp3
+2025-03-30 21:16:24,450 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:24,599 - INFO - TTS完成，耗时: 1.33 秒
+2025-03-30 21:16:24,843 - INFO - 语音长度: 2952ms, 字幕长度: 3860ms
+2025-03-30 21:16:24,843 - INFO - TTS音频统计: 10个汉字, 平均每个汉字295.20ms
+2025-03-30 21:16:24,843 - INFO - 段落处理完成，耗时: 1.57 秒
+2025-03-30 21:16:24,844 - INFO - --------------------------------------------------
+2025-03-30 21:16:24,844 - INFO - 处理第 63/91 段字幕 [69.2%]:
+2025-03-30 21:16:24,844 - INFO - 时间: 717110ms -> 730650ms (持续 13540ms)
+2025-03-30 21:16:24,844 - INFO - 文本: 要是成功了，这瀑布得命名为"菲利普之梯"。丹尼尔有点吃力啊。
+2025-03-30 21:16:24,844 - INFO - 开始文本转语音: resources/audios/segment_0062.mp3
+2025-03-30 21:16:24,844 - INFO - 处理文本: 要是成功了，这瀑布得命名为"菲利普之梯"。丹尼尔有点吃力啊。
+2025-03-30 21:16:24,878 - INFO - 发送TTS请求并保存到: resources/audios/segment_0062.mp3
+2025-03-30 21:16:26,089 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:26,525 - INFO - TTS完成，耗时: 1.68 秒
+2025-03-30 21:16:26,758 - INFO - 语音长度: 5433ms, 字幕长度: 13540ms
+2025-03-30 21:16:26,758 - INFO - TTS音频统计: 25个汉字, 平均每个汉字217.32ms
+2025-03-30 21:16:26,759 - INFO - 段落处理完成，耗时: 1.91 秒
+2025-03-30 21:16:26,759 - INFO - --------------------------------------------------
+2025-03-30 21:16:26,759 - INFO - 处理第 64/91 段字幕 [70.3%]:
+2025-03-30 21:16:26,759 - INFO - 时间: 733110ms -> 734530ms (持续 1420ms)
+2025-03-30 21:16:26,759 - INFO - 文本: 继续猛攻！
+2025-03-30 21:16:26,759 - INFO - 开始文本转语音: resources/audios/segment_0063.mp3
+2025-03-30 21:16:26,759 - INFO - 处理文本: 继续猛攻！
+2025-03-30 21:16:26,793 - INFO - 发送TTS请求并保存到: resources/audios/segment_0063.mp3
+2025-03-30 21:16:27,816 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:27,927 - INFO - TTS完成，耗时: 1.17 秒
+2025-03-30 21:16:28,167 - INFO - 语音长度: 1384ms, 字幕长度: 1420ms
+2025-03-30 21:16:28,167 - INFO - TTS音频统计: 4个汉字, 平均每个汉字346.00ms
+2025-03-30 21:16:28,167 - INFO - 段落处理完成，耗时: 1.41 秒
+2025-03-30 21:16:28,167 - INFO - --------------------------------------------------
+2025-03-30 21:16:28,167 - INFO - 处理第 65/91 段字幕 [71.4%]:
+2025-03-30 21:16:28,167 - INFO - 时间: 739590ms -> 754400ms (持续 14810ms)
+2025-03-30 21:16:28,167 - INFO - 文本: 预计多久到前沿？距冰河约两百米但海拔较高。待我和安吉尔他们确认。
+2025-03-30 21:16:28,167 - INFO - 开始文本转语音: resources/audios/segment_0064.mp3
+2025-03-30 21:16:28,167 - INFO - 处理文本: 预计多久到前沿？距冰河约两百米但海拔较高。待我和安吉尔他们确认。
+2025-03-30 21:16:28,202 - INFO - 发送TTS请求并保存到: resources/audios/segment_0064.mp3
+2025-03-30 21:16:29,447 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:30,094 - INFO - TTS完成，耗时: 1.93 秒
+2025-03-30 21:16:30,335 - INFO - 语音长度: 6713ms, 字幕长度: 14810ms
+2025-03-30 21:16:30,335 - INFO - TTS音频统计: 29个汉字, 平均每个汉字231.48ms
+2025-03-30 21:16:30,335 - INFO - 段落处理完成，耗时: 2.17 秒
+2025-03-30 21:16:30,335 - INFO - --------------------------------------------------
+2025-03-30 21:16:30,336 - INFO - 处理第 66/91 段字幕 [72.5%]:
+2025-03-30 21:16:30,336 - INFO - 时间: 755060ms -> 759080ms (持续 4020ms)
+2025-03-30 21:16:30,336 - INFO - 文本: 收到。我现在查看。
+2025-03-30 21:16:30,336 - INFO - 开始文本转语音: resources/audios/segment_0065.mp3
+2025-03-30 21:16:30,336 - INFO - 处理文本: 收到。我现在查看。
+2025-03-30 21:16:30,371 - INFO - 发送TTS请求并保存到: resources/audios/segment_0065.mp3
+2025-03-30 21:16:31,621 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:31,702 - INFO - TTS完成，耗时: 1.37 秒
+2025-03-30 21:16:31,924 - INFO - 语音长度: 2403ms, 字幕长度: 4020ms
+2025-03-30 21:16:31,924 - INFO - TTS音频统计: 7个汉字, 平均每个汉字343.29ms
+2025-03-30 21:16:31,924 - INFO - 段落处理完成，耗时: 1.59 秒
+2025-03-30 21:16:31,924 - INFO - --------------------------------------------------
+2025-03-30 21:16:31,924 - INFO - 处理第 67/91 段字幕 [73.6%]:
+2025-03-30 21:16:31,925 - INFO - 时间: 762660ms -> 770932ms (持续 8272ms)
+2025-03-30 21:16:31,925 - INFO - 文本: 侦察真累人。冰河迷宫般错综复杂。
+2025-03-30 21:16:31,925 - INFO - 开始文本转语音: resources/audios/segment_0066.mp3
+2025-03-30 21:16:31,925 - INFO - 处理文本: 侦察真累人。冰河迷宫般错综复杂。
+2025-03-30 21:16:31,959 - INFO - 发送TTS请求并保存到: resources/audios/segment_0066.mp3
+2025-03-30 21:16:33,469 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:33,544 - INFO - TTS完成，耗时: 1.62 秒
+2025-03-30 21:16:33,790 - INFO - 语音长度: 4362ms, 字幕长度: 8272ms
+2025-03-30 21:16:33,790 - INFO - TTS音频统计: 14个汉字, 平均每个汉字311.57ms
+2025-03-30 21:16:33,790 - INFO - 段落处理完成，耗时: 1.87 秒
+2025-03-30 21:16:33,790 - INFO - --------------------------------------------------
+2025-03-30 21:16:33,790 - INFO - 处理第 68/91 段字幕 [74.7%]:
+2025-03-30 21:16:33,790 - INFO - 时间: 771076ms -> 786920ms (持续 15844ms)
+2025-03-30 21:16:33,790 - INFO - 文本: 必须确认正确路线，否则可能误入歧途。
+2025-03-30 21:16:33,791 - INFO - 开始文本转语音: resources/audios/segment_0067.mp3
+2025-03-30 21:16:33,791 - INFO - 处理文本: 必须确认正确路线，否则可能误入歧途。
+2025-03-30 21:16:33,825 - INFO - 发送TTS请求并保存到: resources/audios/segment_0067.mp3
+2025-03-30 21:16:35,308 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:35,353 - INFO - TTS完成，耗时: 1.56 秒
+2025-03-30 21:16:35,580 - INFO - 语音长度: 4362ms, 字幕长度: 15844ms
+2025-03-30 21:16:35,580 - INFO - TTS音频统计: 16个汉字, 平均每个汉字272.62ms
+2025-03-30 21:16:35,580 - INFO - 段落处理完成，耗时: 1.79 秒
+2025-03-30 21:16:35,580 - INFO - --------------------------------------------------
+2025-03-30 21:16:35,581 - INFO - 处理第 69/91 段字幕 [75.8%]:
+2025-03-30 21:16:35,581 - INFO - 时间: 787660ms -> 791316ms (持续 3656ms)
+2025-03-30 21:16:35,581 - INFO - 文本: 那艘艇应该是标记...就是这条！
+2025-03-30 21:16:35,581 - INFO - 开始文本转语音: resources/audios/segment_0068.mp3
+2025-03-30 21:16:35,581 - INFO - 处理文本: 那艘艇应该是标记...就是这条！
+2025-03-30 21:16:35,616 - INFO - 发送TTS请求并保存到: resources/audios/segment_0068.mp3
+2025-03-30 21:16:36,645 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:37,073 - INFO - TTS完成，耗时: 1.49 秒
+2025-03-30 21:16:37,316 - INFO - 语音长度: 3997ms, 字幕长度: 3656ms
+2025-03-30 21:16:37,316 - INFO - TTS音频统计: 12个汉字, 平均每个汉字333.08ms
+2025-03-30 21:16:37,316 - INFO - 段落处理完成，耗时: 1.74 秒
+2025-03-30 21:16:37,316 - INFO - --------------------------------------------------
+2025-03-30 21:16:37,316 - INFO - 处理第 70/91 段字幕 [76.9%]:
+2025-03-30 21:16:37,317 - INFO - 时间: 791388ms -> 798838ms (持续 7450ms)
+2025-03-30 21:16:37,317 - INFO - 文本: 肯定是它。水量太充沛了。这才是主河道！
+2025-03-30 21:16:37,317 - INFO - 开始文本转语音: resources/audios/segment_0069.mp3
+2025-03-30 21:16:37,317 - INFO - 处理文本: 肯定是它。水量太充沛了。这才是主河道！
+2025-03-30 21:16:37,351 - INFO - 发送TTS请求并保存到: resources/audios/segment_0069.mp3
+2025-03-30 21:16:38,593 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:39,211 - INFO - TTS完成，耗时: 1.89 秒
+2025-03-30 21:16:39,449 - INFO - 语音长度: 4545ms, 字幕长度: 7450ms
+2025-03-30 21:16:39,450 - INFO - TTS音频统计: 16个汉字, 平均每个汉字284.06ms
+2025-03-30 21:16:39,450 - INFO - 段落处理完成，耗时: 2.13 秒
+2025-03-30 21:16:39,450 - INFO - --------------------------------------------------
+2025-03-30 21:16:39,450 - INFO - 处理第 71/91 段字幕 [78.0%]:
+2025-03-30 21:16:39,450 - INFO - 时间: 798934ms -> 799610ms (持续 676ms)
+2025-03-30 21:16:39,450 - INFO - 文本: 没错。
+2025-03-30 21:16:39,451 - INFO - 开始文本转语音: resources/audios/segment_0070.mp3
+2025-03-30 21:16:39,451 - INFO - 处理文本: 没错。
+2025-03-30 21:16:39,485 - INFO - 发送TTS请求并保存到: resources/audios/segment_0070.mp3
+2025-03-30 21:16:41,662 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:41,668 - INFO - TTS完成，耗时: 2.22 秒
+2025-03-30 21:16:41,902 - INFO - 语音长度: 784ms, 字幕长度: 676ms
+2025-03-30 21:16:41,902 - INFO - TTS音频统计: 2个汉字, 平均每个汉字392.00ms
+2025-03-30 21:16:41,902 - INFO - 段落处理完成，耗时: 2.45 秒
+2025-03-30 21:16:41,902 - INFO - --------------------------------------------------
+2025-03-30 21:16:41,902 - INFO - 处理第 72/91 段字幕 [79.1%]:
+2025-03-30 21:16:41,902 - INFO - 时间: 802670ms -> 804850ms (持续 2180ms)
+2025-03-30 21:16:41,902 - INFO - 文本: 终于到了！
+2025-03-30 21:16:41,903 - INFO - 开始文本转语音: resources/audios/segment_0071.mp3
+2025-03-30 21:16:41,903 - INFO - 处理文本: 终于到了！
+2025-03-30 21:16:41,937 - INFO - 发送TTS请求并保存到: resources/audios/segment_0071.mp3
+2025-03-30 21:16:43,101 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:43,108 - INFO - TTS完成，耗时: 1.20 秒
+2025-03-30 21:16:43,329 - INFO - 语音长度: 862ms, 字幕长度: 2180ms
+2025-03-30 21:16:43,329 - INFO - TTS音频统计: 4个汉字, 平均每个汉字215.50ms
+2025-03-30 21:16:43,329 - INFO - 段落处理完成，耗时: 1.43 秒
+2025-03-30 21:16:43,329 - INFO - --------------------------------------------------
+2025-03-30 21:16:43,329 - INFO - 处理第 73/91 段字幕 [80.2%]:
+2025-03-30 21:16:43,329 - INFO - 时间: 828170ms -> 847122ms (持续 18952ms)
+2025-03-30 21:16:43,330 - INFO - 文本: 水流极速。比预想更宏大复杂。入口既险峻又骇人。虽艰难但绝美得令人窒息。我该用无线电通知...
+2025-03-30 21:16:43,330 - INFO - 开始文本转语音: resources/audios/segment_0072.mp3
+2025-03-30 21:16:43,330 - INFO - 处理文本: 水流极速。比预想更宏大复杂。入口既险峻又骇人。虽艰难但绝美得令人窒息。我该用无线电通知...
+2025-03-30 21:16:43,363 - INFO - 发送TTS请求并保存到: resources/audios/segment_0072.mp3
+2025-03-30 21:16:44,734 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:45,693 - INFO - TTS完成，耗时: 2.36 秒
+2025-03-30 21:16:45,930 - INFO - 语音长度: 10266ms, 字幕长度: 18952ms
+2025-03-30 21:16:45,931 - INFO - TTS音频统计: 39个汉字, 平均每个汉字263.23ms
+2025-03-30 21:16:45,931 - INFO - 段落处理完成，耗时: 2.60 秒
+2025-03-30 21:16:45,931 - INFO - --------------------------------------------------
+2025-03-30 21:16:45,931 - INFO - 处理第 74/91 段字幕 [81.3%]:
+2025-03-30 21:16:45,931 - INFO - 时间: 847146ms -> 848750ms (持续 1604ms)
+2025-03-30 21:16:45,931 - INFO - 文本: 他们会跟上的。
+2025-03-30 21:16:45,931 - INFO - 开始文本转语音: resources/audios/segment_0073.mp3
+2025-03-30 21:16:45,931 - INFO - 处理文本: 他们会跟上的。
+2025-03-30 21:16:45,966 - INFO - 发送TTS请求并保存到: resources/audios/segment_0073.mp3
+2025-03-30 21:16:46,987 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:47,016 - INFO - TTS完成，耗时: 1.08 秒
+2025-03-30 21:16:47,231 - INFO - 语音长度: 1489ms, 字幕长度: 1604ms
+2025-03-30 21:16:47,231 - INFO - TTS音频统计: 6个汉字, 平均每个汉字248.17ms
+2025-03-30 21:16:47,231 - INFO - 段落处理完成，耗时: 1.30 秒
+2025-03-30 21:16:47,231 - INFO - --------------------------------------------------
+2025-03-30 21:16:47,231 - INFO - 处理第 75/91 段字幕 [82.4%]:
+2025-03-30 21:16:47,231 - INFO - 时间: 850730ms -> 854046ms (持续 3316ms)
+2025-03-30 21:16:47,231 - INFO - 文本: 太感谢了。
+2025-03-30 21:16:47,231 - INFO - 开始文本转语音: resources/audios/segment_0074.mp3
+2025-03-30 21:16:47,231 - INFO - 处理文本: 太感谢了。
+2025-03-30 21:16:47,265 - INFO - 发送TTS请求并保存到: resources/audios/segment_0074.mp3
+2025-03-30 21:16:48,503 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:48,563 - INFO - TTS完成，耗时: 1.33 秒
+2025-03-30 21:16:48,799 - INFO - 语音长度: 1019ms, 字幕长度: 3316ms
+2025-03-30 21:16:48,800 - INFO - TTS音频统计: 4个汉字, 平均每个汉字254.75ms
+2025-03-30 21:16:48,800 - INFO - 段落处理完成，耗时: 1.57 秒
+2025-03-30 21:16:48,800 - INFO - --------------------------------------------------
+2025-03-30 21:16:48,800 - INFO - 处理第 76/91 段字幕 [83.5%]:
+2025-03-30 21:16:48,800 - INFO - 时间: 854118ms -> 856686ms (持续 2568ms)
+2025-03-30 21:16:48,800 - INFO - 文本: 不客气。注意安全，玩得尽兴！
+2025-03-30 21:16:48,800 - INFO - 开始文本转语音: resources/audios/segment_0075.mp3
+2025-03-30 21:16:48,800 - INFO - 处理文本: 不客气。注意安全，玩得尽兴！
+2025-03-30 21:16:48,835 - INFO - 发送TTS请求并保存到: resources/audios/segment_0075.mp3
+2025-03-30 21:16:49,900 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:50,234 - INFO - TTS完成，耗时: 1.43 秒
+2025-03-30 21:16:50,475 - INFO - 语音长度: 3239ms, 字幕长度: 2568ms
+2025-03-30 21:16:50,475 - INFO - TTS音频统计: 11个汉字, 平均每个汉字294.45ms
+2025-03-30 21:16:50,475 - INFO - 段落处理完成，耗时: 1.68 秒
+2025-03-30 21:16:50,475 - INFO - --------------------------------------------------
+2025-03-30 21:16:50,475 - INFO - 处理第 77/91 段字幕 [84.6%]:
+2025-03-30 21:16:50,476 - INFO - 时间: 856718ms -> 859010ms (持续 2292ms)
+2025-03-30 21:16:50,476 - INFO - 文本: 谢谢各位。
+2025-03-30 21:16:50,476 - INFO - 开始文本转语音: resources/audios/segment_0076.mp3
+2025-03-30 21:16:50,476 - INFO - 处理文本: 谢谢各位。
+2025-03-30 21:16:50,510 - INFO - 发送TTS请求并保存到: resources/audios/segment_0076.mp3
+2025-03-30 21:16:51,647 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:51,658 - INFO - TTS完成，耗时: 1.18 秒
+2025-03-30 21:16:51,884 - INFO - 语音长度: 1202ms, 字幕长度: 2292ms
+2025-03-30 21:16:51,884 - INFO - TTS音频统计: 4个汉字, 平均每个汉字300.50ms
+2025-03-30 21:16:51,884 - INFO - 段落处理完成，耗时: 1.41 秒
+2025-03-30 21:16:51,884 - INFO - --------------------------------------------------
+2025-03-30 21:16:51,884 - INFO - 处理第 78/91 段字幕 [85.7%]:
+2025-03-30 21:16:51,884 - INFO - 时间: 865270ms -> 874690ms (持续 9420ms)
+2025-03-30 21:16:51,884 - INFO - 文本: 艾伦！菲利普！你们准备好后会有五秒倒计时。
+2025-03-30 21:16:51,884 - INFO - 开始文本转语音: resources/audios/segment_0077.mp3
+2025-03-30 21:16:51,885 - INFO - 处理文本: 艾伦！菲利普！你们准备好后会有五秒倒计时。
+2025-03-30 21:16:51,918 - INFO - 发送TTS请求并保存到: resources/audios/segment_0077.mp3
+2025-03-30 21:16:53,545 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:54,125 - INFO - TTS完成，耗时: 2.24 秒
+2025-03-30 21:16:54,353 - INFO - 语音长度: 4624ms, 字幕长度: 9420ms
+2025-03-30 21:16:54,353 - INFO - TTS音频统计: 18个汉字, 平均每个汉字256.89ms
+2025-03-30 21:16:54,354 - INFO - 段落处理完成，耗时: 2.47 秒
+2025-03-30 21:16:54,354 - INFO - --------------------------------------------------
+2025-03-30 21:16:54,354 - INFO - 处理第 79/91 段字幕 [86.8%]:
+2025-03-30 21:16:54,354 - INFO - 时间: 890690ms -> 892750ms (持续 2060ms)
+2025-03-30 21:16:54,354 - INFO - 文本: 准备就绪。
+2025-03-30 21:16:54,354 - INFO - 开始文本转语音: resources/audios/segment_0078.mp3
+2025-03-30 21:16:54,354 - INFO - 处理文本: 准备就绪。
+2025-03-30 21:16:54,389 - INFO - 发送TTS请求并保存到: resources/audios/segment_0078.mp3
+2025-03-30 21:16:55,797 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:55,879 - INFO - TTS完成，耗时: 1.53 秒
+2025-03-30 21:16:56,118 - INFO - 语音长度: 1384ms, 字幕长度: 2060ms
+2025-03-30 21:16:56,118 - INFO - TTS音频统计: 4个汉字, 平均每个汉字346.00ms
+2025-03-30 21:16:56,118 - INFO - 段落处理完成，耗时: 1.76 秒
+2025-03-30 21:16:56,118 - INFO - --------------------------------------------------
+2025-03-30 21:16:56,119 - INFO - 处理第 80/91 段字幕 [87.9%]:
+2025-03-30 21:16:56,119 - INFO - 时间: 894210ms -> 899830ms (持续 5620ms)
+2025-03-30 21:16:56,119 - INFO - 文本: 五、四、三...
+2025-03-30 21:16:56,119 - INFO - 开始文本转语音: resources/audios/segment_0079.mp3
+2025-03-30 21:16:56,119 - INFO - 处理文本: 五、四、三...
+2025-03-30 21:16:56,152 - INFO - 发送TTS请求并保存到: resources/audios/segment_0079.mp3
+2025-03-30 21:16:57,432 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:57,856 - INFO - TTS完成，耗时: 1.74 秒
+2025-03-30 21:16:58,081 - INFO - 语音长度: 2403ms, 字幕长度: 5620ms
+2025-03-30 21:16:58,081 - INFO - TTS音频统计: 3个汉字, 平均每个汉字801.00ms
+2025-03-30 21:16:58,081 - INFO - 段落处理完成，耗时: 1.96 秒
+2025-03-30 21:16:58,081 - INFO - --------------------------------------------------
+2025-03-30 21:16:58,082 - INFO - 处理第 81/91 段字幕 [89.0%]:
+2025-03-30 21:16:58,082 - INFO - 时间: 976260ms -> 983320ms (持续 7060ms)
+2025-03-30 21:16:58,082 - INFO - 文本: 最紧张的时刻来了。
+2025-03-30 21:16:58,082 - INFO - 开始文本转语音: resources/audios/segment_0080.mp3
+2025-03-30 21:16:58,082 - INFO - 处理文本: 最紧张的时刻来了。
+2025-03-30 21:16:58,116 - INFO - 发送TTS请求并保存到: resources/audios/segment_0080.mp3
+2025-03-30 21:16:59,277 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:16:59,427 - INFO - TTS完成，耗时: 1.34 秒
+2025-03-30 21:16:59,667 - INFO - 语音长度: 1907ms, 字幕长度: 7060ms
+2025-03-30 21:16:59,667 - INFO - TTS音频统计: 8个汉字, 平均每个汉字238.38ms
+2025-03-30 21:16:59,667 - INFO - 段落处理完成，耗时: 1.59 秒
+2025-03-30 21:16:59,667 - INFO - --------------------------------------------------
+2025-03-30 21:16:59,667 - INFO - 处理第 82/91 段字幕 [90.1%]:
+2025-03-30 21:16:59,667 - INFO - 时间: 996980ms -> 998520ms (持续 1540ms)
+2025-03-30 21:16:59,667 - INFO - 文本: 心跳加速。
+2025-03-30 21:16:59,668 - INFO - 开始文本转语音: resources/audios/segment_0081.mp3
+2025-03-30 21:16:59,668 - INFO - 处理文本: 心跳加速。
+2025-03-30 21:16:59,702 - INFO - 发送TTS请求并保存到: resources/audios/segment_0081.mp3
+2025-03-30 21:17:00,913 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:17:00,934 - INFO - TTS完成，耗时: 1.27 秒
+2025-03-30 21:17:01,153 - INFO - 语音长度: 1489ms, 字幕长度: 1540ms
+2025-03-30 21:17:01,154 - INFO - TTS音频统计: 4个汉字, 平均每个汉字372.25ms
+2025-03-30 21:17:01,154 - INFO - 段落处理完成，耗时: 1.49 秒
+2025-03-30 21:17:01,154 - INFO - --------------------------------------------------
+2025-03-30 21:17:01,154 - INFO - 处理第 83/91 段字幕 [91.2%]:
+2025-03-30 21:17:01,154 - INFO - 时间: 1008400ms -> 1013380ms (持续 4980ms)
+2025-03-30 21:17:01,154 - INFO - 文本: 五、四、二、一！
+2025-03-30 21:17:01,154 - INFO - 开始文本转语音: resources/audios/segment_0082.mp3
+2025-03-30 21:17:01,154 - INFO - 处理文本: 五、四、二、一！
+2025-03-30 21:17:01,189 - INFO - 发送TTS请求并保存到: resources/audios/segment_0082.mp3
+2025-03-30 21:17:02,199 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:17:02,386 - INFO - TTS完成，耗时: 1.23 秒
+2025-03-30 21:17:02,609 - INFO - 语音长度: 2116ms, 字幕长度: 4980ms
+2025-03-30 21:17:02,609 - INFO - TTS音频统计: 4个汉字, 平均每个汉字529.00ms
+2025-03-30 21:17:02,609 - INFO - 段落处理完成，耗时: 1.46 秒
+2025-03-30 21:17:02,610 - INFO - --------------------------------------------------
+2025-03-30 21:17:02,610 - INFO - 处理第 84/91 段字幕 [92.3%]:
+2025-03-30 21:17:02,610 - INFO - 时间: 1021600ms -> 1025020ms (持续 3420ms)
+2025-03-30 21:17:02,610 - INFO - 文本: 这次是实况等待。
+2025-03-30 21:17:02,610 - INFO - 开始文本转语音: resources/audios/segment_0083.mp3
+2025-03-30 21:17:02,610 - INFO - 处理文本: 这次是实况等待。
+2025-03-30 21:17:02,644 - INFO - 发送TTS请求并保存到: resources/audios/segment_0083.mp3
+2025-03-30 21:17:03,767 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:17:03,891 - INFO - TTS完成，耗时: 1.28 秒
+2025-03-30 21:17:04,123 - INFO - 语音长度: 1933ms, 字幕长度: 3420ms
+2025-03-30 21:17:04,124 - INFO - TTS音频统计: 7个汉字, 平均每个汉字276.14ms
+2025-03-30 21:17:04,124 - INFO - 段落处理完成，耗时: 1.51 秒
+2025-03-30 21:17:04,124 - INFO - --------------------------------------------------
+2025-03-30 21:17:04,124 - INFO - 处理第 85/91 段字幕 [93.4%]:
+2025-03-30 21:17:04,124 - INFO - 时间: 1027120ms -> 1029460ms (持续 2340ms)
+2025-03-30 21:17:04,124 - INFO - 文本: 下面还好吗？
+2025-03-30 21:17:04,124 - INFO - 开始文本转语音: resources/audios/segment_0084.mp3
+2025-03-30 21:17:04,124 - INFO - 处理文本: 下面还好吗？
+2025-03-30 21:17:04,158 - INFO - 发送TTS请求并保存到: resources/audios/segment_0084.mp3
+2025-03-30 21:17:05,463 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:17:05,575 - INFO - TTS完成，耗时: 1.45 秒
+2025-03-30 21:17:05,817 - INFO - 语音长度: 1332ms, 字幕长度: 2340ms
+2025-03-30 21:17:05,817 - INFO - TTS音频统计: 5个汉字, 平均每个汉字266.40ms
+2025-03-30 21:17:05,817 - INFO - 段落处理完成，耗时: 1.69 秒
+2025-03-30 21:17:05,817 - INFO - --------------------------------------------------
+2025-03-30 21:17:05,817 - INFO - 处理第 86/91 段字幕 [94.5%]:
+2025-03-30 21:17:05,817 - INFO - 时间: 1033289ms -> 1064170ms (持续 30881ms)
+2025-03-30 21:17:05,817 - INFO - 文本: 完美入水！顶上的人怎么说？
+2025-03-30 21:17:05,818 - INFO - 开始文本转语音: resources/audios/segment_0085.mp3
+2025-03-30 21:17:05,818 - INFO - 处理文本: 完美入水！顶上的人怎么说？
+2025-03-30 21:17:05,852 - INFO - 发送TTS请求并保存到: resources/audios/segment_0085.mp3
+2025-03-30 21:17:07,062 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:17:07,244 - INFO - TTS完成，耗时: 1.43 秒
+2025-03-30 21:17:07,449 - INFO - 语音长度: 2456ms, 字幕长度: 30881ms
+2025-03-30 21:17:07,449 - INFO - TTS音频统计: 11个汉字, 平均每个汉字223.27ms
+2025-03-30 21:17:07,449 - INFO - 段落处理完成，耗时: 1.63 秒
+2025-03-30 21:17:07,449 - INFO - --------------------------------------------------
+2025-03-30 21:17:07,449 - INFO - 处理第 87/91 段字幕 [95.6%]:
+2025-03-30 21:17:07,449 - INFO - 时间: 1094870ms -> 1096650ms (持续 1780ms)
+2025-03-30 21:17:07,450 - INFO - 文本: 还能说什么？
+2025-03-30 21:17:07,450 - INFO - 开始文本转语音: resources/audios/segment_0086.mp3
+2025-03-30 21:17:07,450 - INFO - 处理文本: 还能说什么？
+2025-03-30 21:17:07,483 - INFO - 发送TTS请求并保存到: resources/audios/segment_0086.mp3
+2025-03-30 21:17:08,715 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:17:08,816 - INFO - TTS完成，耗时: 1.37 秒
+2025-03-30 21:17:09,048 - INFO - 语音长度: 967ms, 字幕长度: 1780ms
+2025-03-30 21:17:09,048 - INFO - TTS音频统计: 5个汉字, 平均每个汉字193.40ms
+2025-03-30 21:17:09,048 - INFO - 段落处理完成，耗时: 1.60 秒
+2025-03-30 21:17:09,048 - INFO - --------------------------------------------------
+2025-03-30 21:17:09,049 - INFO - 处理第 88/91 段字幕 [96.7%]:
+2025-03-30 21:17:09,049 - INFO - 时间: 1099430ms -> 1102910ms (持续 3480ms)
+2025-03-30 21:17:09,049 - INFO - 文本: 无法用语言形容。
+2025-03-30 21:17:09,049 - INFO - 开始文本转语音: resources/audios/segment_0087.mp3
+2025-03-30 21:17:09,049 - INFO - 处理文本: 无法用语言形容。
+2025-03-30 21:17:09,083 - INFO - 发送TTS请求并保存到: resources/audios/segment_0087.mp3
+2025-03-30 21:17:11,078 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:17:11,174 - INFO - TTS完成，耗时: 2.13 秒
+2025-03-30 21:17:11,406 - INFO - 语音长度: 1985ms, 字幕长度: 3480ms
+2025-03-30 21:17:11,407 - INFO - TTS音频统计: 7个汉字, 平均每个汉字283.57ms
+2025-03-30 21:17:11,407 - INFO - 段落处理完成，耗时: 2.36 秒
+2025-03-30 21:17:11,407 - INFO - --------------------------------------------------
+2025-03-30 21:17:11,407 - INFO - 处理第 89/91 段字幕 [97.8%]:
+2025-03-30 21:17:11,407 - INFO - 时间: 1102950ms -> 1106046ms (持续 3096ms)
+2025-03-30 21:17:11,407 - INFO - 文本: 衷心感谢各位。
+2025-03-30 21:17:11,408 - INFO - 开始文本转语音: resources/audios/segment_0088.mp3
+2025-03-30 21:17:11,408 - INFO - 处理文本: 衷心感谢各位。
+2025-03-30 21:17:11,443 - INFO - 发送TTS请求并保存到: resources/audios/segment_0088.mp3
+2025-03-30 21:17:12,812 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:17:12,842 - INFO - TTS完成，耗时: 1.43 秒
+2025-03-30 21:17:13,065 - INFO - 语音长度: 1567ms, 字幕长度: 3096ms
+2025-03-30 21:17:13,065 - INFO - TTS音频统计: 6个汉字, 平均每个汉字261.17ms
+2025-03-30 21:17:13,065 - INFO - 段落处理完成，耗时: 1.66 秒
+2025-03-30 21:17:13,065 - INFO - --------------------------------------------------
+2025-03-30 21:17:13,065 - INFO - 处理第 90/91 段字幕 [98.9%]:
+2025-03-30 21:17:13,065 - INFO - 时间: 1106118ms -> 1111130ms (持续 5012ms)
+2025-03-30 21:17:13,065 - INFO - 文本: 菲利普居功至伟...
+2025-03-30 21:17:13,066 - INFO - 开始文本转语音: resources/audios/segment_0089.mp3
+2025-03-30 21:17:13,066 - INFO - 处理文本: 菲利普居功至伟...
+2025-03-30 21:17:13,100 - INFO - 发送TTS请求并保存到: resources/audios/segment_0089.mp3
+2025-03-30 21:17:14,225 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:17:14,354 - INFO - TTS完成，耗时: 1.29 秒
+2025-03-30 21:17:14,600 - INFO - 语音长度: 2351ms, 字幕长度: 5012ms
+2025-03-30 21:17:14,600 - INFO - TTS音频统计: 7个汉字, 平均每个汉字335.86ms
+2025-03-30 21:17:14,601 - INFO - 段落处理完成，耗时: 1.54 秒
+2025-03-30 21:17:14,601 - INFO - --------------------------------------------------
+2025-03-30 21:17:14,601 - INFO - 处理第 91/91 段字幕 [100.0%]:
+2025-03-30 21:17:14,601 - INFO - 时间: 1115350ms -> 1116270ms (持续 920ms)
+2025-03-30 21:17:14,601 - INFO - 文本: 不愧是"菲利普真爱粉"。
+2025-03-30 21:17:14,601 - INFO - 开始文本转语音: resources/audios/segment_0090.mp3
+2025-03-30 21:17:14,601 - INFO - 处理文本: 不愧是"菲利普真爱粉"。
+2025-03-30 21:17:14,635 - INFO - 发送TTS请求并保存到: resources/audios/segment_0090.mp3
+2025-03-30 21:17:15,763 - INFO - HTTP Request: POST https://api.fish.audio/v1/tts "HTTP/1.1 200 OK"
+2025-03-30 21:17:15,848 - INFO - TTS完成，耗时: 1.25 秒
+2025-03-30 21:17:16,077 - INFO - 语音长度: 2638ms, 字幕长度: 920ms
+2025-03-30 21:17:16,077 - INFO - TTS音频统计: 9个汉字, 平均每个汉字293.11ms
+2025-03-30 21:17:16,077 - INFO - 段落处理完成，耗时: 1.48 秒
+2025-03-30 21:17:16,078 - INFO - --------------------------------------------------
+2025-03-30 21:17:16,078 - INFO - ==================================================
+2025-03-30 21:17:16,078 - INFO - 第二步：根据字幕时长添加空白并合并
+2025-03-30 21:17:16,078 - INFO - 第一个字幕不是从0时间开始的，开始时间为: 1200ms
+2025-03-30 21:17:16,078 - INFO - 添加 1200ms 的空白音频到开头
+2025-03-30 21:17:16,193 - INFO - 已添加初始空白音频: 1200ms
+2025-03-30 21:17:16,415 - INFO - 添加 2048ms 空白
+2025-03-30 21:17:16,416 - INFO - 检测到字幕间隙: 18660ms -> 25840ms (持续 7180ms)
+2025-03-30 21:17:16,555 - INFO - 已添加间隙空白音频: 7180ms
+2025-03-30 21:17:16,751 - INFO - 添加 619ms 空白
+2025-03-30 21:17:16,752 - INFO - 检测到字幕间隙: 30900ms -> 33500ms (持续 2600ms)
+2025-03-30 21:17:16,878 - INFO - 已添加间隙空白音频: 2600ms
+2025-03-30 21:17:17,083 - INFO - 添加 414ms 空白
+2025-03-30 21:17:17,085 - INFO - 检测到字幕间隙: 36500ms -> 36620ms (持续 120ms)
+2025-03-30 21:17:17,213 - INFO - 已添加间隙空白音频: 120ms
+2025-03-30 21:17:17,417 - WARNING - 语音长度超出字幕时间 147ms, 累计超时: 147ms
+2025-03-30 21:17:17,418 - INFO - 检测到字幕间隙: 40052ms -> 40236ms (持续 184ms)
+2025-03-30 21:17:17,418 - INFO - 从间隙中减去 147ms 的累积超时，剩余间隙: 37ms, 剩余累积超时: 0ms
+2025-03-30 21:17:17,522 - INFO - 已添加间隙空白音频: 37ms
+2025-03-30 21:17:17,730 - INFO - 添加 1513ms 空白
+2025-03-30 21:17:17,730 - INFO - 合并临时片段 (共 10 个)
+2025-03-30 21:17:17,739 - INFO - 保存临时文件: resources/audios/combined_temp_0.mp3
+2025-03-30 21:17:18,449 - INFO - 检测到字幕间隙: 47000ms -> 47340ms (持续 340ms)
+2025-03-30 21:17:18,557 - INFO - 已添加间隙空白音频: 340ms
+2025-03-30 21:17:18,782 - INFO - 添加 13338ms 空白
+2025-03-30 21:17:18,784 - INFO - 检测到字幕间隙: 76560ms -> 76640ms (持续 80ms)
+2025-03-30 21:17:18,890 - INFO - 已添加间隙空白音频: 80ms
+2025-03-30 21:17:19,102 - INFO - 添加 1175ms 空白
+2025-03-30 21:17:19,103 - INFO - 检测到字幕间隙: 86540ms -> 97140ms (持续 10600ms)
+2025-03-30 21:17:19,252 - INFO - 已添加间隙空白音频: 10600ms
+2025-03-30 21:17:19,451 - WARNING - 语音长度超出字幕时间 175ms, 累计超时: 175ms
+2025-03-30 21:17:19,452 - INFO - 检测到字幕间隙: 98480ms -> 101620ms (持续 3140ms)
+2025-03-30 21:17:19,452 - INFO - 从间隙中减去 175ms 的累积超时，剩余间隙: 2965ms, 剩余累积超时: 0ms
+2025-03-30 21:17:19,576 - INFO - 已添加间隙空白音频: 2965ms
+2025-03-30 21:17:19,779 - WARNING - 语音长度超出字幕时间 772ms, 累计超时: 772ms
+2025-03-30 21:17:19,779 - INFO - 检测到字幕间隙: 102520ms -> 105300ms (持续 2780ms)
+2025-03-30 21:17:19,779 - INFO - 从间隙中减去 772ms 的累积超时，剩余间隙: 2008ms, 剩余累积超时: 0ms
+2025-03-30 21:17:19,902 - INFO - 已添加间隙空白音频: 2008ms
+2025-03-30 21:17:20,119 - WARNING - 语音长度超出字幕时间 15ms, 累计超时: 15ms
+2025-03-30 21:17:20,120 - INFO - 合并临时片段 (共 11 个)
+2025-03-30 21:17:20,150 - INFO - 保存临时文件: resources/audios/combined_temp_1.mp3
+2025-03-30 21:17:21,333 - INFO - 检测到字幕间隙: 108812ms -> 108876ms (持续 64ms)
+2025-03-30 21:17:21,334 - INFO - 从间隙中减去 15ms 的累积超时，剩余间隙: 49ms, 剩余累积超时: 0ms
+2025-03-30 21:17:21,438 - INFO - 已添加间隙空白音频: 49ms
+2025-03-30 21:17:21,645 - WARNING - 语音长度超出字幕时间 106ms, 累计超时: 106ms
+2025-03-30 21:17:21,646 - INFO - 检测到字幕间隙: 110520ms -> 111700ms (持续 1180ms)
+2025-03-30 21:17:21,646 - INFO - 从间隙中减去 106ms 的累积超时，剩余间隙: 1074ms, 剩余累积超时: 0ms
+2025-03-30 21:17:21,760 - INFO - 已添加间隙空白音频: 1074ms
+2025-03-30 21:17:21,981 - INFO - 添加 4970ms 空白
+2025-03-30 21:17:21,983 - INFO - 检测到字幕间隙: 118760ms -> 121460ms (持续 2700ms)
+2025-03-30 21:17:22,110 - INFO - 已添加间隙空白音频: 2700ms
+2025-03-30 21:17:22,315 - INFO - 添加 129ms 空白
+2025-03-30 21:17:22,315 - INFO - 检测到字幕间隙: 122320ms -> 125060ms (持续 2740ms)
+2025-03-30 21:17:22,444 - INFO - 已添加间隙空白音频: 2740ms
+2025-03-30 21:17:22,641 - WARNING - 语音长度超出字幕时间 420ms, 累计超时: 420ms
+2025-03-30 21:17:22,641 - INFO - 检测到字幕间隙: 128820ms -> 129520ms (持续 700ms)
+2025-03-30 21:17:22,641 - INFO - 从间隙中减去 420ms 的累积超时，剩余间隙: 280ms, 剩余累积超时: 0ms
+2025-03-30 21:17:22,748 - INFO - 已添加间隙空白音频: 280ms
+2025-03-30 21:17:22,959 - INFO - 添加 3462ms 空白
+2025-03-30 21:17:22,960 - INFO - 合并临时片段 (共 11 个)
+2025-03-30 21:17:23,024 - INFO - 保存临时文件: resources/audios/combined_temp_2.mp3
+2025-03-30 21:17:24,431 - INFO - 检测到字幕间隙: 138860ms -> 151600ms (持续 12740ms)
+2025-03-30 21:17:24,588 - INFO - 已添加间隙空白音频: 12740ms
+2025-03-30 21:17:24,808 - INFO - 添加 9204ms 空白
+2025-03-30 21:17:24,810 - INFO - 检测到字幕间隙: 170260ms -> 172040ms (持续 1780ms)
+2025-03-30 21:17:24,929 - INFO - 已添加间隙空白音频: 1780ms
+2025-03-30 21:17:25,134 - INFO - 添加 1900ms 空白
+2025-03-30 21:17:25,135 - INFO - 检测到字幕间隙: 180340ms -> 183080ms (持续 2740ms)
+2025-03-30 21:17:25,263 - INFO - 已添加间隙空白音频: 2740ms
+2025-03-30 21:17:25,459 - INFO - 添加 49ms 空白
+2025-03-30 21:17:25,459 - INFO - 检测到字幕间隙: 183860ms -> 190820ms (持续 6960ms)
+2025-03-30 21:17:25,596 - INFO - 已添加间隙空白音频: 6960ms
+2025-03-30 21:17:25,811 - INFO - 添加 4159ms 空白
+2025-03-30 21:17:25,813 - INFO - 检测到字幕间隙: 201692ms -> 201756ms (持续 64ms)
+2025-03-30 21:17:25,916 - INFO - 已添加间隙空白音频: 64ms
+2025-03-30 21:17:26,123 - INFO - 添加 2424ms 空白
+2025-03-30 21:17:26,124 - INFO - 合并临时片段 (共 11 个)
+2025-03-30 21:17:26,179 - INFO - 保存临时文件: resources/audios/combined_temp_3.mp3
+2025-03-30 21:17:28,096 - INFO - 检测到字幕间隙: 208908ms -> 209084ms (持续 176ms)
+2025-03-30 21:17:28,203 - INFO - 已添加间隙空白音频: 176ms
+2025-03-30 21:17:28,405 - INFO - 添加 1555ms 空白
+2025-03-30 21:17:28,406 - INFO - 检测到字幕间隙: 213800ms -> 221120ms (持续 7320ms)
+2025-03-30 21:17:28,547 - INFO - 已添加间隙空白音频: 7320ms
+2025-03-30 21:17:28,776 - INFO - 添加 530ms 空白
+2025-03-30 21:17:28,777 - INFO - 检测到字幕间隙: 223740ms -> 225360ms (持续 1620ms)
+2025-03-30 21:17:28,902 - INFO - 已添加间隙空白音频: 1620ms
+2025-03-30 21:17:29,107 - INFO - 添加 1109ms 空白
+2025-03-30 21:17:29,108 - INFO - 检测到字幕间隙: 231380ms -> 239760ms (持续 8380ms)
+2025-03-30 21:17:29,250 - INFO - 已添加间隙空白音频: 8380ms
+2025-03-30 21:17:29,456 - INFO - 添加 189ms 空白
+2025-03-30 21:17:29,457 - INFO - 检测到字幕间隙: 241020ms -> 243760ms (持续 2740ms)
+2025-03-30 21:17:29,587 - INFO - 已添加间隙空白音频: 2740ms
+2025-03-30 21:17:29,784 - INFO - 添加 301ms 空白
+2025-03-30 21:17:29,785 - INFO - 合并临时片段 (共 11 个)
+2025-03-30 21:17:29,876 - INFO - 保存临时文件: resources/audios/combined_temp_4.mp3
+2025-03-30 21:17:32,030 - INFO - 检测到字幕间隙: 244740ms -> 246790ms (持续 2050ms)
+2025-03-30 21:17:32,157 - INFO - 已添加间隙空白音频: 2050ms
+2025-03-30 21:17:32,355 - INFO - 添加 886ms 空白
+2025-03-30 21:17:32,356 - INFO - 检测到字幕间隙: 248930ms -> 254230ms (持续 5300ms)
+2025-03-30 21:17:32,490 - INFO - 已添加间隙空白音频: 5300ms
+2025-03-30 21:17:32,706 - INFO - 添加 14088ms 空白
+2025-03-30 21:17:32,709 - INFO - 检测到字幕间隙: 280204ms -> 280332ms (持续 128ms)
+2025-03-30 21:17:32,815 - INFO - 已添加间隙空白音频: 128ms
+2025-03-30 21:17:33,026 - INFO - 添加 4896ms 空白
+2025-03-30 21:17:33,028 - INFO - 检测到字幕间隙: 293404ms -> 293572ms (持续 168ms)
+2025-03-30 21:17:33,128 - INFO - 已添加间隙空白音频: 168ms
+2025-03-30 21:17:33,342 - INFO - 添加 6419ms 空白
+2025-03-30 21:17:33,343 - INFO - 检测到字幕间隙: 306522ms -> 306626ms (持续 104ms)
+2025-03-30 21:17:33,447 - INFO - 已添加间隙空白音频: 104ms
+2025-03-30 21:17:33,648 - INFO - 添加 1058ms 空白
+2025-03-30 21:17:33,648 - INFO - 合并临时片段 (共 11 个)
+2025-03-30 21:17:33,755 - INFO - 保存临时文件: resources/audios/combined_temp_5.mp3
+2025-03-30 21:17:36,404 - INFO - 检测到字幕间隙: 310270ms -> 312770ms (持续 2500ms)
+2025-03-30 21:17:36,524 - INFO - 已添加间隙空白音频: 2500ms
+2025-03-30 21:17:36,733 - INFO - 添加 4504ms 空白
+2025-03-30 21:17:36,735 - INFO - 检测到字幕间隙: 323674ms -> 323762ms (持续 88ms)
+2025-03-30 21:17:36,836 - INFO - 已添加间隙空白音频: 88ms
+2025-03-30 21:17:37,049 - INFO - 添加 4137ms 空白
+2025-03-30 21:17:37,050 - INFO - 检测到字幕间隙: 334430ms -> 334760ms (持续 330ms)
+2025-03-30 21:17:37,159 - INFO - 已添加间隙空白音频: 330ms
+2025-03-30 21:17:37,375 - INFO - 添加 5717ms 空白
+2025-03-30 21:17:37,376 - INFO - 检测到字幕间隙: 352180ms -> 353320ms (持续 1140ms)
+2025-03-30 21:17:37,490 - INFO - 已添加间隙空白音频: 1140ms
+2025-03-30 21:17:37,699 - WARNING - 语音长度超出字幕时间 1037ms, 累计超时: 1037ms
+2025-03-30 21:17:37,699 - INFO - 检测到字幕间隙: 355940ms -> 365240ms (持续 9300ms)
+2025-03-30 21:17:37,699 - INFO - 从间隙中减去 1037ms 的累积超时，剩余间隙: 8263ms, 剩余累积超时: 0ms
+2025-03-30 21:17:37,845 - INFO - 已添加间隙空白音频: 8263ms
+2025-03-30 21:17:38,050 - INFO - 添加 242ms 空白
+2025-03-30 21:17:38,051 - INFO - 合并临时片段 (共 11 个)
+2025-03-30 21:17:38,178 - INFO - 保存临时文件: resources/audios/combined_temp_6.mp3
+2025-03-30 21:17:41,241 - INFO - 检测到字幕间隙: 367520ms -> 368900ms (持续 1380ms)
+2025-03-30 21:17:41,355 - INFO - 已添加间隙空白音频: 1380ms
+2025-03-30 21:17:41,550 - INFO - 添加 2023ms 空白
+2025-03-30 21:17:41,551 - INFO - 检测到字幕间隙: 373196ms -> 373308ms (持续 112ms)
+2025-03-30 21:17:41,654 - INFO - 已添加间隙空白音频: 112ms
+2025-03-30 21:17:41,855 - INFO - 添加 151ms 空白
+2025-03-30 21:17:41,856 - INFO - 检测到字幕间隙: 376620ms -> 376700ms (持续 80ms)
+2025-03-30 21:17:41,963 - INFO - 已添加间隙空白音频: 80ms
+2025-03-30 21:17:42,166 - INFO - 添加 9210ms 空白
+2025-03-30 21:17:42,168 - INFO - 检测到字幕间隙: 393250ms -> 407950ms (持续 14700ms)
+2025-03-30 21:17:42,327 - INFO - 已添加间隙空白音频: 14700ms
+2025-03-30 21:17:42,533 - INFO - 添加 23507ms 空白
+2025-03-30 21:17:42,537 - INFO - 检测到字幕间隙: 437570ms -> 438590ms (持续 1020ms)
+2025-03-30 21:17:42,646 - INFO - 已添加间隙空白音频: 1020ms
+2025-03-30 21:17:42,855 - INFO - 添加 1872ms 空白
+2025-03-30 21:17:42,856 - INFO - 合并临时片段 (共 11 个)
+2025-03-30 21:17:43,030 - INFO - 保存临时文件: resources/audios/combined_temp_7.mp3
+2025-03-30 21:17:46,697 - INFO - 检测到字幕间隙: 449370ms -> 450200ms (持续 830ms)
+2025-03-30 21:17:46,813 - INFO - 已添加间隙空白音频: 830ms
+2025-03-30 21:17:47,013 - WARNING - 语音长度超出字幕时间 326ms, 累计超时: 326ms
+2025-03-30 21:17:47,014 - INFO - 检测到字幕间隙: 452460ms -> 454760ms (持续 2300ms)
+2025-03-30 21:17:47,014 - INFO - 从间隙中减去 326ms 的累积超时，剩余间隙: 1974ms, 剩余累积超时: 0ms
+2025-03-30 21:17:47,133 - INFO - 已添加间隙空白音频: 1974ms
+2025-03-30 21:17:47,332 - INFO - 添加 1835ms 空白
+2025-03-30 21:17:47,333 - INFO - 检测到字幕间隙: 458580ms -> 469320ms (持续 10740ms)
+2025-03-30 21:17:47,483 - INFO - 已添加间隙空白音频: 10740ms
+2025-03-30 21:17:47,679 - WARNING - 语音长度超出字幕时间 674ms, 累计超时: 674ms
+2025-03-30 21:17:47,679 - INFO - 检测到字幕间隙: 471180ms -> 496980ms (持续 25800ms)
+2025-03-30 21:17:47,679 - INFO - 从间隙中减去 674ms 的累积超时，剩余间隙: 25126ms, 剩余累积超时: 0ms
+2025-03-30 21:17:47,874 - INFO - 已添加间隙空白音频: 25126ms
+2025-03-30 21:17:48,082 - WARNING - 语音长度超出字幕时间 69ms, 累计超时: 69ms
+2025-03-30 21:17:48,083 - INFO - 检测到字幕间隙: 499680ms -> 502260ms (持续 2580ms)
+2025-03-30 21:17:48,083 - INFO - 从间隙中减去 69ms 的累积超时，剩余间隙: 2511ms, 剩余累积超时: 0ms
+2025-03-30 21:17:48,208 - INFO - 已添加间隙空白音频: 2511ms
+2025-03-30 21:17:48,405 - INFO - 添加 3300ms 空白
+2025-03-30 21:17:48,406 - INFO - 合并临时片段 (共 11 个)
+2025-03-30 21:17:48,588 - INFO - 保存临时文件: resources/audios/combined_temp_8.mp3
+2025-03-30 21:17:52,617 - INFO - 检测到字幕间隙: 509400ms -> 509780ms (持续 380ms)
+2025-03-30 21:17:52,722 - INFO - 已添加间隙空白音频: 380ms
+2025-03-30 21:17:52,925 - INFO - 添加 1358ms 空白
+2025-03-30 21:17:52,925 - INFO - 检测到字幕间隙: 513724ms -> 513812ms (持续 88ms)
+2025-03-30 21:17:53,028 - INFO - 已添加间隙空白音频: 88ms
+2025-03-30 21:17:53,227 - INFO - 添加 1063ms 空白
+2025-03-30 21:17:53,228 - INFO - 检测到字幕间隙: 517200ms -> 520260ms (持续 3060ms)
+2025-03-30 21:17:53,355 - INFO - 已添加间隙空白音频: 3060ms
+2025-03-30 21:17:53,553 - INFO - 添加 499ms 空白
+2025-03-30 21:17:53,553 - INFO - 检测到字幕间隙: 525200ms -> 535460ms (持续 10260ms)
+2025-03-30 21:17:53,698 - INFO - 已添加间隙空白音频: 10260ms
+2025-03-30 21:17:53,891 - INFO - 添加 676ms 空白
+2025-03-30 21:17:53,892 - INFO - 检测到字幕间隙: 537520ms -> 548320ms (持续 10800ms)
+2025-03-30 21:17:54,039 - INFO - 已添加间隙空白音频: 10800ms
+2025-03-30 21:17:54,234 - INFO - 添加 565ms 空白
+2025-03-30 21:17:54,235 - INFO - 合并临时片段 (共 11 个)
+2025-03-30 21:17:54,441 - INFO - 保存临时文件: resources/audios/combined_temp_9.mp3
+2025-03-30 21:17:58,728 - INFO - 检测到字幕间隙: 550740ms -> 553440ms (持续 2700ms)
+2025-03-30 21:17:58,851 - INFO - 已添加间隙空白音频: 2700ms
+2025-03-30 21:17:59,057 - INFO - 添加 4666ms 空白
+2025-03-30 21:17:59,058 - INFO - 检测到字幕间隙: 561528ms -> 561624ms (持续 96ms)
+2025-03-30 21:17:59,160 - INFO - 已添加间隙空白音频: 96ms
+2025-03-30 21:17:59,371 - INFO - 添加 8418ms 空白
+2025-03-30 21:17:59,373 - INFO - 检测到字幕间隙: 576860ms -> 596380ms (持续 19520ms)
+2025-03-30 21:17:59,547 - INFO - 已添加间隙空白音频: 19520ms
+2025-03-30 21:17:59,753 - INFO - 添加 2116ms 空白
+2025-03-30 21:17:59,754 - INFO - 检测到字幕间隙: 603172ms -> 603236ms (持续 64ms)
+2025-03-30 21:17:59,861 - INFO - 已添加间隙空白音频: 64ms
+2025-03-30 21:18:00,062 - WARNING - 语音长度超出字幕时间 1056ms, 累计超时: 1056ms
+2025-03-30 21:18:00,062 - INFO - 检测到字幕间隙: 604400ms -> 609980ms (持续 5580ms)
+2025-03-30 21:18:00,063 - INFO - 从间隙中减去 1056ms 的累积超时，剩余间隙: 4524ms, 剩余累积超时: 0ms
+2025-03-30 21:18:00,193 - INFO - 已添加间隙空白音频: 4524ms
+2025-03-30 21:18:00,391 - INFO - 添加 3034ms 空白
+2025-03-30 21:18:00,392 - INFO - 合并临时片段 (共 11 个)
+2025-03-30 21:18:00,615 - INFO - 保存临时文件: resources/audios/combined_temp_10.mp3
+2025-03-30 21:18:05,380 - INFO - 检测到字幕间隙: 618160ms -> 620940ms (持续 2780ms)
+2025-03-30 21:18:05,505 - INFO - 已添加间隙空白音频: 2780ms
+2025-03-30 21:18:05,709 - INFO - 添加 8184ms 空白
+2025-03-30 21:18:05,711 - INFO - 检测到字幕间隙: 634270ms -> 648490ms (持续 14220ms)
+2025-03-30 21:18:05,870 - INFO - 已添加间隙空白音频: 14220ms
+2025-03-30 21:18:06,080 - WARNING - 语音长度超出字幕时间 155ms, 累计超时: 155ms
+2025-03-30 21:18:06,080 - INFO - 检测到字幕间隙: 650190ms -> 655450ms (持续 5260ms)
+2025-03-30 21:18:06,080 - INFO - 从间隙中减去 155ms 的累积超时，剩余间隙: 5105ms, 剩余累积超时: 0ms
+2025-03-30 21:18:06,215 - INFO - 已添加间隙空白音频: 5105ms
+2025-03-30 21:18:06,420 - INFO - 添加 1898ms 空白
+2025-03-30 21:18:06,420 - INFO - 检测到字幕间隙: 663330ms -> 665670ms (持续 2340ms)
+2025-03-30 21:18:06,541 - INFO - 已添加间隙空白音频: 2340ms
+2025-03-30 21:18:06,744 - INFO - 添加 1569ms 空白
+2025-03-30 21:18:06,745 - INFO - 检测到字幕间隙: 669930ms -> 677190ms (持续 7260ms)
+2025-03-30 21:18:06,883 - INFO - 已添加间隙空白音频: 7260ms
+2025-03-30 21:18:07,114 - INFO - 添加 1552ms 空白
+2025-03-30 21:18:07,115 - INFO - 合并临时片段 (共 11 个)
+2025-03-30 21:18:07,346 - INFO - 保存临时文件: resources/audios/combined_temp_11.mp3
+2025-03-30 21:18:12,527 - INFO - 检测到字幕间隙: 681250ms -> 699330ms (持续 18080ms)
+2025-03-30 21:18:12,694 - INFO - 已添加间隙空白音频: 18080ms
+2025-03-30 21:18:12,892 - INFO - 添加 1504ms 空白
+2025-03-30 21:18:12,893 - INFO - 检测到字幕间隙: 701670ms -> 709170ms (持续 7500ms)
+2025-03-30 21:18:13,033 - INFO - 已添加间隙空白音频: 7500ms
+2025-03-30 21:18:13,240 - INFO - 添加 908ms 空白
+2025-03-30 21:18:13,240 - INFO - 检测到字幕间隙: 713030ms -> 717110ms (持续 4080ms)
+2025-03-30 21:18:13,369 - INFO - 已添加间隙空白音频: 4080ms
+2025-03-30 21:18:13,578 - INFO - 添加 8107ms 空白
+2025-03-30 21:18:13,580 - INFO - 检测到字幕间隙: 730650ms -> 733110ms (持续 2460ms)
+2025-03-30 21:18:13,703 - INFO - 已添加间隙空白音频: 2460ms
+2025-03-30 21:18:13,901 - INFO - 添加 36ms 空白
+2025-03-30 21:18:13,901 - INFO - 检测到字幕间隙: 734530ms -> 739590ms (持续 5060ms)
+2025-03-30 21:18:14,034 - INFO - 已添加间隙空白音频: 5060ms
+2025-03-30 21:18:14,245 - INFO - 添加 8097ms 空白
+2025-03-30 21:18:14,247 - INFO - 合并临时片段 (共 11 个)
+2025-03-30 21:18:14,517 - INFO - 保存临时文件: resources/audios/combined_temp_12.mp3
+2025-03-30 21:18:20,138 - INFO - 检测到字幕间隙: 754400ms -> 755060ms (持续 660ms)
+2025-03-30 21:18:20,248 - INFO - 已添加间隙空白音频: 660ms
+2025-03-30 21:18:20,448 - INFO - 添加 1617ms 空白
+2025-03-30 21:18:20,449 - INFO - 检测到字幕间隙: 759080ms -> 762660ms (持续 3580ms)
+2025-03-30 21:18:20,576 - INFO - 已添加间隙空白音频: 3580ms
+2025-03-30 21:18:20,783 - INFO - 添加 3910ms 空白
+2025-03-30 21:18:20,784 - INFO - 检测到字幕间隙: 770932ms -> 771076ms (持续 144ms)
+2025-03-30 21:18:20,889 - INFO - 已添加间隙空白音频: 144ms
+2025-03-30 21:18:21,097 - INFO - 添加 11482ms 空白
+2025-03-30 21:18:21,099 - INFO - 检测到字幕间隙: 786920ms -> 787660ms (持续 740ms)
+2025-03-30 21:18:21,213 - INFO - 已添加间隙空白音频: 740ms
+2025-03-30 21:18:21,415 - WARNING - 语音长度超出字幕时间 341ms, 累计超时: 341ms
+2025-03-30 21:18:21,415 - INFO - 检测到字幕间隙: 791316ms -> 791388ms (持续 72ms)
+2025-03-30 21:18:21,415 - INFO - 从间隙中减去 72ms 的累积超时，剩余间隙: 0ms, 剩余累积超时: 269ms
+2025-03-30 21:18:21,621 - INFO - 从需要添加的空白中减去 269ms 的累积超时，剩余需添加空白: 2636ms, 剩余累积超时: 0ms
+2025-03-30 21:18:21,622 - INFO - 添加 2636ms 空白
+2025-03-30 21:18:21,622 - INFO - 合并临时片段 (共 10 个)
+2025-03-30 21:18:21,868 - INFO - 保存临时文件: resources/audios/combined_temp_13.mp3
+2025-03-30 21:18:27,944 - INFO - 检测到字幕间隙: 798838ms -> 798934ms (持续 96ms)
+2025-03-30 21:18:28,047 - INFO - 已添加间隙空白音频: 96ms
+2025-03-30 21:18:28,239 - WARNING - 语音长度超出字幕时间 108ms, 累计超时: 108ms
+2025-03-30 21:18:28,239 - INFO - 检测到字幕间隙: 799610ms -> 802670ms (持续 3060ms)
+2025-03-30 21:18:28,240 - INFO - 从间隙中减去 108ms 的累积超时，剩余间隙: 2952ms, 剩余累积超时: 0ms
+2025-03-30 21:18:28,364 - INFO - 已添加间隙空白音频: 2952ms
+2025-03-30 21:18:28,559 - INFO - 添加 1318ms 空白
+2025-03-30 21:18:28,560 - INFO - 检测到字幕间隙: 804850ms -> 828170ms (持续 23320ms)
+2025-03-30 21:18:28,746 - INFO - 已添加间隙空白音频: 23320ms
+2025-03-30 21:18:28,958 - INFO - 添加 8686ms 空白
+2025-03-30 21:18:28,960 - INFO - 检测到字幕间隙: 847122ms -> 847146ms (持续 24ms)
+2025-03-30 21:18:29,059 - INFO - 已添加间隙空白音频: 24ms
+2025-03-30 21:18:29,277 - INFO - 添加 115ms 空白
+2025-03-30 21:18:29,278 - INFO - 检测到字幕间隙: 848750ms -> 850730ms (持续 1980ms)
+2025-03-30 21:18:29,399 - INFO - 已添加间隙空白音频: 1980ms
+2025-03-30 21:18:29,593 - INFO - 添加 2297ms 空白
+2025-03-30 21:18:29,594 - INFO - 合并临时片段 (共 11 个)
+2025-03-30 21:18:29,903 - INFO - 保存临时文件: resources/audios/combined_temp_14.mp3
+2025-03-30 21:18:36,176 - INFO - 检测到字幕间隙: 854046ms -> 854118ms (持续 72ms)
+2025-03-30 21:18:36,287 - INFO - 已添加间隙空白音频: 72ms
+2025-03-30 21:18:36,487 - WARNING - 语音长度超出字幕时间 671ms, 累计超时: 671ms
+2025-03-30 21:18:36,487 - INFO - 检测到字幕间隙: 856686ms -> 856718ms (持续 32ms)
+2025-03-30 21:18:36,488 - INFO - 从间隙中减去 32ms 的累积超时，剩余间隙: 0ms, 剩余累积超时: 639ms
+2025-03-30 21:18:36,692 - INFO - 从需要添加的空白中减去 639ms 的累积超时，剩余需添加空白: 451ms, 剩余累积超时: 0ms
+2025-03-30 21:18:36,692 - INFO - 添加 451ms 空白
+2025-03-30 21:18:36,692 - INFO - 检测到字幕间隙: 859010ms -> 865270ms (持续 6260ms)
+2025-03-30 21:18:36,828 - INFO - 已添加间隙空白音频: 6260ms
+2025-03-30 21:18:37,039 - INFO - 添加 4796ms 空白
+2025-03-30 21:18:37,040 - INFO - 检测到字幕间隙: 874690ms -> 890690ms (持续 16000ms)
+2025-03-30 21:18:37,213 - INFO - 已添加间隙空白音频: 16000ms
+2025-03-30 21:18:37,421 - INFO - 添加 676ms 空白
+2025-03-30 21:18:37,422 - INFO - 检测到字幕间隙: 892750ms -> 894210ms (持续 1460ms)
+2025-03-30 21:18:37,537 - INFO - 已添加间隙空白音频: 1460ms
+2025-03-30 21:18:37,734 - INFO - 添加 3217ms 空白
+2025-03-30 21:18:37,735 - INFO - 合并临时片段 (共 10 个)
+2025-03-30 21:18:38,071 - INFO - 保存临时文件: resources/audios/combined_temp_15.mp3
+2025-03-30 21:18:44,792 - INFO - 检测到字幕间隙: 899830ms -> 976260ms (持续 76430ms)
+2025-03-30 21:18:45,120 - INFO - 已添加间隙空白音频: 76430ms
+2025-03-30 21:18:45,323 - INFO - 添加 5153ms 空白
+2025-03-30 21:18:45,325 - INFO - 检测到字幕间隙: 983320ms -> 996980ms (持续 13660ms)
+2025-03-30 21:18:45,479 - INFO - 已添加间隙空白音频: 13660ms
+2025-03-30 21:18:45,681 - INFO - 添加 51ms 空白
+2025-03-30 21:18:45,681 - INFO - 检测到字幕间隙: 998520ms -> 1008400ms (持续 9880ms)
+2025-03-30 21:18:45,830 - INFO - 已添加间隙空白音频: 9880ms
+2025-03-30 21:18:46,034 - INFO - 添加 2864ms 空白
+2025-03-30 21:18:46,034 - INFO - 检测到字幕间隙: 1013380ms -> 1021600ms (持续 8220ms)
+2025-03-30 21:18:46,180 - INFO - 已添加间隙空白音频: 8220ms
+2025-03-30 21:18:46,384 - INFO - 添加 1487ms 空白
+2025-03-30 21:18:46,385 - INFO - 检测到字幕间隙: 1025020ms -> 1027120ms (持续 2100ms)
+2025-03-30 21:18:46,509 - INFO - 已添加间隙空白音频: 2100ms
+2025-03-30 21:18:46,708 - INFO - 添加 1008ms 空白
+2025-03-30 21:18:46,708 - INFO - 合并临时片段 (共 11 个)
+2025-03-30 21:18:47,090 - INFO - 保存临时文件: resources/audios/combined_temp_16.mp3
+2025-03-30 21:18:54,440 - INFO - 检测到字幕间隙: 1029460ms -> 1033289ms (持续 3829ms)
+2025-03-30 21:18:54,572 - INFO - 已添加间隙空白音频: 3829ms
+2025-03-30 21:18:54,774 - INFO - 添加 28425ms 空白
+2025-03-30 21:18:54,778 - INFO - 检测到字幕间隙: 1064170ms -> 1094870ms (持续 30700ms)
+2025-03-30 21:18:54,983 - INFO - 已添加间隙空白音频: 30700ms
+2025-03-30 21:18:55,185 - INFO - 添加 813ms 空白
+2025-03-30 21:18:55,185 - INFO - 检测到字幕间隙: 1096650ms -> 1099430ms (持续 2780ms)
+2025-03-30 21:18:55,312 - INFO - 已添加间隙空白音频: 2780ms
+2025-03-30 21:18:55,515 - INFO - 添加 1495ms 空白
+2025-03-30 21:18:55,515 - INFO - 检测到字幕间隙: 1102910ms -> 1102950ms (持续 40ms)
+2025-03-30 21:18:55,613 - INFO - 已添加间隙空白音频: 40ms
+2025-03-30 21:18:55,821 - INFO - 添加 1529ms 空白
+2025-03-30 21:18:55,821 - INFO - 检测到字幕间隙: 1106046ms -> 1106118ms (持续 72ms)
+2025-03-30 21:18:55,929 - INFO - 已添加间隙空白音频: 72ms
+2025-03-30 21:18:56,129 - INFO - 添加 2661ms 空白
+2025-03-30 21:18:56,130 - INFO - 合并临时片段 (共 11 个)
+2025-03-30 21:18:56,565 - INFO - 保存临时文件: resources/audios/combined_temp_17.mp3
+2025-03-30 21:19:04,410 - INFO - 检测到字幕间隙: 1111130ms -> 1115350ms (持续 4220ms)
+2025-03-30 21:19:04,539 - INFO - 已添加间隙空白音频: 4220ms
+2025-03-30 21:19:04,743 - WARNING - 语音长度超出字幕时间 1718ms, 累计超时: 1718ms
+2025-03-30 21:19:04,743 - INFO - 合并临时片段 (共 3 个)
+2025-03-30 21:19:04,806 - INFO - 保存临时文件: resources/audios/combined_temp_18.mp3
+2025-03-30 21:19:12,781 - WARNING - 最终仍有 1718ms 的累积超时未能抵消
+2025-03-30 21:19:12,782 - INFO - 开始最终合并
+2025-03-30 21:19:12,782 - INFO - 导出最终文件: resources/audios/final_output.mp3
+2025-03-30 21:19:19,139 - INFO - 整体音频统计: 总计1345个汉字, 平均每个汉字831.22ms
+2025-03-30 21:19:19,139 - INFO - ================================================================================
+2025-03-30 21:19:19,139 - INFO - 处理完成! 总耗时: 298.11 秒
+2025-03-30 21:19:19,139 - INFO - 最终音频文件: resources/audios/final_output.mp3
+2025-03-30 21:19:19,139 - INFO - 音频长度: 1117.99 秒
+2025-03-30 21:19:19,139 - INFO - 成功处理 91/91 个段落 (100.0%)
+2025-03-30 21:19:19,139 - INFO - 字幕总时长: 1116.27 秒
+2025-03-30 21:19:19,140 - INFO - 音频时长与字幕时长差异: 1.72 秒
+2025-03-30 21:19:19,140 - INFO - ================================================================================
