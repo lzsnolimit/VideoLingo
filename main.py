@@ -13,6 +13,7 @@ from translate_subtitles import translate_srt_file
 
 def main():
     url = "https://youtube.com/watch?v=A_5Nd3vAG9k"
+    video_name = url.split("=")[1]
     
     #第一步：下载视频和音频
     # 使用默认参数下载视频（默认类型为video，质量为best）
@@ -57,7 +58,7 @@ def main():
     
     #第四步：将汉语字幕转换为语音
     # 使用process_subtitles函数处理字幕文件
-    generated_audio = process_subtitles(translated_subtitle, output_dir="resources/audios")
+    generated_audio = process_subtitles(translated_subtitle, output_dir=f"resources/audios/{video_name}",file_name=video_name)
     return generated_audio
 
 if __name__ == "__main__":

@@ -177,7 +177,7 @@ def create_silence(duration, output_path=None):
         silence.export(output_path, format="mp3", bitrate="320k")
     return silence
 
-def process_subtitles(subtitle_file, output_dir="resources/audio"):
+def process_subtitles(subtitle_file, output_dir="resources/audios",file_name):
     """
     处理字幕文件，生成对应的语音文件
     1. 解析字幕
