@@ -3,6 +3,8 @@
 
 import sys
 import os
+
+from merge_audio import merge_audio
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from audio_to_subtitle import assembly_audio_to_subtitle
@@ -58,21 +60,10 @@ def main():
     
     #第四步：将汉语字幕转换为语音
     # 使用process_subtitles函数处理字幕文件
-    generated_audio = process_subtitles(translated_subtitle, output_dir=f"resources/audios/{video_name}",file_name=video_name)
+    generated_audio = process_subtitles(translated_subtitle, video_name, output_dir=f"resources/audios/{video_name}")
     return generated_audio
 
 if __name__ == "__main__":
     # 完整流程测试
-    print(main())
-    
-    # # 单独测试字幕翻译和语音生成
-    # input_srt = "resources/transcripts/merger_A_5Nd3vAG9k.srt"
-    # output_srt = "resources/transcripts/merger_A_5Nd3vAG9k_cn.srt"
-    
-    # # 翻译字幕
-    # translated_subtitle = translate_srt_file(input_srt, output_srt)
-    # print(f"中文字幕文件已保存至: {translated_subtitle}")
-    
-    # # # 根据翻译后的字幕生成语音
-    # generated_audio = process_subtitles(translated_subtitle, output_dir="resources/audios")
-    # print(f"生成的音频文件: {generated_audio}")
+    # print(main())
+    merge_audio(original_video="resources/videos/merger_A_5Nd3vAG9k.mp4", original_audio="resources/audios/A_5Nd3vAG9k.mp3", speaking_audio="resources/audios/A_5Nd3vAG9k/A_5Nd3vAG9k.mp3", output_filename="resources/results/A_5Nd3vAG9k.mp4")

@@ -2,3 +2,7 @@ yt-dlp
 assemblyai
 python-dotenv
 openai
+ffmpeg-python
+httpx
+fish-audio-sdk
+demucs
