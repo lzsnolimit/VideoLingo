@@ -63,7 +63,7 @@ def process(url):
     chinese_subtitle = os.path.join(os.path.dirname(subtitle_result), f"{name}_cn{ext}")
     
     # 调用translate_srt_file函数将英文字幕翻译为中文字幕
-    max_attempts = 3
+    max_attempts = 5
     attempt = 0
     translated_subtitle = None
     

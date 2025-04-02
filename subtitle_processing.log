@@ -5217,3 +5217,736 @@ Error opening input files: Invalid data found when processing input
 2025-04-02 00:17:05,727 - INFO - 第五步，开始将混合后的音频替换到原始视频中
 2025-04-02 00:41:55,670 - INFO - 最终视频文件已保存至: resources/results/hFZFjoX2cGg&t.mp4
 2025-04-02 00:41:55,670 - INFO - 处理完成，最终视频文件已保存至: resources/results/hFZFjoX2cGg&t.mp4
+2025-04-02 13:29:51,730 - INFO - 第一步，开始下载视频和音频
+2025-04-02 13:29:59,558 - INFO - 下载成功，视频文件保存在: resources/videos/hFZFjoX2cGg.mp4
+2025-04-02 13:29:59,558 - INFO - 下载成功，音频文件保存在: resources/audios/hFZFjoX2cGg.mp3
+2025-04-02 13:29:59,558 - INFO - 第二步，开始将音频转换为字幕
+2025-04-02 13:30:10,695 - INFO - HTTP Request: POST https://api.assemblyai.com/v2/upload "HTTP/1.1 200 OK"
+2025-04-02 13:30:10,841 - INFO - HTTP Request: POST https://api.assemblyai.com/v2/transcript "HTTP/1.1 200 OK"
+2025-04-02 13:30:10,892 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/c27446d9-73ac-4ce2-a367-394d1730545d "HTTP/1.1 200 OK"
+2025-04-02 13:30:13,957 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/c27446d9-73ac-4ce2-a367-394d1730545d "HTTP/1.1 200 OK"
+2025-04-02 13:30:17,082 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/c27446d9-73ac-4ce2-a367-394d1730545d "HTTP/1.1 200 OK"
+2025-04-02 13:30:20,142 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/c27446d9-73ac-4ce2-a367-394d1730545d "HTTP/1.1 200 OK"
+2025-04-02 13:30:23,206 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/c27446d9-73ac-4ce2-a367-394d1730545d "HTTP/1.1 200 OK"
+2025-04-02 13:30:26,285 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/c27446d9-73ac-4ce2-a367-394d1730545d "HTTP/1.1 200 OK"
+2025-04-02 13:30:29,341 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/c27446d9-73ac-4ce2-a367-394d1730545d "HTTP/1.1 200 OK"
+2025-04-02 13:30:32,915 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/c27446d9-73ac-4ce2-a367-394d1730545d "HTTP/1.1 200 OK"
+2025-04-02 13:30:33,915 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/c27446d9-73ac-4ce2-a367-394d1730545d/srt "HTTP/1.1 200 OK"
+2025-04-02 13:30:33,922 - INFO - 字幕文件已保存至: resources/transcripts/merger_hFZFjoX2cGg.srt
+2025-04-02 13:30:33,923 - INFO - 第三步，开始将字幕转换为汉语字幕
+2025-04-02 13:30:33,923 - INFO - 尝试翻译字幕，第1次尝试
+2025-04-02 13:30:33,923 - INFO - 开始处理字幕文件: resources/transcripts/merger_hFZFjoX2cGg.srt
+2025-04-02 13:30:33,923 - INFO - 输出文件路径: resources/transcripts/merger_hFZFjoX2cGg_cn.srt
+2025-04-02 13:30:33,923 - INFO - 开始解析SRT文件: resources/transcripts/merger_hFZFjoX2cGg.srt
+2025-04-02 13:30:33,923 - INFO - 成功解析 62 条字幕
+2025-04-02 13:30:33,923 - INFO - 成功解析到 62 条字幕
+2025-04-02 13:30:33,923 - INFO - 开始分析字幕内容...
+2025-04-02 13:30:33,923 - INFO - 开始分析字幕内容
+2025-04-02 13:30:34,552 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-04-02 13:30:58,700 - INFO - 内容分析完成
+2025-04-02 13:30:58,701 - INFO - 内容分析完成
+2025-04-02 13:30:58,701 - INFO - 开始翻译字幕...
+2025-04-02 13:30:58,701 - INFO - 开始翻译 62 条字幕
+2025-04-02 13:31:00,255 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-04-02 13:32:00,173 - INFO - Retrying request to /chat/completions in 0.491668 seconds
+2025-04-02 13:32:01,224 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-04-02 13:33:16,788 - ERROR - 翻译时出错: list index out of range
+Traceback (most recent call last):
+  File "/Users/zhongshanlv/Workplaces/magic_video/translate_subtitles.py", line 231, in translate_text_with_ai
+    translated_text = response.choices[1].message.content
+IndexError: list index out of range
+2025-04-02 13:33:16,788 - WARNING - 由于翻译失败，将返回原文本
+2025-04-02 13:33:16,788 - INFO - 翻译完成!
+2025-04-02 13:33:16,788 - INFO - 开始创建翻译后的SRT文件: resources/transcripts/merger_hFZFjoX2cGg_cn.srt
+2025-04-02 13:33:16,790 - INFO - 翻译后的SRT文件已保存: resources/transcripts/merger_hFZFjoX2cGg_cn.srt
+2025-04-02 13:33:16,790 - INFO - 翻译后的字幕已保存至: resources/transcripts/merger_hFZFjoX2cGg_cn.srt
+2025-04-02 13:33:16,790 - INFO - 保存翻译日志到: resources/transcripts/merger_hFZFjoX2cGg_translation_log.txt
+2025-04-02 13:33:16,790 - INFO - 翻译日志保存成功
+2025-04-02 13:33:16,791 - INFO - 翻译日志已保存至: resources/transcripts/merger_hFZFjoX2cGg_translation_log.txt
+2025-04-02 13:33:16,791 - INFO - 翻译成功，第1次尝试
+2025-04-02 13:33:16,791 - INFO - 中文字幕文件已保存至: resources/transcripts/merger_hFZFjoX2cGg_cn.srt
+2025-04-02 13:33:16,791 - INFO - 第四步，开始将汉语字幕转换为语音
+2025-04-02 13:33:16,791 - INFO - ================================================================================
+2025-04-02 13:33:16,791 - INFO - 开始处理字幕转语音任务
+2025-04-02 13:33:16,791 - INFO - 字幕文件: resources/transcripts/merger_hFZFjoX2cGg_cn.srt
+2025-04-02 13:33:16,791 - INFO - 输出目录: resources/audios/hFZFjoX2cGg&t
+2025-04-02 13:33:16,791 - INFO - 输出目录已准备: resources/audios/hFZFjoX2cGg&t
+2025-04-02 13:33:16,791 - INFO - 开始解析字幕文件: resources/transcripts/merger_hFZFjoX2cGg_cn.srt
+2025-04-02 13:33:16,791 - INFO - 成功读取字幕文件，大小: 23085 字节
+2025-04-02 13:33:16,792 - INFO - 找到 62 个字幕片段
+2025-04-02 13:33:16,792 - INFO - 字幕解析完成，耗时: 0.00 秒
+2025-04-02 13:33:16,792 - INFO - 共有 62 个字幕段落需要处理
+2025-04-02 13:33:16,792 - INFO - ==================================================
+2025-04-02 13:33:16,792 - INFO - 第一步：生成所有TTS音频
+2025-04-02 13:33:16,792 - INFO - 处理第 1/62 段字幕 [1.6%]:
+2025-04-02 13:33:16,792 - INFO - 时间: 240ms -> 21448ms (持续 21208ms)
+2025-04-02 13:33:16,792 - INFO - 文本: This is a bird feeder. And everything to my left is my attempt at making it squirrel proof. If they want the bird seed, they will first need to pass through what is basically an eight part ninja warrior obstacle course for squirrels. This course is extremely challenging. It is not for the timid of heart, but out of the gate. I will admit that in hindsight that I completely underestimated my adversary.
+2025-04-02 13:33:16,792 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0000.mp3
+2025-04-02 13:33:17,002 - INFO - 已存在音频长度: 1855ms, 字幕长度: 21208ms
+2025-04-02 13:33:17,002 - INFO - 跳过TTS生成，耗时: 0.21 秒
+2025-04-02 13:33:17,002 - INFO - --------------------------------------------------
+2025-04-02 13:33:17,002 - INFO - 处理第 2/62 段字幕 [3.2%]:
+2025-04-02 13:33:17,002 - INFO - 时间: 21544ms -> 28248ms (持续 6704ms)
+2025-04-02 13:33:17,002 - INFO - 文本: Now, if you're wondering why I would go through all this trouble, we need to go back eight weeks ago when I found myself stuck at home and very bored.
+2025-04-02 13:33:17,002 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0001.mp3
+2025-04-02 13:33:17,188 - INFO - 已存在音频长度: 1855ms, 字幕长度: 6704ms
+2025-04-02 13:33:17,188 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:17,188 - INFO - --------------------------------------------------
+2025-04-02 13:33:17,188 - INFO - 处理第 3/62 段字幕 [4.8%]:
+2025-04-02 13:33:17,188 - INFO - 时间: 28344ms -> 97500ms (持续 69156ms)
+2025-04-02 13:33:17,188 - INFO - 文本: So I installed a bird feeder and decided to become a bird watcher. And it was just so lovely until they showed up. Now, luckily, my bird feeder had a wire cage around it. Big enough for the birds to slip inside, but small enough to prevent the squirrels from getting the food. And that worked really well until right here. For me, this was like the moment in Jurassic park when they realized the velociraptors can open door handles. And once the door was open, it was clear this wasn't their first rodeo. They basically cleared this whole tube of birdseed by the end of the day. Mind you, this bird feeder was advertised as being squirrel proof. So I bought another squirrel proof bird feeder to replace it. It's got this outer cage suspended by some springs. And so if a bird comes and lands here, it doesn't weigh that much and it has access to the seeds. However, if a squirrel comes, it'll grab onto this cage. Its weight will force the springs down, thereby preventing access to the seeds. I have no idea how the squirrels could possibly outsmart this, but let's see. And this one worked exactly as intended. You can see the birds love it. But when the squirrel comes along, the cage shifts down. And now all the seed ports are covered up.
+2025-04-02 13:33:17,188 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0002.mp3
+2025-04-02 13:33:17,376 - INFO - 已存在音频长度: 1567ms, 字幕长度: 69156ms
+2025-04-02 13:33:17,376 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:17,376 - INFO - --------------------------------------------------
+2025-04-02 13:33:17,376 - INFO - 处理第 4/62 段字幕 [6.5%]:
+2025-04-02 13:33:17,376 - INFO - 时间: 97620ms -> 115116ms (持续 17496ms)
+2025-04-02 13:33:17,376 - INFO - 文本: Every time they tried, it was the same results. However, the next morning, this guy manages to unclip the springs that hold the cage up, which means the cage stays in the lowered position where it blocks all the seed openings. Problem with that is now they can get to the lid. But this bird feeder lid doesn't hinge open to give direct access.
+2025-04-02 13:33:17,377 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0003.mp3
+2025-04-02 13:33:17,571 - INFO - 已存在音频长度: 1672ms, 字幕长度: 17496ms
+2025-04-02 13:33:17,571 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:17,571 - INFO - --------------------------------------------------
+2025-04-02 13:33:17,571 - INFO - 处理第 5/62 段字幕 [8.1%]:
+2025-04-02 13:33:17,571 - INFO - 时间: 115268ms -> 127600ms (持续 12332ms)
+2025-04-02 13:33:17,571 - INFO - 文本: So he goes with a different tactic where he now has access to all the bird seed he wants. And so I decided I would try one more bird feeder design. Okay.
+2025-04-02 13:33:17,571 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0004.mp3
+2025-04-02 13:33:17,771 - ERROR - 获取音频时长失败 [resources/audios/hFZFjoX2cGg&t/segment_0004.mp3]: Decoding failed. ffmpeg returned error code: 183
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.6)
+  configuration: --prefix=/usr/local/Cellar/ffmpeg/7.1.1_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[mp3 @ 0x7f9f6df04280] Format mp3 detected only with low score of 1, misdetection possible!
+[mp3 @ 0x7f9f6df04280] Failed to find two consecutive MPEG audio frames.
+[in#0 @ 0x7f9f6e931240] Error opening input: Invalid data found when processing input
+Error opening input file resources/audios/hFZFjoX2cGg&t/segment_0004.mp3.
+Error opening input files: Invalid data found when processing input
+
+2025-04-02 13:33:17,771 - INFO - 已存在音频长度: 0ms, 字幕长度: 12332ms
+2025-04-02 13:33:17,771 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:17,771 - INFO - --------------------------------------------------
+2025-04-02 13:33:17,771 - INFO - 处理第 6/62 段字幕 [9.7%]:
+2025-04-02 13:33:17,771 - INFO - 时间: 128070ms -> 131198ms (持续 3128ms)
+2025-04-02 13:33:17,771 - INFO - 文本: Wow. It almost feels intentional at this point.
+2025-04-02 13:33:17,772 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0005.mp3
+2025-04-02 13:33:17,990 - INFO - 已存在音频长度: 24189ms, 字幕长度: 3128ms
+2025-04-02 13:33:17,990 - INFO - 跳过TTS生成，耗时: 0.22 秒
+2025-04-02 13:33:17,990 - INFO - --------------------------------------------------
+2025-04-02 13:33:17,990 - INFO - 处理第 7/62 段字幕 [11.3%]:
+2025-04-02 13:33:17,990 - INFO - 时间: 131254ms -> 140670ms (持续 9416ms)
+2025-04-02 13:33:17,990 - INFO - 文本: This one's supposed to work well because it's got this baffle which is supposed to keep the squirrels from just coming straight down and getting to the seeds. And more importantly, there's no way for them to Rip this off.
+2025-04-02 13:33:17,991 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0006.mp3
+2025-04-02 13:33:18,197 - INFO - 已存在音频长度: 11468ms, 字幕长度: 9416ms
+2025-04-02 13:33:18,197 - INFO - 跳过TTS生成，耗时: 0.21 秒
+2025-04-02 13:33:18,197 - INFO - --------------------------------------------------
+2025-04-02 13:33:18,197 - INFO - 处理第 8/62 段字幕 [12.9%]:
+2025-04-02 13:33:18,197 - INFO - 时间: 140790ms -> 144206ms (持续 3416ms)
+2025-04-02 13:33:18,197 - INFO - 文本: We'll see. This one debuted to similar results.
+2025-04-02 13:33:18,197 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0007.mp3
+2025-04-02 13:33:18,386 - INFO - 已存在音频长度: 3161ms, 字幕长度: 3416ms
+2025-04-02 13:33:18,387 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:18,387 - INFO - --------------------------------------------------
+2025-04-02 13:33:18,387 - INFO - 处理第 9/62 段字幕 [14.5%]:
+2025-04-02 13:33:18,387 - INFO - 时间: 144358ms -> 164148ms (持续 19790ms)
+2025-04-02 13:33:18,387 - INFO - 文本: As he hangs by a few toes. This is when I really started to gain an appreciation for what they were capable of. It definitely seemed like this bird feeder was their favorite. Okay, yeah, they're flexing on me for sure. And at this point, a plan was forming in my head. But just to be thorough, I moved the post away from the fence. And I can't say I was surprised when they just climbed it.
+2025-04-02 13:33:18,387 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0008.mp3
+2025-04-02 13:33:18,589 - INFO - 已存在音频长度: 14211ms, 字幕长度: 19790ms
+2025-04-02 13:33:18,590 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:18,590 - INFO - --------------------------------------------------
+2025-04-02 13:33:18,590 - INFO - 处理第 10/62 段字幕 [16.1%]:
+2025-04-02 13:33:18,590 - INFO - 时间: 164204ms -> 175364ms (持续 11160ms)
+2025-04-02 13:33:18,590 - INFO - 文本: Nor was I surprised to see they could shimmy up and down a small metal pole, or even a large one for that matter. And whether they could climb a certain pole material was a moot point anyways. Because of this.
+2025-04-02 13:33:18,590 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0009.mp3
+2025-04-02 13:33:18,790 - INFO - 已存在音频长度: 12669ms, 字幕长度: 11160ms
+2025-04-02 13:33:18,790 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:18,790 - INFO - --------------------------------------------------
+2025-04-02 13:33:18,790 - INFO - 处理第 11/62 段字幕 [17.7%]:
+2025-04-02 13:33:18,790 - INFO - 时间: 175532ms -> 178916ms (持续 3384ms)
+2025-04-02 13:33:18,790 - INFO - 文本: Look at this. These guys are basically freaking rodent sized.
+2025-04-02 13:33:18,790 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0010.mp3
+2025-04-02 13:33:18,981 - INFO - 已存在音频长度: 4859ms, 字幕长度: 3384ms
+2025-04-02 13:33:18,981 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:18,981 - INFO - --------------------------------------------------
+2025-04-02 13:33:18,981 - INFO - 处理第 12/62 段字幕 [19.4%]:
+2025-04-02 13:33:18,981 - INFO - 时间: 178948ms -> 188980ms (持续 10032ms)
+2025-04-02 13:33:18,981 - INFO - 文本: Simone Biles. And on some level, this is what it felt like when someone stole a package from my porch that didn't belong to them. And I harnessed that indignation, spending a year designing the glitter bomb bait package.
+2025-04-02 13:33:18,981 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0011.mp3
+2025-04-02 13:33:19,175 - INFO - 已存在音频长度: 9848ms, 字幕长度: 10032ms
+2025-04-02 13:33:19,176 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:19,176 - INFO - --------------------------------------------------
+2025-04-02 13:33:19,176 - INFO - 处理第 13/62 段字幕 [21.0%]:
+2025-04-02 13:33:19,176 - INFO - 时间: 189640ms -> 201168ms (持续 11528ms)
+2025-04-02 13:33:19,176 - INFO - 文本: Hello. Complete with special fragrances. If I could design a package to deter thieves, could I design a bird feeder to deter squirrels?
+2025-04-02 13:33:19,176 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0012.mp3
+2025-04-02 13:33:19,367 - INFO - 已存在音频长度: 3004ms, 字幕长度: 11528ms
+2025-04-02 13:33:19,367 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:19,367 - INFO - --------------------------------------------------
+2025-04-02 13:33:19,367 - INFO - 处理第 14/62 段字幕 [22.6%]:
+2025-04-02 13:33:19,367 - INFO - 时间: 201264ms -> 208500ms (持续 7236ms)
+2025-04-02 13:33:19,367 - INFO - 文本: And so, after a couple weeks of brainstorming, designing and building with my buddy John, we put it all together in this 22nd build montage.
+2025-04-02 13:33:19,368 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0013.mp3
+2025-04-02 13:33:19,574 - INFO - 已存在音频长度: 11886ms, 字幕长度: 7236ms
+2025-04-02 13:33:19,574 - INFO - 跳过TTS生成，耗时: 0.21 秒
+2025-04-02 13:33:19,574 - INFO - --------------------------------------------------
+2025-04-02 13:33:19,574 - INFO - 处理第 15/62 段字幕 [24.2%]:
+2025-04-02 13:33:19,574 - INFO - 时间: 225240ms -> 243016ms (持续 17776ms)
+2025-04-02 13:33:19,574 - INFO - 文本: Here are the basic elements. For starters, here's where I've placed their favorite bird feeder at the end of the course. And to sweeten the deal, right below that there's a trap door. And if they step here, it releases a butt ton of walnuts and unfurls some celebratory banners. Why walnuts?
+2025-04-02 13:33:19,574 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0014.mp3
+2025-04-02 13:33:19,776 - INFO - 已存在音频长度: 13140ms, 字幕长度: 17776ms
+2025-04-02 13:33:19,776 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:19,776 - INFO - --------------------------------------------------
+2025-04-02 13:33:19,776 - INFO - 处理第 16/62 段字幕 [25.8%]:
+2025-04-02 13:33:19,776 - INFO - 时间: 243088ms -> 261720ms (持续 18632ms)
+2025-04-02 13:33:19,776 - INFO - 文本: I'm glad you asked. I'm using walnuts because over the course of a week, I put out a buffet of seven different nuts and seeds. And all four times I repeated the experiment. Walnuts were always the one they ate first. What's great about placing this here is it levels the playing field as the birds can fly up and get as much food as they want anytime they need it.
+2025-04-02 13:33:19,776 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0015.mp3
+2025-04-02 13:33:19,974 - INFO - 已存在音频长度: 3762ms, 字幕长度: 18632ms
+2025-04-02 13:33:19,974 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:19,974 - INFO - --------------------------------------------------
+2025-04-02 13:33:19,974 - INFO - 处理第 17/62 段字幕 [27.4%]:
+2025-04-02 13:33:19,974 - INFO - 时间: 261760ms -> 305904ms (持续 44144ms)
+2025-04-02 13:33:19,974 - INFO - 文本: The squirrels, however, will have to work for it, because the only way to make it to this platform is if they work their way through my eight part ninja warrior obstacle course. Which all starts right here. This is the only platform on the course that has a pole that isn't covered and slippery stuff. Which means this is where they have to climb up to enter the course. If they try and get up any other way, they can't keep a good grip and they just slide back down. So the first challenge is the bridge of instability. Now, this may look easy, but the trick is it attaches at A single point on each end. And from a physics standpoint, that makes it no different than trying to crawl across a tightrope. It's the same deceptive principle with that one carnival game that's so impossible, I broke it down in another video where I used physics to show which carnival games were basically scams and the science on how to beat them.
+2025-04-02 13:33:19,974 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0016.mp3
+2025-04-02 13:33:20,180 - INFO - 已存在音频长度: 15125ms, 字幕长度: 44144ms
+2025-04-02 13:33:20,180 - INFO - 跳过TTS生成，耗时: 0.21 秒
+2025-04-02 13:33:20,180 - INFO - --------------------------------------------------
+2025-04-02 13:33:20,180 - INFO - 处理第 18/62 段字幕 [29.0%]:
+2025-04-02 13:33:20,180 - INFO - 时间: 305992ms -> 322896ms (持续 16904ms)
+2025-04-02 13:33:20,180 - INFO - 文本: Next up, the maze of a thousand corridors. This one's a bit more cerebral, but if they make it through that, it will bring them to the pitchfork tumblers, which are inspired by the show Wipeout. But unlike Wipeout, I should point out that all these contraptions are squirrel friendly, and even with a little back force, they will break away and stop spinning.
+2025-04-02 13:33:20,180 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0017.mp3
+2025-04-02 13:33:20,372 - INFO - 已存在音频长度: 3004ms, 字幕长度: 16904ms
+2025-04-02 13:33:20,372 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:20,372 - INFO - --------------------------------------------------
+2025-04-02 13:33:20,372 - INFO - 处理第 19/62 段字幕 [30.6%]:
+2025-04-02 13:33:20,372 - INFO - 时间: 323008ms -> 328820ms (持续 5812ms)
+2025-04-02 13:33:20,372 - INFO - 文本: Now, if they can make it past the pitchfork tumblers of treachery, they come to one of my personal favorites, the Homewrecker.
+2025-04-02 13:33:20,372 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0018.mp3
+2025-04-02 13:33:20,574 - INFO - 已存在音频长度: 6269ms, 字幕长度: 5812ms
+2025-04-02 13:33:20,574 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:20,574 - INFO - --------------------------------------------------
+2025-04-02 13:33:20,574 - INFO - 处理第 20/62 段字幕 [32.3%]:
+2025-04-02 13:33:20,574 - INFO - 时间: 335210ms -> 403790ms (持续 68580ms)
+2025-04-02 13:33:20,574 - INFO - 文本: I put her in to tempt the squirrel to lose focus on the real prize at the end of the course. Because this pad has a pressure sensor underneath it, and it connects to a microcontroller that has a relay that connects to a solenoid that connects to a pneumatic piston that connects back to this platform with the pressure sensor. And so if they stand here for more than three seconds, they've got to start the course all over again. Next up is the Slinky Bridge of Deception. I've suspended a juicy walnut right in the middle, but there's no way this bridge will support their weight, so it'll be interesting to see how they approach it. The sixth challenge is called the Tourist Trap. It's actually a bit of a reward for making it this far. If the squirrel sticks their head through this board my wife painted, it's just a photo op they can hang on the wall of their tiny squirrel nest. I'll place a walnut here as an incentive for them not to miss this unique opportunity. The penultimate challenge are the quad steps of Great elevation. This is taken straight from Ninja Warrior, and this is super tricky because these paths are all totally smoothed and placed at a 45 degree incline. And now for the last challenge. At this point, they are a mere few feet away from their ultimate goal. But if they're not careful, they'll have to deal with the orbital assist platform ak the final countdown, AKA it's not a catapult, it's a squirrel, a pult.
+2025-04-02 13:33:20,574 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0019.mp3
+2025-04-02 13:33:20,768 - INFO - 已存在音频长度: 6922ms, 字幕长度: 68580ms
+2025-04-02 13:33:20,769 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:20,769 - INFO - --------------------------------------------------
+2025-04-02 13:33:20,769 - INFO - 处理第 21/62 段字幕 [33.9%]:
+2025-04-02 13:33:20,769 - INFO - 时间: 406210ms -> 427514ms (持续 21304ms)
+2025-04-02 13:33:20,769 - INFO - 文本: Which means they now have to go back and start all the way over from the beginning. Now, if they want to avoid that fate, they just need to stand on this pad for less than three seconds. But once again, I've placed a diversion here. This one projects an optical illusion of anything you place in the bottom of this dish. It's actually super trippy and looks even more impressive in real life because the projected image is 3D. They're like nine bucks on Amazon.
+2025-04-02 13:33:20,769 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0020.mp3
+2025-04-02 13:33:20,983 - INFO - 已存在音频长度: 25025ms, 字幕长度: 21304ms
+2025-04-02 13:33:20,984 - INFO - 跳过TTS生成，耗时: 0.21 秒
+2025-04-02 13:33:20,984 - INFO - --------------------------------------------------
+2025-04-02 13:33:20,984 - INFO - 处理第 22/62 段字幕 [35.5%]:
+2025-04-02 13:33:20,984 - INFO - 时间: 427562ms -> 476180ms (持续 48618ms)
+2025-04-02 13:33:20,984 - INFO - 文本: And I put a link that explains the juicy physics of how they work in video description. Now, with regards to squirrel safety, I know I seem to have this reputation of improvised high speed projectiles, and so this one might worry a few animal lovers out there, including my wife. We have five pets and one child, and the child was the only one I had a say in. So rest assured, I can adjust the pressure on the piston, and we'll be staying way below any launch force that could hurt any of our adorable backyard contestants. And so, finally, after making it through all that, we're back here at the world's most satisfying bird feeder. And as far as I'm concerned, if they make it here, they've earned the right to gorge next to the birds for as long as they want. And so, after nearly a month of prep work, the course was officially open for business.
+2025-04-02 13:33:20,984 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0021.mp3
+2025-04-02 13:33:21,206 - INFO - 已存在音频长度: 35605ms, 字幕长度: 48618ms
+2025-04-02 13:33:21,206 - INFO - 跳过TTS生成，耗时: 0.22 秒
+2025-04-02 13:33:21,206 - INFO - --------------------------------------------------
+2025-04-02 13:33:21,206 - INFO - 处理第 23/62 段字幕 [37.1%]:
+2025-04-02 13:33:21,206 - INFO - 时间: 478160ms -> 509794ms (持续 31634ms)
+2025-04-02 13:33:21,206 - INFO - 文本: They could smell the walnuts at the final station, and you could see the gears turning because right above that was their favorite bird feeder. And so, before long, we had our first contender that didn't exactly go as planned. So Rick decides to regroup.
+2025-04-02 13:33:21,206 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0022.mp3
+2025-04-02 13:33:21,418 - INFO - 已存在音频长度: 26175ms, 字幕长度: 31634ms
+2025-04-02 13:33:21,418 - INFO - 跳过TTS生成，耗时: 0.21 秒
+2025-04-02 13:33:21,418 - INFO - --------------------------------------------------
+2025-04-02 13:33:21,418 - INFO - 处理第 24/62 段字幕 [38.7%]:
+2025-04-02 13:33:21,418 - INFO - 时间: 509922ms -> 517790ms (持续 7868ms)
+2025-04-02 13:33:21,418 - INFO - 文本: Speaking of which, that's Rick. There are a total of four competitors that will be attempting the course. First up is Rick, and he weighs five.
+2025-04-02 13:33:21,418 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0023.mp3
+2025-04-02 13:33:21,614 - INFO - 已存在音频长度: 7184ms, 字幕长度: 7868ms
+2025-04-02 13:33:21,615 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:21,615 - INFO - --------------------------------------------------
+2025-04-02 13:33:21,615 - INFO - 处理第 25/62 段字幕 [40.3%]:
+2025-04-02 13:33:21,615 - INFO - 时间: 518310ms -> 525438ms (持续 7128ms)
+2025-04-02 13:33:21,615 - INFO - 文本: I know this because he's actually standing on a custom made scale. Rick is very clever, as you'll see here in a minute, but he also gets spooked easily.
+2025-04-02 13:33:21,615 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0024.mp3
+2025-04-02 13:33:21,809 - INFO - 已存在音频长度: 7105ms, 字幕长度: 7128ms
+2025-04-02 13:33:21,809 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:21,809 - INFO - --------------------------------------------------
+2025-04-02 13:33:21,809 - INFO - 处理第 26/62 段字幕 [41.9%]:
+2025-04-02 13:33:21,809 - INFO - 时间: 525534ms -> 528622ms (持续 3088ms)
+2025-04-02 13:33:21,809 - INFO - 文本: Next up is Marty. He's basically indistinguishable from Rick.
+2025-04-02 13:33:21,810 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0025.mp3
+2025-04-02 13:33:22,007 - INFO - 已存在音频长度: 5930ms, 字幕长度: 3088ms
+2025-04-02 13:33:22,007 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:22,007 - INFO - --------------------------------------------------
+2025-04-02 13:33:22,007 - INFO - 处理第 27/62 段字幕 [43.5%]:
+2025-04-02 13:33:22,007 - INFO - 时间: 528686ms -> 550522ms (持续 21836ms)
+2025-04-02 13:33:22,007 - INFO - 文本: Rick and Marty are inseparable and pretty much spend all their time together as a pair. Our third contender is Frank, also coming in around 500 grams. He's very gutsy. He's also kind of dumb. Finally, we've got my personal favorite, Fat Gus. He's just really charming and will strike a pose if he sees a camera. He also really likes to eat, and he tips the scales at an impressive 800 grams.
+2025-04-02 13:33:22,007 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0026.mp3
+2025-04-02 13:33:22,201 - INFO - 已存在音频长度: 5930ms, 字幕长度: 21836ms
+2025-04-02 13:33:22,202 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:22,202 - INFO - --------------------------------------------------
+2025-04-02 13:33:22,202 - INFO - 处理第 28/62 段字幕 [45.2%]:
+2025-04-02 13:33:22,202 - INFO - 时间: 550586ms -> 575870ms (持续 25284ms)
+2025-04-02 13:33:22,202 - INFO - 文本: While most of the squirrels are kind of particular. Before making a selection and then gracefully leaping away, Fat Gus just goes for it, hands free, just makes himself real comfortable. Here he is laying out with a light snack from the bird feeder. I mean, you can't fault the guy for just clearly appreciating a good meal. So now that you Know our four contenders. Let's get back to Rick. So he hops back on, and he's actually doing better than his first attempt. Just barely.
+2025-04-02 13:33:22,202 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0027.mp3
+2025-04-02 13:33:22,399 - INFO - 已存在音频长度: 3004ms, 字幕长度: 25284ms
+2025-04-02 13:33:22,399 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:22,399 - INFO - --------------------------------------------------
+2025-04-02 13:33:22,399 - INFO - 处理第 29/62 段字幕 [46.8%]:
+2025-04-02 13:33:22,399 - INFO - 时间: 576860ms -> 579940ms (持续 3080ms)
+2025-04-02 13:33:22,399 - INFO - 文本: This is the best. Because he's like, okay, I got this.
+2025-04-02 13:33:22,399 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0028.mp3
+2025-04-02 13:33:22,611 - INFO - 已存在音频长度: 15830ms, 字幕长度: 3080ms
+2025-04-02 13:33:22,611 - INFO - 跳过TTS生成，耗时: 0.21 秒
+2025-04-02 13:33:22,611 - INFO - --------------------------------------------------
+2025-04-02 13:33:22,611 - INFO - 处理第 30/62 段字幕 [48.4%]:
+2025-04-02 13:33:22,611 - INFO - 时间: 580060ms -> 583000ms (持续 2940ms)
+2025-04-02 13:33:22,611 - INFO - 文本: Never mind. Well, maybe I. No, I definitely don't.
+2025-04-02 13:33:22,611 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0029.mp3
+2025-04-02 13:33:22,808 - INFO - 已存在音频长度: 5799ms, 字幕长度: 2940ms
+2025-04-02 13:33:22,809 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:22,809 - INFO - --------------------------------------------------
+2025-04-02 13:33:22,809 - INFO - 处理第 31/62 段字幕 [50.0%]:
+2025-04-02 13:33:22,809 - INFO - 时间: 583420ms -> 587680ms (持续 4260ms)
+2025-04-02 13:33:22,809 - INFO - 文本: And this was the exact moment I realized I just might be outmatched here.
+2025-04-02 13:33:22,809 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0030.mp3
+2025-04-02 13:33:23,000 - INFO - 已存在音频长度: 2273ms, 字幕长度: 4260ms
+2025-04-02 13:33:23,000 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:23,000 - INFO - --------------------------------------------------
+2025-04-02 13:33:23,000 - INFO - 处理第 32/62 段字幕 [51.6%]:
+2025-04-02 13:33:23,000 - INFO - 时间: 593180ms -> 600000ms (持续 6820ms)
+2025-04-02 13:33:23,000 - INFO - 文本: Marty was watching Rick, and after a quick dip of his toes in the water, adopts his strategy right out of the gate. Oof. So close.
+2025-04-02 13:33:23,000 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0031.mp3
+2025-04-02 13:33:23,189 - INFO - 已存在音频长度: 2952ms, 字幕长度: 6820ms
+2025-04-02 13:33:23,189 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:23,189 - INFO - --------------------------------------------------
+2025-04-02 13:33:23,189 - INFO - 处理第 33/62 段字幕 [53.2%]:
+2025-04-02 13:33:23,189 - INFO - 时间: 600300ms -> 610910ms (持续 10610ms)
+2025-04-02 13:33:23,189 - INFO - 文本: But an excellent recovery. And Fat Gus, perhaps predictably, comes up a little short. Which brings us to the maze of a thousand corridors, which, to be honest, they mastered this one pretty quickly.
+2025-04-02 13:33:23,189 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0032.mp3
+2025-04-02 13:33:23,384 - INFO - 已存在音频长度: 3474ms, 字幕长度: 10610ms
+2025-04-02 13:33:23,384 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:23,384 - INFO - --------------------------------------------------
+2025-04-02 13:33:23,384 - INFO - 处理第 34/62 段字幕 [54.8%]:
+2025-04-02 13:33:23,384 - INFO - 时间: 611970ms -> 614590ms (持续 2620ms)
+2025-04-02 13:33:23,384 - INFO - 文本: Here's a solid run from Fat Gus.
+2025-04-02 13:33:23,385 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0033.mp3
+2025-04-02 13:33:23,581 - INFO - 已存在音频长度: 4362ms, 字幕长度: 2620ms
+2025-04-02 13:33:23,581 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:23,581 - INFO - --------------------------------------------------
+2025-04-02 13:33:23,581 - INFO - 处理第 35/62 段字幕 [56.5%]:
+2025-04-02 13:33:23,581 - INFO - 时间: 616370ms -> 618954ms (持续 2584ms)
+2025-04-02 13:33:23,581 - INFO - 文本: And now for the pitchfork tumblers of treachery.
+2025-04-02 13:33:23,581 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0034.mp3
+2025-04-02 13:33:23,775 - INFO - 已存在音频长度: 3187ms, 字幕长度: 2584ms
+2025-04-02 13:33:23,775 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:23,775 - INFO - --------------------------------------------------
+2025-04-02 13:33:23,775 - INFO - 处理第 36/62 段字幕 [58.1%]:
+2025-04-02 13:33:23,775 - INFO - 时间: 619082ms -> 621946ms (持续 2864ms)
+2025-04-02 13:33:23,775 - INFO - 文本: Marty was like, yeah, that's a hard pass.
+2025-04-02 13:33:23,775 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0035.mp3
+2025-04-02 13:33:23,975 - INFO - 已存在音频长度: 4545ms, 字幕长度: 2864ms
+2025-04-02 13:33:23,975 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:23,975 - INFO - --------------------------------------------------
+2025-04-02 13:33:23,975 - INFO - 处理第 37/62 段字幕 [59.7%]:
+2025-04-02 13:33:23,975 - INFO - 时间: 622098ms -> 624510ms (持续 2412ms)
+2025-04-02 13:33:23,975 - INFO - 文本: Fat Gus is just like, abort.
+2025-04-02 13:33:23,975 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0036.mp3
+2025-04-02 13:33:24,178 - INFO - 已存在音频长度: 8803ms, 字幕长度: 2412ms
+2025-04-02 13:33:24,178 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:24,178 - INFO - --------------------------------------------------
+2025-04-02 13:33:24,178 - INFO - 处理第 38/62 段字幕 [61.3%]:
+2025-04-02 13:33:24,178 - INFO - 时间: 625090ms -> 628972ms (持续 3882ms)
+2025-04-02 13:33:24,178 - INFO - 文本: Frank is just like, nope. Then he's like, wait a second.
+2025-04-02 13:33:24,178 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0037.mp3
+2025-04-02 13:33:24,370 - INFO - 已存在音频长度: 2586ms, 字幕长度: 3882ms
+2025-04-02 13:33:24,370 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:24,370 - INFO - --------------------------------------------------
+2025-04-02 13:33:24,370 - INFO - 处理第 39/62 段字幕 [62.9%]:
+2025-04-02 13:33:24,370 - INFO - 时间: 629146ms -> 639060ms (持续 9914ms)
+2025-04-02 13:33:24,370 - INFO - 文本: Mm. Still nope. Then Marty flies in real hot over the top. He did make it through, but that's partial credit as far as I'm concerned. And then here's Fat Gus with my favorite attempt by far.
+2025-04-02 13:33:24,371 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0038.mp3
+2025-04-02 13:33:24,573 - INFO - 已存在音频长度: 8255ms, 字幕长度: 9914ms
+2025-04-02 13:33:24,574 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:24,574 - INFO - --------------------------------------------------
+2025-04-02 13:33:24,574 - INFO - 处理第 40/62 段字幕 [64.5%]:
+2025-04-02 13:33:24,574 - INFO - 时间: 644560ms -> 693520ms (持续 48960ms)
+2025-04-02 13:33:24,574 - INFO - 文本: And then Frank shows no fear, which helps him pull off this near flawless run. And finally, Smart Rick surgically weaves his way through essentially untouched. And I should mention the squirrels were Most active from 6 to 10am so every morning I've been getting up before the sunrise to start filming from in my house. Like when of those camouflage nature photographers, only like a suburbanized version. I've also had a handful of streaming cameras rolling 24 7, which has allowed me to make such discoveries as we have the world's worst guard dog. Thanks for the help, pal. Now back to the homewrecker. You can see Rick is instinctively suspicious of this gold digger and only for a brief moment puts his full weight on the platform. I told you he was smart. His buddy Marty, on the other hand, she is a cruel mistress.
+2025-04-02 13:33:24,574 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0039.mp3
+2025-04-02 13:33:24,773 - INFO - 已存在音频长度: 5329ms, 字幕长度: 48960ms
+2025-04-02 13:33:24,773 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:24,773 - INFO - --------------------------------------------------
+2025-04-02 13:33:24,773 - INFO - 处理第 41/62 段字幕 [66.1%]:
+2025-04-02 13:33:24,773 - INFO - 时间: 694260ms -> 715964ms (持续 21704ms)
+2025-04-02 13:33:24,773 - INFO - 文本: And because I know my wife is going to ask me, no, this will not hurt the squirrel for two reasons. Number one, they are amazing like cats and always land on their feet. And two, they themselves were jumping from this height all the time. And in some cases, much higher. In fact, squirrels are one of the few mammals that can survive a fall from any height because they make their terminal velocity so low.
+2025-04-02 13:33:24,773 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0040.mp3
+2025-04-02 13:33:24,969 - INFO - 已存在音频长度: 3474ms, 字幕长度: 21704ms
+2025-04-02 13:33:24,969 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:24,969 - INFO - --------------------------------------------------
+2025-04-02 13:33:24,969 - INFO - 处理第 42/62 段字幕 [67.7%]:
+2025-04-02 13:33:24,969 - INFO - 时间: 716052ms -> 738510ms (持续 22458ms)
+2025-04-02 13:33:24,969 - INFO - 文本: You can see it right here. They make their body as flat as possible, then put their tail back to increase drag. They basically become their own parachute. And then right before they land, they pull in and fully extend their arms and legs to act as shock absorbing landing gear. This is so cool. Now back to the course where even Smart Rick eventually lets his guard down, which is exactly when she strikes.
+2025-04-02 13:33:24,969 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0041.mp3
+2025-04-02 13:33:25,169 - INFO - 已存在音频长度: 4624ms, 字幕长度: 22458ms
+2025-04-02 13:33:25,170 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:25,170 - INFO - --------------------------------------------------
+2025-04-02 13:33:25,170 - INFO - 处理第 43/62 段字幕 [69.4%]:
+2025-04-02 13:33:25,170 - INFO - 时间: 740210ms -> 748830ms (持续 8620ms)
+2025-04-02 13:33:25,170 - INFO - 文本: But just like all the other obstacles so far, after a day or two they'd mastered it. In this case even disregarding her offering of a fresh walnut.
+2025-04-02 13:33:25,170 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0042.mp3
+2025-04-02 13:33:25,400 - INFO - 已存在音频长度: 41979ms, 字幕长度: 8620ms
+2025-04-02 13:33:25,400 - INFO - 跳过TTS生成，耗时: 0.23 秒
+2025-04-02 13:33:25,400 - INFO - --------------------------------------------------
+2025-04-02 13:33:25,400 - INFO - 处理第 44/62 段字幕 [71.0%]:
+2025-04-02 13:33:25,400 - INFO - 时间: 750190ms -> 763730ms (持续 13540ms)
+2025-04-02 13:33:25,400 - INFO - 文本: Now onto the Slinky bridge of deception. And this was the sleeper obstacle. In my book, that is not a large gap which they can easily jump, but having the Slinky there just threw them off somehow. You can see how much Frank is struggling here and he's the brave one.
+2025-04-02 13:33:25,400 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0043.mp3
+2025-04-02 13:33:25,599 - INFO - 已存在音频长度: 11180ms, 字幕长度: 13540ms
+2025-04-02 13:33:25,599 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:25,599 - INFO - --------------------------------------------------
+2025-04-02 13:33:25,599 - INFO - 处理第 45/62 段字幕 [72.6%]:
+2025-04-02 13:33:25,599 - INFO - 时间: 765070ms -> 768770ms (持续 3700ms)
+2025-04-02 13:33:25,599 - INFO - 文本: And Rick only jumps when Marty shows up for emotional support.
+2025-04-02 13:33:25,599 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0044.mp3
+2025-04-02 13:33:25,800 - INFO - 已存在音频长度: 8359ms, 字幕长度: 3700ms
+2025-04-02 13:33:25,800 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:25,800 - INFO - --------------------------------------------------
+2025-04-02 13:33:25,800 - INFO - 处理第 46/62 段字幕 [74.2%]:
+2025-04-02 13:33:25,800 - INFO - 时间: 770190ms -> 781950ms (持续 11760ms)
+2025-04-02 13:33:25,800 - INFO - 文本: But like all the obstacles so far, after a day or two, they'd mastered it. Now onto our third to last obstacle, the tourist trap. And this one was just a freaking delight. A little peanut butter really did the trick here.
+2025-04-02 13:33:25,801 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0045.mp3
+2025-04-02 13:33:25,995 - INFO - 已存在音频长度: 3187ms, 字幕长度: 11760ms
+2025-04-02 13:33:25,995 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:25,995 - INFO - --------------------------------------------------
+2025-04-02 13:33:25,995 - INFO - 处理第 47/62 段字幕 [75.8%]:
+2025-04-02 13:33:25,995 - INFO - 时间: 793370ms -> 796866ms (持续 3496ms)
+2025-04-02 13:33:25,995 - INFO - 文本: Now here comes Fat Gus and I mean, how Fat Gus is this?
+2025-04-02 13:33:25,995 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0046.mp3
+2025-04-02 13:33:26,192 - INFO - 已存在音频长度: 9848ms, 字幕长度: 3496ms
+2025-04-02 13:33:26,192 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:26,192 - INFO - --------------------------------------------------
+2025-04-02 13:33:26,192 - INFO - 处理第 48/62 段字幕 [77.4%]:
+2025-04-02 13:33:26,192 - INFO - 时间: 796938ms -> 800626ms (持续 3688ms)
+2025-04-02 13:33:26,192 - INFO - 文本: He sees the camera and he's like, paint me like one of your French squirrels.
+2025-04-02 13:33:26,192 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0047.mp3
+2025-04-02 13:33:26,392 - INFO - 已存在音频长度: 9561ms, 字幕长度: 3688ms
+2025-04-02 13:33:26,393 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:26,393 - INFO - --------------------------------------------------
+2025-04-02 13:33:26,393 - INFO - 处理第 49/62 段字幕 [79.0%]:
+2025-04-02 13:33:26,393 - INFO - 时间: 800738ms -> 813410ms (持续 12672ms)
+2025-04-02 13:33:26,393 - INFO - 文本: Yeah. No, no takers. Alright, here's another classic Gus, where he looks at the camera. Wait a second. Play that back. And freeze, zoom, enhance.
+2025-04-02 13:33:26,393 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0048.mp3
+2025-04-02 13:33:26,580 - INFO - 已存在音频长度: 2586ms, 字幕长度: 12672ms
+2025-04-02 13:33:26,581 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:26,581 - INFO - --------------------------------------------------
+2025-04-02 13:33:26,581 - INFO - 处理第 50/62 段字幕 [80.6%]:
+2025-04-02 13:33:26,581 - INFO - 时间: 822870ms -> 837054ms (持续 14184ms)
+2025-04-02 13:33:26,581 - INFO - 文本: Well, turns out Fat Gus is not a dude and he's pregnant. Which meant I was suddenly feeling real uncomfortable about all those weight comments. So after a bit of a pivot to smooth things over, we soldiered on to the quad steps of great elevation.
+2025-04-02 13:33:26,581 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0049.mp3
+2025-04-02 13:33:26,778 - INFO - 已存在音频长度: 3605ms, 字幕长度: 14184ms
+2025-04-02 13:33:26,778 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:26,778 - INFO - --------------------------------------------------
+2025-04-02 13:33:26,778 - INFO - 处理第 51/62 段字幕 [82.3%]:
+2025-04-02 13:33:26,778 - INFO - 时间: 837182ms -> 844110ms (持续 6928ms)
+2025-04-02 13:33:26,778 - INFO - 文本: Frank comes in rather confident, almost his demise, but he pulls off the smooth recovery.
+2025-04-02 13:33:26,778 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0050.mp3
+2025-04-02 13:33:26,978 - INFO - 已存在音频长度: 2586ms, 字幕长度: 6928ms
+2025-04-02 13:33:26,978 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:26,978 - INFO - --------------------------------------------------
+2025-04-02 13:33:26,978 - INFO - 处理第 52/62 段字幕 [83.9%]:
+2025-04-02 13:33:26,978 - INFO - 时间: 848210ms -> 882902ms (持续 34692ms)
+2025-04-02 13:33:26,978 - INFO - 文本: So after not much time at all, they were looking pretty good here. In fact, one morning I noticed Marty totally skipped the last step altogether, which I took as a challenge. And so I removed the middle step to see what they would do. And who else but Fantastic Gus? Let's slow that down a bit. They're such amazing jumpers, so I suppose the quick mastery here wasn't a surprise. I mean, this right here is probably a ten foot jump. And here's some classic brave but dumb Frank. He'd already entered the course normally and made it to the home wrecker at least a dozen times by this point. And yet for some reason he decides his 12 foot jump is his best course of action.
+2025-04-02 13:33:26,978 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0051.mp3
+2025-04-02 13:33:27,175 - INFO - 已存在音频长度: 5277ms, 字幕长度: 34692ms
+2025-04-02 13:33:27,176 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:27,176 - INFO - --------------------------------------------------
+2025-04-02 13:33:27,176 - INFO - 处理第 53/62 段字幕 [85.5%]:
+2025-04-02 13:33:27,176 - INFO - 时间: 883086ms -> 927472ms (持续 44386ms)
+2025-04-02 13:33:27,176 - INFO - 文本: Smartrick was the first one to enter the course. So in the end, after about a week of effort, it was fitting he was the one to make it to the jackpot first. And he's so stoked, he apparently wants to run the whole course in reverse. In hindsight, we probably should have made the jackpot a little quieter. Here's Marty, as always, not far behind he's also a bit flighty, as you know, which worked against him here, because down below, Fantastic Gus, ever the opportunist, comes through with a real stroke of brilliance. But pretty soon, Marty comes back like, um, I'm the one who kind of earned that. And then Fantastic Gus is like, you snooze, you lose, sucker. And might I just say, Fantastic Gus, when you sit like that, you don't look an ounce over 700 grams.
+2025-04-02 13:33:27,176 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0052.mp3
+2025-04-02 13:33:27,372 - INFO - 已存在音频长度: 6922ms, 字幕长度: 44386ms
+2025-04-02 13:33:27,372 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:27,372 - INFO - --------------------------------------------------
+2025-04-02 13:33:27,372 - INFO - 处理第 54/62 段字幕 [87.1%]:
+2025-04-02 13:33:27,372 - INFO - 时间: 927626ms -> 957556ms (持续 29930ms)
+2025-04-02 13:33:27,372 - INFO - 文本: Eventually, they learned that sound was a good thing, and they'd quickly return for their reward before Fantastic Gus got any ideas. So here's a single camera shot of a full run, and by the end, all of them could do the full course in less than 40 seconds. And while we're watching, you might be wondering what happened to the squirrel a put. Unfortunately, they didn't really fall for my illusion much. But I'm about to show you the two times they did. And as a promise to my wife, I turned the pressure to only 40% full power. So the acceleration the squirrel would feel is about half a g, which is 10 times less than a typical roller coaster.
+2025-04-02 13:33:27,372 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0053.mp3
+2025-04-02 13:33:27,572 - INFO - 已存在音频长度: 10449ms, 字幕长度: 29930ms
+2025-04-02 13:33:27,573 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:27,573 - INFO - --------------------------------------------------
+2025-04-02 13:33:27,573 - INFO - 处理第 55/62 段字幕 [88.7%]:
+2025-04-02 13:33:27,573 - INFO - 时间: 957698ms -> 979260ms (持续 21562ms)
+2025-04-02 13:33:27,573 - INFO - 文本: Additionally, I never turned on either the Homewrecker trapdoor or the launch platform when I wasn't actively watching from inside my house, where I had a manual override button. Because as safe as it was, something about launching fantastic gusts just didn't feel right. Now what you're about to see is gonna look pretty chaotic, but when we check the slow mo, amazingly, I'll show you how the squirrel is totally in control pretty much the whole time.
+2025-04-02 13:33:27,573 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0054.mp3
+2025-04-02 13:33:27,769 - INFO - 已存在音频长度: 4833ms, 字幕长度: 21562ms
+2025-04-02 13:33:27,769 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:27,769 - INFO - --------------------------------------------------
+2025-04-02 13:33:27,769 - INFO - 处理第 56/62 段字幕 [90.3%]:
+2025-04-02 13:33:27,769 - INFO - 时间: 981800ms -> 983940ms (持续 2140ms)
+2025-04-02 13:33:27,769 - INFO - 文本: Alright, now here's a second angle.
+2025-04-02 13:33:27,769 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0055.mp3
+2025-04-02 13:33:27,979 - INFO - 已存在音频长度: 5930ms, 字幕长度: 2140ms
+2025-04-02 13:33:27,979 - INFO - 跳过TTS生成，耗时: 0.21 秒
+2025-04-02 13:33:27,979 - INFO - --------------------------------------------------
+2025-04-02 13:33:27,979 - INFO - 处理第 57/62 段字幕 [91.9%]:
+2025-04-02 13:33:27,979 - INFO - 时间: 986020ms -> 1026870ms (持续 40850ms)
+2025-04-02 13:33:27,979 - INFO - 文本: Also, even if you don't trust my calculations, I can assure you that the squirrels did not care. In both launch cases, they were back up on the course in like five minutes. Here's the slo mo and see if you can spot the two critical things he does to make sure he lands feet down. Did you catch it? The first critical moment is right here. He's already done the predictive math and he's locked his head on the spot where he plans to land. And now his head will not lose that lock the whole way down. What's crazy is the time it takes him to do all the predictive math, to know exactly where he will land, and to lock his head is 300 milliseconds. That's exactly this long. Literally less than the blink of an eye. That blows my mind.
+2025-04-02 13:33:27,979 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0056.mp3
+2025-04-02 13:33:28,175 - INFO - 已存在音频长度: 6452ms, 字幕长度: 40850ms
+2025-04-02 13:33:28,175 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:28,175 - INFO - --------------------------------------------------
+2025-04-02 13:33:28,175 - INFO - 处理第 58/62 段字幕 [93.5%]:
+2025-04-02 13:33:28,175 - INFO - 时间: 1026910ms -> 1053229ms (持续 26319ms)
+2025-04-02 13:33:28,175 - INFO - 文本: But if you think about it, it makes sense. These reactions would have evolved to be razor sharp. If you live your life in the trees constantly making split second decisions. Now, besides picking a landing spot with his head, the second trick is with his arm. When he wants to keep his upper body from rotating, he has his arms out. But the moment he wants to rotate his upper body quickly, he tucks them in. And then when he wants to stop rotating, he extends them out again. This is straight up conservation of angular momentum. It's the same trick ice skaters use.
+2025-04-02 13:33:28,175 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0057.mp3
+2025-04-02 13:33:28,409 - INFO - 已存在音频长度: 45166ms, 字幕长度: 26319ms
+2025-04-02 13:33:28,409 - INFO - 跳过TTS生成，耗时: 0.23 秒
+2025-04-02 13:33:28,409 - INFO - --------------------------------------------------
+2025-04-02 13:33:28,409 - INFO - 处理第 59/62 段字幕 [95.2%]:
+2025-04-02 13:33:28,409 - INFO - 时间: 1053349ms -> 1092390ms (持续 39041ms)
+2025-04-02 13:33:28,409 - INFO - 文本: Basically bring your limbs in if you want to rotate fast, extend them out if you want to slow the rotation. My buddy Destin from Smarter Every Day also made a video analyzing how cats always land on their feet and they do the exact same two tricks. The head target lock and bringing lens into rotate and out to stop rotation. Here's the second launch. So this may look like pure luck in real time, but the slow mo tells a different story. In that amount of time, he's already made a slight lateral push in that direction and locked his landing target with his head. We know from the previous clip he can rotate his body to any orientation, but he doesn't in this case because he sees his small push has already aligned him for the perfect landing. That's just so cool.
+2025-04-02 13:33:28,410 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0058.mp3
+2025-04-02 13:33:28,601 - INFO - 已存在音频长度: 3840ms, 字幕长度: 39041ms
+2025-04-02 13:33:28,601 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:28,601 - INFO - --------------------------------------------------
+2025-04-02 13:33:28,601 - INFO - 处理第 60/62 段字幕 [96.8%]:
+2025-04-02 13:33:28,601 - INFO - 时间: 1092470ms -> 1099078ms (持续 6608ms)
+2025-04-02 13:33:28,601 - INFO - 文本: And so, after those two physics demonstrations, I disabled both the launcher and the home wrecker trapdoor and just let them enjoy the course in peace.
+2025-04-02 13:33:28,601 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0059.mp3
+2025-04-02 13:33:28,795 - INFO - 已存在音频长度: 1332ms, 字幕长度: 6608ms
+2025-04-02 13:33:28,795 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:28,795 - INFO - --------------------------------------------------
+2025-04-02 13:33:28,795 - INFO - 处理第 61/62 段字幕 [98.4%]:
+2025-04-02 13:33:28,795 - INFO - 时间: 1099174ms -> 1164076ms (持续 64902ms)
+2025-04-02 13:33:28,795 - INFO - 文本: As far as I was concerned, they had earned it. Plus, after spending a month together, we were sort of bros. By this point. If they saw me coming out to work, they would certainly jump away. But then they'd just quickly be right back and sadly, all good things must come to an end. And because I didn't want them to develop an unhealthy dependence on my handouts, after about a week of free reign, I took down the core. But in its place, I put up a specialized squirrel sized picnic table. Every morning, this door opens to release just a few walnuts as a little treat to remind them of our good times together. Although I had to laugh that after all this, somehow I didn't anticipate. On day one, Frank would immediately try and figure out and partially succeed in finding a way to beat the system. Like everything else though, they quickly caught on. And now on some mornings, I'll catch them just waiting for the daily ration, chilling patiently on the bench seat that is everyone but. But fantastic, Gus. Don't ever change, buddy. When I started this two month long adventure trying to bird watch, I had no idea I would enjoy squirrel watching so much more. It's also made me realize that even amongst the structures and pavement and power lines. How interesting nature can be in a single suburban backyard if you just really stop to look.
+2025-04-02 13:33:28,795 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0060.mp3
+2025-04-02 13:33:28,990 - INFO - 已存在音频长度: 9038ms, 字幕长度: 64902ms
+2025-04-02 13:33:28,991 - INFO - 跳过TTS生成，耗时: 0.20 秒
+2025-04-02 13:33:28,991 - INFO - --------------------------------------------------
+2025-04-02 13:33:28,991 - INFO - 处理第 62/62 段字幕 [100.0%]:
+2025-04-02 13:33:28,991 - INFO - 时间: 1164148ms -> 1213670ms (持续 49522ms)
+2025-04-02 13:33:28,991 - INFO - 文本: Even the plants are amazing. I had no idea that as vines grow they spin around looking for something to grab onto. I didn't anticipate the wide variety of animals that use fences as inner yard highways to get around as a substitute for all the trees that existed before we got here. Even little interactions like this spider extending his life with this very timely leap into the unknown were just so delightful to see. But of all the animals, I can definitively say now that squirrels are my absolute favorite and they're certainly a more formidable adversary than porch pirates. They're kind of adorable, incredibly crafty, curious by nature, athletic and persistent. Turns out squirrels can live to be 20 years old, and so I like to think that someday Fantastic Gus will bring his grand squirrels to the fence and regale them with tales of cowboys and courage and legendary walnut piles.
+2025-04-02 13:33:28,991 - INFO - 文件已存在，跳过TTS生成: resources/audios/hFZFjoX2cGg&t/segment_0061.mp3
+2025-04-02 13:33:29,185 - INFO - 已存在音频长度: 4963ms, 字幕长度: 49522ms
+2025-04-02 13:33:29,186 - INFO - 跳过TTS生成，耗时: 0.19 秒
+2025-04-02 13:33:29,186 - INFO - --------------------------------------------------
+2025-04-02 13:33:29,186 - INFO - ==================================================
+2025-04-02 13:33:29,186 - INFO - 第二步：根据字幕时长添加空白并合并
+2025-04-02 13:33:29,186 - INFO - 第一个字幕不是从0时间开始的，开始时间为: 240ms
+2025-04-02 13:33:29,186 - INFO - 添加 240ms 的空白音频到开头
+2025-04-02 13:33:29,290 - INFO - 已添加初始空白音频: 240ms
+2025-04-02 13:33:29,487 - INFO - 添加 19353ms 空白
+2025-04-02 13:33:29,490 - INFO - 检测到字幕间隙: 21448ms -> 21544ms (持续 96ms)
+2025-04-02 13:33:29,595 - INFO - 已添加间隙空白音频: 96ms
+2025-04-02 13:33:29,793 - INFO - 添加 4849ms 空白
+2025-04-02 13:33:29,794 - INFO - 检测到字幕间隙: 28248ms -> 28344ms (持续 96ms)
+2025-04-02 13:33:29,901 - INFO - 已添加间隙空白音频: 96ms
+2025-04-02 13:33:30,097 - INFO - 添加 67589ms 空白
+2025-04-02 13:33:30,107 - INFO - 检测到字幕间隙: 97500ms -> 97620ms (持续 120ms)
+2025-04-02 13:33:30,209 - INFO - 已添加间隙空白音频: 120ms
+2025-04-02 13:33:30,410 - INFO - 添加 15824ms 空白
+2025-04-02 13:33:30,413 - INFO - 检测到字幕间隙: 115116ms -> 115268ms (持续 152ms)
+2025-04-02 13:33:30,516 - INFO - 已添加间隙空白音频: 152ms
+2025-04-02 13:33:30,702 - ERROR - 处理音频段落 5 失败: Decoding failed. ffmpeg returned error code: 183
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 16.0.0 (clang-1600.0.26.6)
+  configuration: --prefix=/usr/local/Cellar/ffmpeg/7.1.1_1 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[mp3 @ 0x7f9de0806080] Format mp3 detected only with low score of 1, misdetection possible!
+[mp3 @ 0x7f9de0806080] Failed to find two consecutive MPEG audio frames.
+[in#0 @ 0x7f9de0805dc0] Error opening input: Invalid data found when processing input
+Error opening input file resources/audios/hFZFjoX2cGg&t/segment_0004.mp3.
+Error opening input files: Invalid data found when processing input
+
+2025-04-02 13:33:30,703 - WARNING - 添加 12332ms 空白代替失败的音频段落
+2025-04-02 13:33:30,703 - INFO - 检测到字幕间隙: 127600ms -> 128070ms (持续 470ms)
+2025-04-02 13:33:30,807 - INFO - 已添加间隙空白音频: 470ms
+2025-04-02 13:33:31,041 - WARNING - 语音长度超出字幕时间 21061ms, 累计超时: 21061ms
+2025-04-02 13:33:31,041 - INFO - 检测到字幕间隙: 131198ms -> 131254ms (持续 56ms)
+2025-04-02 13:33:31,041 - INFO - 从间隙中减去 56ms 的累积超时，剩余间隙: 0ms, 剩余累积超时: 21005ms
+2025-04-02 13:33:31,252 - WARNING - 语音长度超出字幕时间 2052ms, 累计超时: 23057ms
+2025-04-02 13:33:31,253 - INFO - 检测到字幕间隙: 140670ms -> 140790ms (持续 120ms)
+2025-04-02 13:33:31,253 - INFO - 从间隙中减去 120ms 的累积超时，剩余间隙: 0ms, 剩余累积超时: 22937ms
+2025-04-02 13:33:31,449 - INFO - 从需要添加的空白中减去 255ms 的累积超时，剩余需添加空白: 0ms, 剩余累积超时: 22682ms
+2025-04-02 13:33:31,449 - INFO - 检测到字幕间隙: 144206ms -> 144358ms (持续 152ms)
+2025-04-02 13:33:31,449 - INFO - 从间隙中减去 152ms 的累积超时，剩余间隙: 0ms, 剩余累积超时: 22530ms
+2025-04-02 13:33:31,666 - INFO - 从需要添加的空白中减去 5579ms 的累积超时，剩余需添加空白: 0ms, 剩余累积超时: 16951ms
+2025-04-02 13:33:31,666 - INFO - 检测到字幕间隙: 164148ms -> 164204ms (持续 56ms)
+2025-04-02 13:33:31,666 - INFO - 从间隙中减去 56ms 的累积超时，剩余间隙: 0ms, 剩余累积超时: 16895ms
+2025-04-02 13:33:31,883 - WARNING - 语音长度超出字幕时间 1509ms, 累计超时: 18404ms
+2025-04-02 13:33:31,883 - INFO - 合并临时片段 (共 16 个)
+2025-04-02 13:33:31,918 - INFO - 保存临时文件: resources/audios/hFZFjoX2cGg&t/combined_temp_1.mp3
+2025-04-02 13:33:33,596 - INFO - 检测到字幕间隙: 175364ms -> 175532ms (持续 168ms)
+2025-04-02 13:33:33,596 - INFO - 从间隙中减去 168ms 的累积超时，剩余间隙: 0ms, 剩余累积超时: 18236ms
+2025-04-02 13:33:33,805 - WARNING - 语音长度超出字幕时间 1475ms, 累计超时: 19711ms
+2025-04-02 13:33:33,806 - INFO - 检测到字幕间隙: 178916ms -> 178948ms (持续 32ms)
+2025-04-02 13:33:33,806 - INFO - 从间隙中减去 32ms 的累积超时，剩余间隙: 0ms, 剩余累积超时: 19679ms
+2025-04-02 13:33:34,024 - INFO - 从需要添加的空白中减去 184ms 的累积超时，剩余需添加空白: 0ms, 剩余累积超时: 19495ms
+2025-04-02 13:33:34,024 - INFO - 检测到字幕间隙: 188980ms -> 189640ms (持续 660ms)
+2025-04-02 13:33:34,024 - INFO - 从间隙中减去 660ms 的累积超时，剩余间隙: 0ms, 剩余累积超时: 18835ms
+2025-04-02 13:33:34,233 - INFO - 从需要添加的空白中减去 8524ms 的累积超时，剩余需添加空白: 0ms, 剩余累积超时: 10311ms
+2025-04-02 13:33:34,233 - INFO - 检测到字幕间隙: 201168ms -> 201264ms (持续 96ms)
+2025-04-02 13:33:34,233 - INFO - 从间隙中减去 96ms 的累积超时，剩余间隙: 0ms, 剩余累积超时: 10215ms
+2025-04-02 13:33:34,457 - WARNING - 语音长度超出字幕时间 4650ms, 累计超时: 14865ms
+2025-04-02 13:33:34,458 - INFO - 检测到字幕间隙: 208500ms -> 225240ms (持续 16740ms)
+2025-04-02 13:33:34,458 - INFO - 从间隙中减去 14865ms 的累积超时，剩余间隙: 1875ms, 剩余累积超时: 0ms
+2025-04-02 13:33:34,575 - INFO - 已添加间隙空白音频: 1875ms
+2025-04-02 13:33:34,790 - INFO - 添加 4636ms 空白
+2025-04-02 13:33:34,791 - INFO - 合并临时片段 (共 7 个)
+2025-04-02 13:33:34,823 - INFO - 保存临时文件: resources/audios/hFZFjoX2cGg&t/combined_temp_2.mp3
+2025-04-02 13:33:36,964 - INFO - 检测到字幕间隙: 243016ms -> 243088ms (持续 72ms)
+2025-04-02 13:33:37,081 - INFO - 已添加间隙空白音频: 72ms
+2025-04-02 13:33:37,285 - INFO - 添加 14870ms 空白
+2025-04-02 13:33:37,288 - INFO - 检测到字幕间隙: 261720ms -> 261760ms (持续 40ms)
+2025-04-02 13:33:37,392 - INFO - 已添加间隙空白音频: 40ms
+2025-04-02 13:33:37,620 - INFO - 添加 29019ms 空白
+2025-04-02 13:33:37,626 - INFO - 检测到字幕间隙: 305904ms -> 305992ms (持续 88ms)
+2025-04-02 13:33:37,728 - INFO - 已添加间隙空白音频: 88ms
+2025-04-02 13:33:37,938 - INFO - 添加 13900ms 空白
+2025-04-02 13:33:37,941 - INFO - 检测到字幕间隙: 322896ms -> 323008ms (持续 112ms)
+2025-04-02 13:33:38,046 - INFO - 已添加间隙空白音频: 112ms
+2025-04-02 13:33:38,251 - WARNING - 语音长度超出字幕时间 457ms, 累计超时: 457ms
+2025-04-02 13:33:38,251 - INFO - 检测到字幕间隙: 328820ms -> 335210ms (持续 6390ms)
+2025-04-02 13:33:38,251 - INFO - 从间隙中减去 457ms 的累积超时，剩余间隙: 5933ms, 剩余累积超时: 0ms
+2025-04-02 13:33:38,385 - INFO - 已添加间隙空白音频: 5933ms
+2025-04-02 13:33:38,595 - INFO - 添加 61658ms 空白
+2025-04-02 13:33:38,606 - INFO - 合并临时片段 (共 11 个)
+2025-04-02 13:33:38,667 - INFO - 保存临时文件: resources/audios/hFZFjoX2cGg&t/combined_temp_3.mp3
+2025-04-02 13:33:41,836 - INFO - 检测到字幕间隙: 403790ms -> 406210ms (持续 2420ms)
+2025-04-02 13:33:41,959 - INFO - 已添加间隙空白音频: 2420ms
+2025-04-02 13:33:42,200 - WARNING - 语音长度超出字幕时间 3721ms, 累计超时: 3721ms
+2025-04-02 13:33:42,201 - INFO - 检测到字幕间隙: 427514ms -> 427562ms (持续 48ms)
+2025-04-02 13:33:42,201 - INFO - 从间隙中减去 48ms 的累积超时，剩余间隙: 0ms, 剩余累积超时: 3673ms
+2025-04-02 13:33:42,467 - INFO - 从需要添加的空白中减去 3673ms 的累积超时，剩余需添加空白: 9340ms, 剩余累积超时: 0ms
+2025-04-02 13:33:42,467 - INFO - 添加 9340ms 空白
+2025-04-02 13:33:42,470 - INFO - 检测到字幕间隙: 476180ms -> 478160ms (持续 1980ms)
+2025-04-02 13:33:42,593 - INFO - 已添加间隙空白音频: 1980ms
+2025-04-02 13:33:42,841 - INFO - 添加 5459ms 空白
+2025-04-02 13:33:42,843 - INFO - 检测到字幕间隙: 509794ms -> 509922ms (持续 128ms)
+2025-04-02 13:33:42,951 - INFO - 已添加间隙空白音频: 128ms
+2025-04-02 13:33:43,166 - INFO - 添加 684ms 空白
+2025-04-02 13:33:43,166 - INFO - 检测到字幕间隙: 517790ms -> 518310ms (持续 520ms)
+2025-04-02 13:33:43,277 - INFO - 已添加间隙空白音频: 520ms
+2025-04-02 13:33:43,490 - INFO - 添加 23ms 空白
+2025-04-02 13:33:43,491 - INFO - 合并临时片段 (共 10 个)
+2025-04-02 13:33:43,584 - INFO - 保存临时文件: resources/audios/hFZFjoX2cGg&t/combined_temp_4.mp3
+2025-04-02 13:33:47,835 - INFO - 检测到字幕间隙: 525438ms -> 525534ms (持续 96ms)
+2025-04-02 13:33:47,942 - INFO - 已添加间隙空白音频: 96ms
+2025-04-02 13:33:48,154 - WARNING - 语音长度超出字幕时间 2842ms, 累计超时: 2842ms
+2025-04-02 13:33:48,154 - INFO - 检测到字幕间隙: 528622ms -> 528686ms (持续 64ms)
+2025-04-02 13:33:48,154 - INFO - 从间隙中减去 64ms 的累积超时，剩余间隙: 0ms, 剩余累积超时: 2778ms
+2025-04-02 13:33:48,366 - INFO - 从需要添加的空白中减去 2778ms 的累积超时，剩余需添加空白: 13128ms, 剩余累积超时: 0ms
+2025-04-02 13:33:48,366 - INFO - 添加 13128ms 空白
+2025-04-02 13:33:48,369 - INFO - 检测到字幕间隙: 550522ms -> 550586ms (持续 64ms)
+2025-04-02 13:33:48,473 - INFO - 已添加间隙空白音频: 64ms
+2025-04-02 13:33:48,679 - INFO - 添加 22280ms 空白
+2025-04-02 13:33:48,684 - INFO - 检测到字幕间隙: 575870ms -> 576860ms (持续 990ms)
+2025-04-02 13:33:48,794 - INFO - 已添加间隙空白音频: 990ms
+2025-04-02 13:33:49,020 - WARNING - 语音长度超出字幕时间 12750ms, 累计超时: 12750ms
+2025-04-02 13:33:49,020 - INFO - 检测到字幕间隙: 579940ms -> 580060ms (持续 120ms)
+2025-04-02 13:33:49,020 - INFO - 从间隙中减去 120ms 的累积超时，剩余间隙: 0ms, 剩余累积超时: 12630ms
+2025-04-02 13:33:49,235 - WARNING - 语音长度超出字幕时间 2859ms, 累计超时: 15489ms
+2025-04-02 13:33:49,235 - INFO - 合并临时片段 (共 9 个)
+2025-04-02 13:33:49,347 - INFO - 保存临时文件: resources/audios/hFZFjoX2cGg&t/combined_temp_5.mp3
+2025-04-02 13:35:53,462 - INFO - 第一步，开始下载视频和音频
+2025-04-02 13:36:01,373 - INFO - 下载成功，视频文件保存在: resources/videos/hFZFjoX2cGg.mp4
+2025-04-02 13:36:01,373 - INFO - 下载成功，音频文件保存在: resources/audios/hFZFjoX2cGg.mp3
+2025-04-02 13:36:01,373 - INFO - 第二步，开始将音频转换为字幕
+2025-04-02 13:36:14,655 - INFO - HTTP Request: POST https://api.assemblyai.com/v2/upload "HTTP/1.1 200 OK"
+2025-04-02 13:36:14,801 - INFO - HTTP Request: POST https://api.assemblyai.com/v2/transcript "HTTP/1.1 200 OK"
+2025-04-02 13:36:14,856 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/84cc024e-18ef-4f9e-ab5f-013446f3e193 "HTTP/1.1 200 OK"
+2025-04-02 13:36:17,934 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/84cc024e-18ef-4f9e-ab5f-013446f3e193 "HTTP/1.1 200 OK"
+2025-04-02 13:36:20,994 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/84cc024e-18ef-4f9e-ab5f-013446f3e193 "HTTP/1.1 200 OK"
+2025-04-02 13:36:24,053 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/84cc024e-18ef-4f9e-ab5f-013446f3e193 "HTTP/1.1 200 OK"
+2025-04-02 13:36:27,113 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/84cc024e-18ef-4f9e-ab5f-013446f3e193 "HTTP/1.1 200 OK"
+2025-04-02 13:36:30,172 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/84cc024e-18ef-4f9e-ab5f-013446f3e193 "HTTP/1.1 200 OK"
+2025-04-02 13:36:33,229 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/84cc024e-18ef-4f9e-ab5f-013446f3e193 "HTTP/1.1 200 OK"
+2025-04-02 13:36:37,220 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/84cc024e-18ef-4f9e-ab5f-013446f3e193 "HTTP/1.1 200 OK"
+2025-04-02 13:36:38,373 - INFO - HTTP Request: GET https://api.assemblyai.com/v2/transcript/84cc024e-18ef-4f9e-ab5f-013446f3e193/srt "HTTP/1.1 200 OK"
+2025-04-02 13:36:38,385 - INFO - 字幕文件已保存至: resources/transcripts/merger_hFZFjoX2cGg.srt
+2025-04-02 13:36:38,385 - INFO - 第三步，开始将字幕转换为汉语字幕
+2025-04-02 13:36:38,386 - INFO - 尝试翻译字幕，第1次尝试
+2025-04-02 13:36:38,386 - INFO - 开始处理字幕文件: resources/transcripts/merger_hFZFjoX2cGg.srt
+2025-04-02 13:36:38,386 - INFO - 输出文件路径: resources/transcripts/merger_hFZFjoX2cGg_cn.srt
+2025-04-02 13:36:38,386 - INFO - 开始解析SRT文件: resources/transcripts/merger_hFZFjoX2cGg.srt
+2025-04-02 13:36:38,386 - INFO - 成功解析 65 条字幕
+2025-04-02 13:36:38,386 - INFO - 成功解析到 65 条字幕
+2025-04-02 13:36:38,386 - INFO - 开始分析字幕内容...
+2025-04-02 13:36:38,386 - INFO - 开始分析字幕内容
+2025-04-02 13:36:38,889 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-04-02 13:37:01,219 - INFO - 内容分析完成
+2025-04-02 13:37:01,220 - INFO - 内容分析完成
+2025-04-02 13:37:01,220 - INFO - 开始翻译字幕...
+2025-04-02 13:37:01,220 - INFO - 开始翻译 65 条字幕
+2025-04-02 13:37:01,792 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-04-02 13:38:03,169 - INFO - 开始解析翻译结果，预期字幕数: 65
+2025-04-02 13:38:03,171 - WARNING - 有 37 条字幕未成功匹配
+2025-04-02 13:38:03,171 - WARNING - 使用正则表达式解析失败，尝试按行分割
+2025-04-02 13:38:03,172 - ERROR - 无法正确解析翻译结果，预期65条字幕，实际解析出28条
+2025-04-02 13:38:03,172 - ERROR - 翻译结果为空，将返回原文本
+2025-04-02 13:38:03,172 - ERROR - 翻译结果为空，将返回原文本
+2025-04-02 13:38:03,172 - WARNING - 第1次翻译未生成文件
+2025-04-02 13:38:03,172 - INFO - 尝试翻译字幕，第2次尝试
+2025-04-02 13:38:03,172 - INFO - 开始处理字幕文件: resources/transcripts/merger_hFZFjoX2cGg.srt
+2025-04-02 13:38:03,173 - INFO - 输出文件路径: resources/transcripts/merger_hFZFjoX2cGg_cn.srt
+2025-04-02 13:38:03,173 - INFO - 开始解析SRT文件: resources/transcripts/merger_hFZFjoX2cGg.srt
+2025-04-02 13:38:03,174 - INFO - 成功解析 65 条字幕
+2025-04-02 13:38:03,174 - INFO - 成功解析到 65 条字幕
+2025-04-02 13:38:03,174 - INFO - 开始分析字幕内容...
+2025-04-02 13:38:03,174 - INFO - 开始分析字幕内容
+2025-04-02 13:38:03,631 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-04-02 13:38:25,771 - INFO - 内容分析完成
+2025-04-02 13:38:25,771 - INFO - 内容分析完成
+2025-04-02 13:38:25,771 - INFO - 开始翻译字幕...
+2025-04-02 13:38:25,771 - INFO - 开始翻译 65 条字幕
+2025-04-02 13:38:26,411 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-04-02 13:39:16,588 - INFO - 开始解析翻译结果，预期字幕数: 65
+2025-04-02 13:39:16,589 - WARNING - 有 49 条字幕未成功匹配
+2025-04-02 13:39:16,590 - WARNING - 使用正则表达式解析失败，尝试按行分割
+2025-04-02 13:39:16,590 - ERROR - 无法正确解析翻译结果，预期65条字幕，实际解析出16条
+2025-04-02 13:39:16,590 - ERROR - 翻译结果为空，将返回原文本
+2025-04-02 13:39:16,590 - ERROR - 翻译结果为空，将返回原文本
+2025-04-02 13:39:16,590 - WARNING - 第2次翻译未生成文件
+2025-04-02 13:39:16,590 - INFO - 尝试翻译字幕，第3次尝试
+2025-04-02 13:39:16,590 - INFO - 开始处理字幕文件: resources/transcripts/merger_hFZFjoX2cGg.srt
+2025-04-02 13:39:16,590 - INFO - 输出文件路径: resources/transcripts/merger_hFZFjoX2cGg_cn.srt
+2025-04-02 13:39:16,590 - INFO - 开始解析SRT文件: resources/transcripts/merger_hFZFjoX2cGg.srt
+2025-04-02 13:39:16,591 - INFO - 成功解析 65 条字幕
+2025-04-02 13:39:16,591 - INFO - 成功解析到 65 条字幕
+2025-04-02 13:39:16,592 - INFO - 开始分析字幕内容...
+2025-04-02 13:39:16,592 - INFO - 开始分析字幕内容
+2025-04-02 13:39:17,077 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-04-02 13:39:36,604 - INFO - 内容分析完成
+2025-04-02 13:39:36,605 - INFO - 内容分析完成
+2025-04-02 13:39:36,605 - INFO - 开始翻译字幕...
+2025-04-02 13:39:36,605 - INFO - 开始翻译 65 条字幕
+2025-04-02 13:39:37,166 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+2025-04-02 13:41:12,501 - INFO - 开始解析翻译结果，预期字幕数: 65
+2025-04-02 13:41:12,502 - WARNING - 有 22 条字幕未成功匹配
+2025-04-02 13:41:12,502 - WARNING - 使用正则表达式解析失败，尝试按行分割
+2025-04-02 13:41:12,502 - ERROR - 无法正确解析翻译结果，预期65条字幕，实际解析出43条
+2025-04-02 13:41:12,502 - ERROR - 翻译结果为空，将返回原文本
+2025-04-02 13:41:12,502 - ERROR - 翻译结果为空，将返回原文本
+2025-04-02 13:41:12,503 - WARNING - 第3次翻译未生成文件
+2025-04-02 13:41:12,503 - INFO - 尝试翻译字幕，第4次尝试
+2025-04-02 13:41:12,503 - INFO - 开始处理字幕文件: resources/transcripts/merger_hFZFjoX2cGg.srt
+2025-04-02 13:41:12,503 - INFO - 输出文件路径: resources/transcripts/merger_hFZFjoX2cGg_cn.srt
+2025-04-02 13:41:12,503 - INFO - 开始解析SRT文件: resources/transcripts/merger_hFZFjoX2cGg.srt
+2025-04-02 13:41:12,503 - INFO - 成功解析 65 条字幕
+2025-04-02 13:41:12,504 - INFO - 成功解析到 65 条字幕
+2025-04-02 13:41:12,504 - INFO - 开始分析字幕内容...
+2025-04-02 13:41:12,504 - INFO - 开始分析字幕内容
+2025-04-02 13:41:12,924 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
