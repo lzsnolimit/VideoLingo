@@ -63,10 +63,27 @@ def process(url):
     chinese_subtitle = os.path.join(os.path.dirname(subtitle_result), f"{name}_cn{ext}")
     
     # 调用translate_srt_file函数将英文字幕翻译为中文字幕
-    translated_subtitle = translate_srt_file(subtitle_result, chinese_subtitle)
+    max_attempts = 3
+    attempt = 0
+    translated_subtitle = None
     
-    if not os.path.exists(translated_subtitle):
-        logger.error("翻译字幕失败，未生成翻译文件")
+    while attempt < max_attempts:
+        attempt += 1
+        logger.info(f"尝试翻译字幕，第{attempt}次尝试")
+        try:
+            translated_subtitle = translate_srt_file(subtitle_result, chinese_subtitle)
+            if translated_subtitle and os.path.exists(translated_subtitle):
+                logger.info(f"翻译成功，第{attempt}次尝试")
+                break
+            else:
+                logger.warning(f"第{attempt}次翻译未生成文件")
+        except Exception as e:
+            logger.error(f"第{attempt}次翻译出错: {str(e)}")
+            if attempt < max_attempts:
+                logger.info("准备重试...")
+    
+    if not translated_subtitle or not os.path.exists(translated_subtitle):
+        logger.error("翻译字幕失败，三次尝试后仍未生成翻译文件")
         sys.exit(1)
     
     logger.info(f"中文字幕文件已保存至: {translated_subtitle}")

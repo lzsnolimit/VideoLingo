@@ -233,6 +233,9 @@ def translate_text_with_ai(texts: List[str], content_analysis: str = "") -> List
         
         # 分割翻译结果
         results = parse_translated_text(translated_text, len(texts))
+        if results is None:
+            logger.error("翻译结果为空，将返回原文本")
+            return 
         logger.info(f"翻译完成，获得 {len(results)} 条翻译结果")
         return results
     
@@ -305,7 +308,7 @@ def parse_translated_text(translated_text: str, expected_count: int) -> List[str
     # 如果仍然无法正确匹配，则返回原文
     if len(translations) != expected_count:
         logger.error(f"无法正确解析翻译结果，预期{expected_count}条字幕，实际解析出{len(translations)}条")
-        return ["无法正确翻译"] * expected_count
+        return
     
     logger.info("翻译结果解析完成")
     return translations
@@ -408,6 +411,9 @@ def translate_srt_file(input_path: str, output_path: str, log_file=None) -> str:
         # 一次性翻译所有字幕
         logger.info("开始翻译字幕...")
         translated_texts = translate_text_with_ai(texts, content_analysis)
+        if not translated_texts:
+            logger.error("翻译结果为空，将返回原文本")
+            return
         logger.info("翻译完成!")
         
         # 创建翻译后的SRT文件
