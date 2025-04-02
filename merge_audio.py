@@ -158,38 +158,60 @@ def mix_audio(accompaniment_path, speaking_audio, output_path):
     return output_path
 
 
-def replace_video_audio(video_path, audio_path, output_path):
+def replace_video_audio(video_path, audio_path, output_path, subtitle_path=None):
     """
-    将混合后的音频替换到原始视频中
+    将混合后的音频替换到原始视频中，可选择添加字幕
     
     参数:
         video_path: 视频文件路径
         audio_path: 音频文件路径
         output_path: 输出视频文件路径
+        subtitle_path: 字幕文件路径（可选，仅支持SRT格式）
         
     返回:
         输出视频文件路径
     """
     print(f"将混合后的音频替换到原始视频中: {video_path}")
+    
     output_cmd = [
         "ffmpeg", "-y",
         "-i", video_path,
         "-i", audio_path,
+    ]
+    
+    # 如果提供了字幕文件，添加字幕输入
+    if subtitle_path and os.path.exists(subtitle_path) and subtitle_path.lower().endswith('.srt'):
+        output_cmd.extend(["-i", subtitle_path])
+    
+    # 基本输出选项
+    output_cmd.extend([
         "-c:v", "copy",       # 保持视频质量
         "-c:a", "aac",        # 使用AAC编码音频
         "-b:a", "320k",       # 高音频比特率
         "-map", "0:v:0",      # 使用第一个输入的视频流
         "-map", "1:a:0",      # 使用第二个输入的音频流
+    ])
+    
+    # 如果有字幕，添加字幕映射和相关选项
+    if subtitle_path and os.path.exists(subtitle_path) and subtitle_path.lower().endswith('.srt'):
+        output_cmd.extend([
+            "-map", "2",      # 使用第三个输入的字幕流
+            "-c:s", "mov_text"  # 使用mov_text编码字幕
+        ])
+    
+    # 添加最终输出选项
+    output_cmd.extend([
         "-shortest",          # 以最短的流长度为准
         output_path
-    ]
+    ])
+    
     subprocess.run(output_cmd, check=True)
     
     print(f"成功生成文件: {output_path}")
     return output_path
 
 
-def merge_audio(original_video, original_audio, speaking_audio, output_filename):
+def merge_audio(original_video, original_audio, speaking_audio, output_filename, subtitle_path=None):
     """
     将原始音频中分离出的背景音乐与新的人声音频合并，然后替换视频中的音频
     
@@ -198,6 +220,7 @@ def merge_audio(original_video, original_audio, speaking_audio, output_filename)
         original_audio: 原始音频文件路径
         speaking_audio: 新的人声音频文件路径
         output_filename: 输出视频文件路径
+        subtitle_path: 字幕文件路径（可选，仅支持SRT格式）
     """
     # 创建临时目录
     temp_dir = create_temp_directory()
@@ -218,8 +241,8 @@ def merge_audio(original_video, original_audio, speaking_audio, output_filename)
         mixed_audio_path = os.path.join(temp_dir, "mixed_audio.wav")
         mix_audio(accompaniment_path, speaking_audio, mixed_audio_path)
         
-        # 将混合后的音频替换到原始视频中
-        replace_video_audio(original_video, mixed_audio_path, output_filename)
+        # 将混合后的音频替换到原始视频中，并可选择添加字幕
+        return replace_video_audio(original_video, mixed_audio_path, output_filename, subtitle_path)
         
     finally:
         # 清理临时文件
@@ -230,4 +253,5 @@ if __name__ == "__main__":
         merge_audio(original_video="resources/videos/A_5Nd3vAG9k.mp4", 
                     original_audio="resources/audios/A_5Nd3vAG9k.mp3", 
                     speaking_audio="resources/audios/A_5Nd3vAG9k/A_5Nd3vAG9k.mp3", 
-                    output_filename="resources/videos/merged_A_5Nd3vAG9k.mp4")
+                    output_filename="resources/videos/merged_A_5Nd3vAG9k.mp4",
+                    subtitle_path="resources/transcripts/merger_A_5Nd3vAG9k_cn.srt")  # 可以提供SRT字幕文件路径

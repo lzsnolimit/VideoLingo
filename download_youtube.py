@@ -2,6 +2,7 @@ import os
 import subprocess
 import time
 import re
+import sys
 from pathlib import Path
 
 import audio_to_subtitle
@@ -15,7 +16,7 @@ def extract_video_id(url):
         return match.group(1)
     return None
 
-def download_youtube(url, content_type="video", quality="best", audio_format="mp3", audio_quality="0"):
+def download_youtube(url, content_type="video", quality="best", audio_format="mp3", audio_quality="0", show_progress=True, threads=8):
     """
     使用yt-dlp下载YouTube视频或音频到指定目录，使用视频ID或时间戳作为文件名
     
@@ -28,6 +29,8 @@ def download_youtube(url, content_type="video", quality="best", audio_format="mp
                       - '720p': 720p视频
         audio_format (str): 音频格式，默认'mp3'，可选'm4a'、'wav'、'opus'等
         audio_quality (str): 音频质量，0(最好)到9(最差)，默认为0
+        show_progress (bool): 是否显示下载进度，默认为True
+        threads (int): 并行下载的线程数量，默认为8
     
     返回:
         str: 成功时返回下载文件的相对路径，失败时返回错误信息
@@ -40,6 +43,10 @@ def download_youtube(url, content_type="video", quality="best", audio_format="mp
     
     # 构建命令
     command = ["yt-dlp"]
+    
+    # 添加多线程下载参数
+    if threads > 1:
+        command.extend(["--concurrent-fragments", str(threads)])
     
     if content_type == "video":
         # 构建视频格式参数
@@ -81,26 +88,58 @@ def download_youtube(url, content_type="video", quality="best", audio_format="mp
     command.append(url)
     
     try:
-        # 执行下载命令
-        result = subprocess.run(
-            command, 
-            check=True,
-            capture_output=True,
-            text=True
-        )
+        if show_progress:
+            # 使用 Popen 实时获取输出以显示进度
+            process = subprocess.Popen(
+                command,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                universal_newlines=True,
+                bufsize=1
+            )
+            
+            # 实时读取输出并显示进度
+            for line in process.stdout:
+                line = line.strip()
+                # 过滤并显示下载进度信息
+                if '[download]' in line and '%' in line:
+                    print(f"\r{line}", end='', flush=True)
+                # 显示多线程下载信息
+                elif 'fragment' in line.lower() and '%' in line:
+                    print(f"\r{line}", end='', flush=True)
+                
+            # 等待进程完成
+            process.wait()
+            print()  # 换行，保持输出整洁
+            
+            # 检查返回码
+            if process.returncode != 0:
+                return f"下载失败，返回码: {process.returncode}"
+        else:
+            # 使用原来的方式执行命令
+            result = subprocess.run(
+                command, 
+                check=True,
+                capture_output=True,
+                text=True
+            )
         
         # 检查文件是否存在
         if os.path.exists(file_path):
             return file_path
         
         # 如果找不到预期的文件，尝试从输出中提取
-        print("can't find the file{}".format(file_path))
-        output_lines = result.stdout.strip().split('\n')
-        for line in output_lines:
-            if "Destination" in line and ":" in line:
-                return line.split(":", 1)[1].strip()
-            elif "[Merger] Merging formats into" in line:
-                return line.replace("[Merger] Merging formats into ", "").replace('"', '').strip()
+        print("找不到文件: {}".format(file_path))
+        
+        if show_progress:
+            return file_path
+        else:
+            output_lines = result.stdout.strip().split('\n')
+            for line in output_lines:
+                if "Destination" in line and ":" in line:
+                    return line.split(":", 1)[1].strip()
+                elif "[Merger] Merging formats into" in line:
+                    return line.replace("[Merger] Merging formats into ", "").replace('"', '').strip()
         
         # 如果仍然找不到，返回可能的路径
         return file_path
