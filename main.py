@@ -125,7 +125,7 @@ def process(url):
 if __name__ == "__main__":
     # 完整流程测试
     try:
-        url = "https://www.youtube.com/watch?v=hFZFjoX2cGg&t"
+        url = "https://www.youtube.com/watch?v=lg5wznn3IBE"
         final_video = process(url)
         logger.info(f"处理完成，最终视频文件已保存至: {final_video}")
     except Exception as e:

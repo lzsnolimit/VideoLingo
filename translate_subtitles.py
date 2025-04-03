@@ -69,8 +69,8 @@ def translate_srt_file(input_path: str, output_path: str, log_file=None, target_
     # 初始化LangChain模型和链
     print("初始化翻译模型...")
     llm = ChatDeepSeek(
-        model="deepseek-chat",
-        temperature=0.1,
+        model="deepseek-reasoner",
+        temperature=0.6,
         max_tokens=None,
         timeout=None,
         max_retries=3,
