@@ -7,3 +7,5 @@ httpx
 fish-audio-sdk
 demucs
 pydub
+python-dateutil
+langchain-deepseek

@@ -53,3 +53,4 @@ resources/results/*
 *.srt.cn.mp3
 *.srt.cn.mp4
 *.txt
+segments/*
