@@ -255,7 +255,7 @@ def process_subtitles(subtitle_file, file_name, output_dir="resources/audios"):
             text_to_speech(
                 text=text,
                 api_key=api_key,
-                reference_audio_path="resources/audios/clip-TechVoice-2025_03_30.wav",
+                reference_audio_path="resources/audios/peiyin.mp3",
                 output_path=audio_file,
                 reference_text="这是久负盛名的核桃杯，如果你想要它，你首先需要赢得我在自家后院设置的大部分比赛活动，其次，成为一只松鼠。欢迎来到我在后院与松鼠进行艰苦战斗的第三年也是最后一年。然后爆米花，因为今年我们不仅有惊人的运动壮举和很多险胜，还有物种间的战斗、Fat Gus 婴儿时期的家庭视频，以及震撼整个社区的丑闻，你不得不去看，相信它。所以，抓紧你的核桃，让我们开始吧。体育迷们，您好，欢迎来到 Backyard 夏季运动会，世界上最伟大的浓密尾巴运动员将参加七个不同的项目，包括跳远、跳高和旋转平衡木，所有这些都是为了荣耀和享有盛誉的核桃杯。我是 Chuck Acorns。我是 Jimmy。就跟 Jimmy 一起去？是的，就是 Jimmy。好的，欢迎。"
                 #reference_text="Through a sunlit forest, a curious fox with a fluffy tail and bright, glimmering eyes darted between the trees, its tiny paws leaving soft imprints on the mossy ground. Pausing to sniff a patch of wildflowers, it tilted its head, listening to the distant chirp of a bird, as if the entire forest were a melody it alone could understand."
@@ -465,3 +465,7 @@ def process_subtitles(subtitle_file, file_name, output_dir="resources/audios"):
         logger.error(f"最终合并失败: {e}")
         logger.error("处理未完成")
         return None
+
+
+if __name__ == "__main__":
+    process_subtitles("resources/transcripts/merger_DTvS9lvRxZ8_cn.srt", "DTvS9lvRxZ8", output_dir="resources/audios/DTvS9lvRxZ8")
