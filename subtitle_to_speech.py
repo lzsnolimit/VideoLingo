@@ -257,7 +257,8 @@ def process_subtitles(subtitle_file, file_name, output_dir="resources/audios"):
                 api_key=api_key,
                 reference_audio_path="resources/audios/clip-TechVoice-2025_03_30.wav",
                 output_path=audio_file,
-                reference_text="Through a sunlit forest, a curious fox with a fluffy tail and bright, glimmering eyes darted between the trees, its tiny paws leaving soft imprints on the mossy ground. Pausing to sniff a patch of wildflowers, it tilted its head, listening to the distant chirp of a bird, as if the entire forest were a melody it alone could understand."
+                reference_text="这是久负盛名的核桃杯，如果你想要它，你首先需要赢得我在自家后院设置的大部分比赛活动，其次，成为一只松鼠。欢迎来到我在后院与松鼠进行艰苦战斗的第三年也是最后一年。然后爆米花，因为今年我们不仅有惊人的运动壮举和很多险胜，还有物种间的战斗、Fat Gus 婴儿时期的家庭视频，以及震撼整个社区的丑闻，你不得不去看，相信它。所以，抓紧你的核桃，让我们开始吧。体育迷们，您好，欢迎来到 Backyard 夏季运动会，世界上最伟大的浓密尾巴运动员将参加七个不同的项目，包括跳远、跳高和旋转平衡木，所有这些都是为了荣耀和享有盛誉的核桃杯。我是 Chuck Acorns。我是 Jimmy。就跟 Jimmy 一起去？是的，就是 Jimmy。好的，欢迎。"
+                #reference_text="Through a sunlit forest, a curious fox with a fluffy tail and bright, glimmering eyes darted between the trees, its tiny paws leaving soft imprints on the mossy ground. Pausing to sniff a patch of wildflowers, it tilted its head, listening to the distant chirp of a bird, as if the entire forest were a melody it alone could understand."
                 # reference_text="当苏联将坦克与南极洲的冰原相结合，会发生什么？你将得到可能是人类史上最疯狂的陆地载具。它能在零下57摄氏度（-70华氏度）的环境中工作，穿越暴风雪运输大宗货物，同时为乘员提供舒适的居住空间。与早期美国征服南极的尝试不同，俄罗斯人实际研发了多个迭代版本，其最新型号甚至在本世纪仍在服役。这就是苏联南极坦克的故事——在美国人失败的地方，他们成功了。来自哈尔科夫的传奇——哈尔科夫尚卡。"
             )
             
