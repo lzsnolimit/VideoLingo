@@ -5,6 +5,7 @@ from typing import List, Dict, Tuple
 from langchain.prompts import PromptTemplate
 from langchain_deepseek import ChatDeepSeek
 from langchain_core.output_parsers import StrOutputParser
+from langchain_openai import ChatOpenAI
 
 
 def parse_srt(content: str) -> List[Tuple[str, str, str]]:
@@ -168,13 +169,20 @@ def detect_ads_in_subtitles(srt_file: str) -> List[Dict]:
     
     # 初始化LangChain模型
     print("初始化AI分析模型...")
-    llm = ChatDeepSeek(
-        model="deepseek-reasoner",
-        temperature=0.2,  # 降低温度以获得更一致和确定性的输出
+    # llm = ChatDeepSeek(
+    #     model="deepseek-reasoner",
+    #     temperature=0.5,  # 降低温度以获得更一致和确定性的输出
+    #     max_tokens=None,
+    #     timeout=None,
+    #     max_retries=3,
+    #     api_key=os.getenv("DEEPSEEK_API_KEY")
+    # )
+    llm=ChatOpenAI(
+        model="gpt-4.1",
+        temperature=0.1,
         max_tokens=None,
         timeout=None,
-        max_retries=3,
-        api_key=os.getenv("DEEPSEEK_API_KEY")
+        max_retries=2,
     )
     
     # 创建处理链
@@ -187,8 +195,45 @@ def detect_ads_in_subtitles(srt_file: str) -> List[Dict]:
             "subtitle_data": json.dumps(subtitle_data, ensure_ascii=False, indent=2)
         })
         
-        # 解析JSON结果
-        ad_segments = json.loads(result)
+        # 打印调试信息
+        print(f"AI返回的原始结果类型: {type(result)}")
+        print(f"AI返回的原始结果长度: {len(str(result)) if result else 0}")
+        
+        # 尝试预处理AI返回的结果，提取JSON部分
+        result = result.strip()
+        
+        # 查找JSON数组的开始和结束位置
+        start_pos = result.find('[')
+        end_pos = result.rfind(']') + 1
+        
+        if start_pos >= 0 and end_pos > start_pos:
+            # 提取JSON数组部分
+            json_result = result[start_pos:end_pos]
+            print(f"提取的JSON部分: {json_result[:100]}...")  # 只打印开头部分，避免过长
+        else:
+            # 如果没有找到JSON数组格式，可能整个响应就是JSON对象
+            json_result = result
+            print("未找到JSON数组标记，使用整个结果作为JSON")
+            
+        try:
+            # 解析JSON结果
+            ad_segments = json.loads(json_result)
+        except json.JSONDecodeError:
+            print(f"JSON解析失败，尝试用正则表达式提取...")
+            # 使用正则表达式尝试提取可能的JSON对象
+            import re
+            pattern = r'\[\s*\{.*?\}\s*\]'
+            matches = re.search(pattern, result, re.DOTALL)
+            if matches:
+                try:
+                    json_result = matches.group(0)
+                    ad_segments = json.loads(json_result)
+                except:
+                    print(f"正则表达式提取的内容仍无法解析为JSON")
+                    ad_segments = []
+            else:
+                print(f"无法从AI响应中提取有效的JSON数据")
+                ad_segments = []
         
         # 验证生成的广告片段
         validated_ad_segments = []
@@ -215,6 +260,9 @@ def detect_ads_in_subtitles(srt_file: str) -> List[Dict]:
     
     except Exception as e:
         print(f"AI分析过程中出现错误: {str(e)}")
+        print(f"错误类型: {type(e).__name__}")
+        import traceback
+        print(f"详细错误信息: {traceback.format_exc()}")
         return []
 
 

@@ -5,7 +5,7 @@ import sys
 import os
 import logging
 
-from merge_audio import merge_audio
+from merge_audio import delete_ads_from_video, merge_audio
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from audio_to_subtitle import assembly_audio_to_subtitle
@@ -119,6 +119,11 @@ def process(url):
     except Exception as e:
         logger.error(f"音视频合并过程出错: {str(e)}")
         sys.exit(1)
+    
+    #第六步：删除视频中的广告片段
+    logger.info("第六步，开始删除视频中的广告片段")
+    delete_ads_from_video(video_path=final_video, 
+                         srt_file=subtitle_result)
     
     return final_video
 

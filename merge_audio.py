@@ -4,6 +4,9 @@ import tempfile
 import shutil
 from pathlib import Path
 import glob
+import json
+
+from detect_ads import detect_ads_in_subtitles
 
 
 def create_temp_directory():
@@ -247,11 +250,118 @@ def merge_audio(original_video, original_audio, speaking_audio, output_filename,
     finally:
         # 清理临时文件
         cleanup_temp_files(temp_dir)
+        
+def delete_ads_from_video(video_path, srt_file):
+    """
+    删除视频中的广告片段
+    
+    参数:
+        video_path: 视频文件路径    
+        srt_file: srt文件路径
+        
+    返回:
+        删除广告片段后的视频文件路径
+    """
+    print(f"删除视频中的广告片段: {video_path}")
+    
+    ads_info = detect_ads_in_subtitles(srt_file)
+    if ads_info:
+        print(f"检测到广告片段: {ads_info} 开始从原视频删除广告片段")
+        
+        # 创建临时目录存储处理文件
+        temp_dir = create_temp_directory()
+        try:
+            # 获取视频文件基本信息
+            video_base_name = os.path.basename(video_path)
+            video_name, video_ext = os.path.splitext(video_base_name)
+            output_path = os.path.join(os.path.dirname(video_path), f"{video_name}_no_ads{video_ext}")
+            
+            # 获取视频总时长
+            ffprobe_cmd = [
+                "ffprobe", 
+                "-v", "error", 
+                "-select_streams", "v:0", 
+                "-show_entries", "format=duration", 
+                "-of", "json", 
+                video_path
+            ]
+            ffprobe_result = subprocess.run(ffprobe_cmd, check=True, capture_output=True, text=True)
+            video_duration = float(json.loads(ffprobe_result.stdout)["format"]["duration"])
+            
+            # 构建过滤器复杂表达式
+            filter_parts = []
+            splits = []
+            
+            # 按照广告信息对视频进行分割
+            # 将广告片段按开始时间排序
+            sorted_ads = sorted(ads_info, key=lambda x: x["start_time"])
+            
+            # 创建需要保留的片段列表
+            segments = []
+            last_end_time = 0
+            
+            for ad in sorted_ads:
+                start_time = ad["start_time"]
+                end_time = ad["end_time"]
+                
+                # 如果广告开始前有内容，添加到保留片段
+                if start_time > last_end_time:
+                    segments.append((last_end_time, start_time))
+                
+                # 更新结束时间为当前广告的结束时间
+                last_end_time = end_time
+            
+            # 添加最后一个广告结束到视频结束的片段
+            if last_end_time < video_duration:
+                segments.append((last_end_time, video_duration))
+            
+            # 创建过滤器表达式
+            for i, (start, end) in enumerate(segments):
+                filter_parts.append(f"[0:v]trim=start={start}:end={end},setpts=PTS-STARTPTS[v{i}]")
+                filter_parts.append(f"[0:a]atrim=start={start}:end={end},asetpts=PTS-STARTPTS[a{i}]")
+                splits.append(f"[v{i}][a{i}]")
+            
+            # 拼接所有片段
+            filter_parts.append(f"{' '.join(splits)}concat=n={len(segments)}:v=1:a=1[outv][outa]")
+            
+            # 构建FFmpeg命令
+            ffmpeg_cmd = [
+                "ffmpeg", "-y",
+                "-i", video_path,
+                "-filter_complex", ";".join(filter_parts),
+                "-map", "[outv]",
+                "-map", "[outa]",
+                "-c:v", "libx264",
+                "-c:a", "aac",
+                "-b:a", "320k",
+                output_path
+            ]
+            
+            print(f"执行FFmpeg命令: {' '.join(ffmpeg_cmd)}")
+            subprocess.run(ffmpeg_cmd, check=True)
+            
+            print(f"成功删除广告片段，输出文件: {output_path}")
+            return output_path
+            
+        except Exception as e:
+            print(f"删除广告片段时出错: {str(e)}")
+            if os.path.exists(output_path):
+                os.remove(output_path)
+            return video_path
+            
+        finally:
+            # 清理临时文件
+            cleanup_temp_files(temp_dir)
+    else:
+        print("未检测到广告片段")
+        return video_path
 
 
 if __name__ == "__main__":
-        merge_audio(original_video="resources/videos/A_5Nd3vAG9k.mp4", 
-                    original_audio="resources/audios/A_5Nd3vAG9k.mp3", 
-                    speaking_audio="resources/audios/A_5Nd3vAG9k/A_5Nd3vAG9k.mp3", 
-                    output_filename="resources/videos/merged_A_5Nd3vAG9k.mp4",
-                    subtitle_path="resources/transcripts/merger_A_5Nd3vAG9k_cn.srt")  # 可以提供SRT字幕文件路径
+        # merge_audio(original_video="resources/videos/A_5Nd3vAG9k.mp4", 
+        #             original_audio="resources/audios/A_5Nd3vAG9k.mp3", 
+        #             speaking_audio="resources/audios/A_5Nd3vAG9k/A_5Nd3vAG9k.mp3", 
+        #             output_filename="resources/videos/merged_A_5Nd3vAG9k.mp4",
+        #             subtitle_path="resources/transcripts/merger_A_5Nd3vAG9k_cn.srt")  # 可以提供SRT字幕文件路径
+    delete_ads_from_video(video_path="resources/results/3hpNona8M4g.mp4", 
+                         srt_file="resources/transcripts/3hpNona8M4g.srt")
