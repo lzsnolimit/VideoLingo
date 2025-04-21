@@ -45,8 +45,8 @@ def merge_subtitles(subtitle_file_path, format='srt'):
             if not current_text:
                 current_time = time_code
                 current_text = text
-            # 如果当前文本已经以句号、问号或感叹号结尾，保存并开始新段落
-            elif re.search(r'[.!?。！？]$', current_text):
+            # 如果当前文本已经以逗号，句号、问号或感叹号结尾，保存并开始新段落
+            elif re.search(r'[,.!?。！？]$', current_text):
                 merged_subtitles.append((str(current_number), current_time, current_text))
                 current_number += 1
                 current_time = time_code
@@ -189,3 +189,8 @@ def assembly_audio_to_subtitle(audio_path, api_key=None, format='srt'):
     merged_file_path = merge_subtitles(output_file_path, format)
     
     return merged_file_path
+
+if __name__ == "__main__":
+    audio_path = "resources/audios/zUyH3XhpLTo.mp3"
+    merged_file_path = assembly_audio_to_subtitle(audio_path)
+    print(f"合并后的字幕文件已保存至: {merged_file_path}")

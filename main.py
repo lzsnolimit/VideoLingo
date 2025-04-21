@@ -47,7 +47,7 @@ def process(url):
     #第二步：将音频转换为字幕
     # 使用assembly_audio_to_subtitle函数处理音频文件
     logger.info("第二步，开始将音频转换为字幕")
-    subtitle_result = assembly_audio_to_subtitle(audio_result)
+    subtitle_result = str(assembly_audio_to_subtitle(audio_result))
     
     if subtitle_result.startswith("错误"):
         logger.error(f"音频转字幕错误: {subtitle_result}")
@@ -125,7 +125,7 @@ def process(url):
 if __name__ == "__main__":
     # 完整流程测试
     try:
-        url = "https://www.youtube.com/watch?v=DTvS9lvRxZ8"
+        url = "https://www.youtube.com/watch?v=3hpNona8M4g"
         final_video = process(url)
         logger.info(f"处理完成，最终视频文件已保存至: {final_video}")
     except Exception as e:
