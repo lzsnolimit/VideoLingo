@@ -13,7 +13,7 @@ from download_youtube import download_youtube
 from subtitle_to_speech import process_subtitles
 from translate_subtitles import translate_srt_file
 
-# 配置日志
+# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -27,82 +27,82 @@ logger = logging.getLogger(__name__)
 def process(url):
     video_name = url.split("=")[1]
     
-    #第一步：下载视频和音频
-    # 使用默认参数下载视频（默认类型为video，质量为best）
-    logger.info("第一步，开始下载视频和音频")
+    # Step 1: Download video and audio
+    # Use default parameters to download video (default type is video, quality is best)
+    logger.info("Step 1, start downloading video and audio")
     audio_result = download_youtube(url, content_type="audio", audio_format="mp3", audio_quality="0")
     video_result = download_youtube(url, content_type="video", quality="best")
 
-    if video_result.startswith("下载失败") or video_result.startswith("发生错误"):
-        logger.error(f"下载视频错误: {video_result}")
+    if video_result.startswith("Download failed") or video_result.startswith("Error occurred"):
+        logger.error(f"Video download error: {video_result}")
         sys.exit(1)
     
-    if audio_result.startswith("下载失败") or audio_result.startswith("发生错误"):
-        logger.error(f"下载音频错误: {audio_result}")
+    if audio_result.startswith("Download failed") or audio_result.startswith("Error occurred"):
+        logger.error(f"Audio download error: {audio_result}")
         sys.exit(1)
     
-    logger.info(f"下载成功，视频文件保存在: {video_result}")
-    logger.info(f"下载成功，音频文件保存在: {audio_result}")
+    logger.info(f"Download successful, video file saved at: {video_result}")
+    logger.info(f"Download successful, audio file saved at: {audio_result}")
     
-    #第二步：将音频转换为字幕
-    # 使用assembly_audio_to_subtitle函数处理音频文件
-    logger.info("第二步，开始将音频转换为字幕")
+    # Step 2: Convert audio to subtitles
+    # Use assembly_audio_to_subtitle function to process the audio file
+    logger.info("Step 2, start converting audio to subtitles")
     subtitle_result = str(assembly_audio_to_subtitle(audio_result))
     
-    if subtitle_result.startswith("错误"):
-        logger.error(f"音频转字幕错误: {subtitle_result}")
+    if subtitle_result.startswith("Error"):
+        logger.error(f"Audio to subtitle error: {subtitle_result}")
         sys.exit(1)
     
-    logger.info(f"字幕文件已保存至: {subtitle_result}")
+    logger.info(f"Subtitle file has been saved to: {subtitle_result}")
 
-    #第三步：将字幕转换为汉语字幕
-    # 获取输出文件名
-    logger.info("第三步，开始将字幕转换为汉语字幕")
+    # Step 3: Convert subtitles to Chinese subtitles
+    # Get output filename
+    logger.info("Step 3, start converting subtitles to Chinese subtitles")
     subtitle_name = os.path.basename(subtitle_result)
     name, ext = os.path.splitext(subtitle_name)
     chinese_subtitle = os.path.join(os.path.dirname(subtitle_result), f"{name}_cn{ext}")
     
-    # 调用translate_srt_file函数将英文字幕翻译为中文字幕
+    # Call translate_srt_file function to translate English subtitles to Chinese subtitles
     max_attempts = 5
     attempt = 0
     translated_subtitle = None
     
     while attempt < max_attempts:
         attempt += 1
-        logger.info(f"尝试翻译字幕，第{attempt}次尝试")
+        logger.info(f"Attempting to translate subtitles, attempt {attempt}")
         try:
             translated_subtitle = translate_srt_file(subtitle_result, chinese_subtitle)
             if translated_subtitle and os.path.exists(translated_subtitle):
-                logger.info(f"翻译成功，第{attempt}次尝试")
+                logger.info(f"Translation successful, attempt {attempt}")
                 break
             else:
-                logger.warning(f"第{attempt}次翻译未生成文件")
+                logger.warning(f"Attempt {attempt} did not generate a file")
         except Exception as e:
-            logger.error(f"第{attempt}次翻译出错: {str(e)}")
+            logger.error(f"Error in attempt {attempt}: {str(e)}")
             if attempt < max_attempts:
-                logger.info("准备重试...")
+                logger.info("Preparing to retry...")
     
     if not translated_subtitle or not os.path.exists(translated_subtitle):
-        logger.error("翻译字幕失败，三次尝试后仍未生成翻译文件")
+        logger.error("Translation failed, still no translation file after three attempts")
         sys.exit(1)
     
-    logger.info(f"中文字幕文件已保存至: {translated_subtitle}")
+    logger.info(f"Chinese subtitle file has been saved to: {translated_subtitle}")
     
-    #第四步：将汉语字幕转换为语音
-    # 使用process_subtitles函数处理字幕文件
-    logger.info("第四步，开始将汉语字幕转换为语音")
+    # Step 4: Convert Chinese subtitles to speech
+    # Use process_subtitles function to process subtitle file
+    logger.info("Step 4, start converting Chinese subtitles to speech")
     try:
         generated_audio = process_subtitles(translated_subtitle, video_name, output_dir=f"resources/audios/{video_name}")
         if not os.path.exists(generated_audio):
-            logger.error("字幕转语音失败，未生成音频文件")
+            logger.error("Subtitle to speech failed, no audio file generated")
             sys.exit(1)
-        logger.info(f"生成音频文件已保存至: {generated_audio}")
+        logger.info(f"Generated audio file has been saved to: {generated_audio}")
     except Exception as e:
-        logger.error(f"字幕转语音过程出错: {str(e)}")
+        logger.error(f"Error in subtitle to speech process: {str(e)}")
         sys.exit(1)
     
-    #第五步：将混合后的音频替换到原始视频中
-    logger.info("第五步，开始将混合后的音频替换到原始视频中")
+    # Step 5: Replace the original audio in the video with the mixed audio
+    logger.info("Step 5, start replacing the original audio in the video with the mixed audio")
     try:
         print(f"call merge_audio(original_video={video_result}, original_audio={audio_result}, generated_audio={generated_audio}, output_filename=f\"resources/results/{video_name}.mp4\", subtitle_path={translated_subtitle})")
         final_video = merge_audio(original_video=video_result, 
@@ -112,28 +112,28 @@ def process(url):
                     subtitle_path=translated_subtitle)
         
         if not os.path.exists(final_video):
-            logger.error("音视频合并失败，未生成最终视频文件")
+            logger.error("Audio-video merging failed, no final video file generated")
             sys.exit(1)
             
-        logger.info(f"最终视频文件已保存至: {final_video}")
+        logger.info(f"Final video file has been saved to: {final_video}")
     except Exception as e:
-        logger.error(f"音视频合并过程出错: {str(e)}")
+        logger.error(f"Error in audio-video merging process: {str(e)}")
         sys.exit(1)
     
-    #第六步：删除视频中的广告片段
-    logger.info("第六步，开始删除视频中的广告片段")
+    # Step 6: Remove advertisement segments from the video
+    logger.info("Step 6, start removing advertisement segments from the video")
     delete_ads_from_video(video_path=final_video, 
                          srt_file=subtitle_result)
     
     return final_video
 
 if __name__ == "__main__":
-    # 完整流程测试
+    # Complete process test
     try:
-        url = "https://www.youtube.com/watch?v=3hpNona8M4g"
+        url = "https://www.youtube.com/watch?v=C1UgGbiUTTo"
         final_video = process(url)
-        logger.info(f"处理完成，最终视频文件已保存至: {final_video}")
+        logger.info(f"Processing completed, final video file has been saved to: {final_video}")
     except Exception as e:
-        logger.error(f"处理过程中发生未捕获的错误: {str(e)}")
+        logger.error(f"Uncaught error occurred during processing: {str(e)}")
         sys.exit(1)
     

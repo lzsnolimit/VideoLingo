@@ -8,8 +8,8 @@ from pathlib import Path
 import audio_to_subtitle
 
 def extract_video_id(url):
-    """从YouTube URL中提取视频ID"""
-    # 尝试匹配常见的YouTube URL格式
+    """Extract video ID from YouTube URL"""
+    # Try to match common YouTube URL formats
     pattern = r'(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})'
     match = re.search(pattern, url)
     if match:
@@ -18,38 +18,38 @@ def extract_video_id(url):
 
 def download_youtube(url, content_type="video", quality="best", audio_format="mp3", audio_quality="0", show_progress=True, threads=8):
     """
-    使用yt-dlp下载YouTube视频或音频到指定目录，使用视频ID或时间戳作为文件名
+    Use yt-dlp to download YouTube videos or audio to a specified directory, using video ID or timestamp as filename
     
-    参数:
-        url (str): YouTube视频URL
-        content_type (str): 内容类型，'video'或'audio'
-        quality (str): 视频质量，默认为'best'，可选值如:
-                      - 'best': 最佳视频和音频质量
-                      - '1080p': 1080p视频
-                      - '720p': 720p视频
-        audio_format (str): 音频格式，默认'mp3'，可选'm4a'、'wav'、'opus'等
-        audio_quality (str): 音频质量，0(最好)到9(最差)，默认为0
-        show_progress (bool): 是否显示下载进度，默认为True
-        threads (int): 并行下载的线程数量，默认为8
+    Parameters:
+        url (str): YouTube video URL
+        content_type (str): Content type, 'video' or 'audio'
+        quality (str): Video quality, default is 'best', options include:
+                      - 'best': Best video and audio quality
+                      - '1080p': 1080p video
+                      - '720p': 720p video
+        audio_format (str): Audio format, default 'mp3', options include 'm4a', 'wav', 'opus', etc.
+        audio_quality (str): Audio quality, from 0 (best) to 9 (worst), default is 0
+        show_progress (bool): Whether to display download progress, default is True
+        threads (int): Number of parallel download threads, default is 8
     
-    返回:
-        str: 成功时返回下载文件的相对路径，失败时返回错误信息
+    Returns:
+        str: Returns the relative path of the downloaded file on success, or error message on failure
     """
     
-    # 尝试提取视频ID，如果失败则使用时间戳
+    # Try to extract video ID, use timestamp if failed
     video_id = extract_video_id(url)
     if not video_id:
         video_id = str(int(time.time()))
     
-    # 构建命令
+    # Build command
     command = ["yt-dlp"]
     
-    # 添加多线程下载参数
+    # Add multi-threading parameter
     if threads > 1:
         command.extend(["--concurrent-fragments", str(threads)])
     
     if content_type == "video":
-        # 构建视频格式参数
+        # Build video format parameter
         if quality == "best":
             format_arg = "bestvideo+bestaudio/best"
         elif quality == "1080p":
@@ -67,29 +67,29 @@ def download_youtube(url, content_type="video", quality="best", audio_format="mp
         file_path = f"{output_dir}/{video_id}.mp4"
         output_template = file_path
     
-    else:  # 音频下载
+    else:  # Audio download
         command.extend([
-            "-x",  # 提取音频
+            "-x",  # Extract audio
             "--audio-format", audio_format,
-            "--audio-quality", str(audio_quality)  # 确保 audio_quality 被转换为字符串
+            "--audio-quality", str(audio_quality)  # Ensure audio_quality is converted to string
         ])
         output_dir = "resources/audios"
         file_path = f"{output_dir}/{video_id}.{audio_format}"
         output_template = file_path
     
-    # 确保输出目录存在
+    # Ensure output directory exists
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
     
-    # 添加输出模板
+    # Add output template
     command.extend(["-o", output_template])
     
-    # 添加URL
+    # Add URL
     command.append(url)
     
     try:
         if show_progress:
-            # 使用 Popen 实时获取输出以显示进度
+            # Use Popen to get real-time output to display progress
             process = subprocess.Popen(
                 command,
                 stdout=subprocess.PIPE,
@@ -98,25 +98,25 @@ def download_youtube(url, content_type="video", quality="best", audio_format="mp
                 bufsize=1
             )
             
-            # 实时读取输出并显示进度
+            # Read output in real-time and display progress
             for line in process.stdout:
                 line = line.strip()
-                # 过滤并显示下载进度信息
+                # Filter and display download progress information
                 if '[download]' in line and '%' in line:
                     print(f"\r{line}", end='', flush=True)
-                # 显示多线程下载信息
+                # Display multi-threading download information
                 elif 'fragment' in line.lower() and '%' in line:
                     print(f"\r{line}", end='', flush=True)
                 
-            # 等待进程完成
+            # Wait for process to complete
             process.wait()
-            print()  # 换行，保持输出整洁
+            print()  # Line break, keep output clean
             
-            # 检查返回码
+            # Check return code
             if process.returncode != 0:
-                return f"下载失败，返回码: {process.returncode}"
+                return f"Download failed, return code: {process.returncode}"
         else:
-            # 使用原来的方式执行命令
+            # Use the original way to execute command
             result = subprocess.run(
                 command, 
                 check=True,
@@ -124,12 +124,12 @@ def download_youtube(url, content_type="video", quality="best", audio_format="mp
                 text=True
             )
         
-        # 检查文件是否存在
+        # Check if file exists
         if os.path.exists(file_path):
             return file_path
         
-        # 如果找不到预期的文件，尝试从输出中提取
-        print("找不到文件: {}".format(file_path))
+        # If expected file is not found, try to extract from output
+        print("File not found: {}".format(file_path))
         
         if show_progress:
             return file_path
@@ -141,14 +141,14 @@ def download_youtube(url, content_type="video", quality="best", audio_format="mp
                 elif "[Merger] Merging formats into" in line:
                     return line.replace("[Merger] Merging formats into ", "").replace('"', '').strip()
         
-        # 如果仍然找不到，返回可能的路径
+        # If still not found, return possible path
         return file_path
     
     except subprocess.CalledProcessError as e:
-        return f"下载失败: {e.stderr}"
+        return f"Download failed: {e.stderr}"
     
     except Exception as e:
-        return f"发生错误: {str(e)}"
+        return f"Error occurred: {str(e)}"
 
     
 
