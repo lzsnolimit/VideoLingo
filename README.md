@@ -76,8 +76,7 @@ Main dependencies include:
 - pydub
 
 ## License
-
-[Specify your license here]
+GNU GPL
 
 ## Acknowledgements
 
