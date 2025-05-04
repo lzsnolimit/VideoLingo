@@ -25,20 +25,7 @@ A comprehensive video processing tool that automatically translates YouTube vide
    cd magic_video
    ```
 
-2. Create and activate a virtual environment:
-   ```
-   python -m venv audio_env
-   source audio_env/bin/activate  # On Windows: audio_env\Scripts\activate
-   ```
-
-3. Run the setup script to install dependencies:
-   ```
-   chmod +x setup.sh
-   ./setup.sh
-   ```
-   Follow the prompts to install the required components.
-
-4. Set up environment variables:
+2. Set up environment variables:
    Create a `.env` file in the project root with the following API keys:
    ```
    ASSEMBLYAI_API_KEY=your_assemblyai_key
