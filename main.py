@@ -128,12 +128,21 @@ def process(url):
     return final_video
 
 if __name__ == "__main__":
-    # Complete process test
+    # 从命令行参数获取 YouTube URL
     try:
-        url = "https://www.youtube.com/watch?v=C1UgGbiUTTo"
+        if len(sys.argv) != 2:
+            print("用法: python main.py https://www.youtube.com/watch?v=VIDEO_ID")
+            sys.exit(1)
+            
+        url = sys.argv[1]
+        # 验证URL格式
+        if not url.startswith("https://www.youtube.com/watch?v="):
+            print("错误: 请提供有效的YouTube视频URL，格式为: https://www.youtube.com/watch?v=VIDEO_ID")
+            sys.exit(1)
+            
         final_video = process(url)
-        logger.info(f"Processing completed, final video file has been saved to: {final_video}")
+        logger.info(f"处理完成，最终视频文件已保存至: {final_video}")
     except Exception as e:
-        logger.error(f"Uncaught error occurred during processing: {str(e)}")
+        logger.error(f"处理过程中发生未捕获的错误: {str(e)}")
         sys.exit(1)
     

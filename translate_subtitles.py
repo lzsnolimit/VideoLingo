@@ -6,65 +6,65 @@ from langchain_deepseek import ChatDeepSeek
 from langchain_core.output_parsers import StrOutputParser
 
 
-def translate_srt_file(input_path: str, output_path: str, log_file=None, target_language:str="中文", max_retry:int=5) -> str:
+def translate_srt_file(input_path: str, output_path: str, log_file=None, target_language:str="Chinese", max_retry:int=5) -> str:
     """
-    将SRT字幕文件翻译成目标语言
+    Translate SRT subtitle file to target language
     
     Args:
-        input_path: 输入SRT文件路径
-        output_path: 输出SRT文件路径
-        log_file: 日志文件路径，如果不为None则会记录翻译日志
-        target_language: 目标语言，默认为中文
-        max_retry: 翻译失败时的最大重试次数，默认为5
+        input_path: Input SRT file path
+        output_path: Output SRT file path
+        log_file: Log file path, if not None will record translation logs
+        target_language: Target language, default is Chinese
+        max_retry: Maximum number of retry attempts if translation fails, default is 5
         
     Returns:
-        输出文件路径，如果所有重试都失败则返回空字符串
+        Output file path, or empty string if all retries fail
     """
-    print(f"开始翻译字幕文件: {input_path} -> {output_path}")
-    print(f"目标语言: {target_language}")
+    print(f"Starting subtitle translation: {input_path} -> {output_path}")
+    print(f"Target language: {target_language}")
     
-    # 读取SRT文件
+    # Read SRT file
     with open(input_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # 解析SRT文件
+    # Parse SRT file
     subtitle_blocks = parse_srt(content)
-    print(f"共解析出 {len(subtitle_blocks)} 个字幕块")
+    print(f"Parsed {len(subtitle_blocks)} subtitle blocks")
     
-    # 收集所有文本，添加ID标识符
+    # Collect all text with ID identifiers
     text_with_ids = []
     for i, (idx, timestamp, text) in enumerate(subtitle_blocks):
-        # 使用唯一标识符标记每个字幕块
+        # Mark each subtitle block with unique identifier
         block_id = f"[BLOCK_{i+1}]"
         text_with_ids.append(f"{block_id}\n{text}")
     
-    # 按每批30条分割字幕，并添加前后各10条作为上下文
+    # Split subtitles into batches of 30, with 10 before and after as context
     batch_size = 20
     context_size = 10
     total_blocks = len(text_with_ids)
     
-    # 准备用于存储所有批次翻译结果的字典
+    # Prepare dictionary to store all batch translation results
     all_translated_blocks_map = {}
     
-    # 设置翻译提示模板
+    # Set up translation prompt template
     template = """
-    你是一位精通{target_language}的专业字幕翻译，尤其擅长将口语化的内容翻译成准确、自然的字幕。
+    You are a professional subtitle translator fluent in {target_language}, especially skilled at translating conversational content into accurate and natural subtitles.
 
-    规则：
-    - 准确传达原文的事实、背景和情感
-    - 保留专业术语、品牌名称和人名
-    - 使译文符合{target_language}的表达习惯
-    - 保持字幕简洁，适合观众快速阅读
-    - 每个字幕块都有一个唯一标识符，如[BLOCK_1]，[BLOCK_2]等，翻译时必须保留这些标识符
-    - 只翻译标有"需要翻译"的部分，其他标有"上下文"的部分仅供参考理解，不需要翻译
-    - 保持原文的段落数量和顺序
-    - 只返回翻译结果，不要包含任何解释或原文
+    Rules:
+    - Accurately convey facts, context, and emotions from the original text
+    - Preserve technical terms, brand names, and person names
+    - Make translations conform to {target_language} expression habits
+    - Keep subtitles concise for quick reading by viewers
+    - Each subtitle block has a unique identifier like [BLOCK_1], [BLOCK_2], etc., which must be preserved during translation
+    - Only translate the parts marked as "Need to translate", the parts marked as "Context" are for reference only and should not be translated
+    - Maintain the original number and order of paragraphs
+    - Only return translation results, don't include any explanations or original text
 
-    以下是字幕内容，其中"需要翻译"的部分是本次需要翻译的内容，"上下文"部分是提供的参考上下文：
+    Below is the subtitle content, where the "Need to translate" part needs translation, and the "Context" part is provided for reference:
 
     {text}
     
-    翻译结果（只返回"需要翻译"部分的翻译结果）：
+    Translation result (only return translation results for the "Need to translate" part):
     """
     
     prompt = PromptTemplate(
@@ -72,8 +72,8 @@ def translate_srt_file(input_path: str, output_path: str, log_file=None, target_
         template=template
     )
     
-    # 初始化LangChain模型和链
-    print("初始化翻译模型...")
+    # Initialize LangChain model and chain
+    print("Initializing translation model...")
     llm = ChatDeepSeek(
         model="deepseek-reasoner",
         temperature=0.6,
@@ -84,177 +84,189 @@ def translate_srt_file(input_path: str, output_path: str, log_file=None, target_
         # other params...
     )
     
-    # 使用RunnableSequence代替LLMChain
+    # Use RunnableSequence instead of LLMChain
     chain = prompt | llm | StrOutputParser()
     
-    # 初始化翻译状态追踪
+    # Initialize translation status tracking
     failed_batches = []
     
-    # 按批次进行翻译
+    # Translate in batches
     for batch_start in range(0, total_blocks, batch_size):
         batch_end = min(batch_start + batch_size, total_blocks)
         context_start = max(0, batch_start - context_size)
         context_end = min(total_blocks, batch_end + context_size)
         
-        # 构建带上下文的批次文本
+        # Build batch text with context
         batch_text = []
         
-        # 添加前置上下文
+        # Add preceding context
         if context_start < batch_start:
-            batch_text.append("【上下文（仅供参考，不需要翻译）】")
+            batch_text.append("【Context (for reference only, do not translate)】")
             for i in range(context_start, batch_start):
                 batch_text.append(text_with_ids[i])
-            batch_text.append("【上下文结束】\n")
+            batch_text.append("【End of context】\n")
         
-        # 添加需要翻译的主要内容
-        batch_text.append("【需要翻译】")
+        # Add main content to translate
+        batch_text.append("【Need to translate】")
         for i in range(batch_start, batch_end):
             batch_text.append(text_with_ids[i])
-        batch_text.append("【需要翻译结束】\n")
+        batch_text.append("【End of need to translate】\n")
         
-        # 添加后置上下文
+        # Add following context
         if batch_end < context_end:
-            batch_text.append("【上下文（仅供参考，不需要翻译）】")
+            batch_text.append("【Context (for reference only, do not translate)】")
             for i in range(batch_end, context_end):
                 batch_text.append(text_with_ids[i])
-            batch_text.append("【上下文结束】")
+            batch_text.append("【End of context】")
         
-        # 合并批次文本
+        # Combine batch text
         combined_batch_text = "\n\n".join(batch_text)
         
-        print(f"正在翻译第 {batch_start//batch_size + 1}/{(total_blocks-1)//batch_size + 1} 批 (字幕 {batch_start+1}-{batch_end})...")
+        print(f"Translating batch {batch_start//batch_size + 1}/{(total_blocks-1)//batch_size + 1} (subtitles {batch_start+1}-{batch_end})...")
         
-        # 添加重试逻辑
+        # Add retry logic
         retry_count = 0
         batch_successful = False
         
         while retry_count < max_retry and not batch_successful:
             try:
-                print(f"批次翻译尝试 {retry_count + 1}/{max_retry}...")
+                print(f"Batch translation attempt {retry_count + 1}/{max_retry}...")
                 translated_batch_text = chain.invoke({"text": combined_batch_text, "target_language": target_language})
                 
-                # 解析翻译结果，按ID提取
+                # Parse translation results by ID
                 translated_blocks_map = extract_translations_by_id(translated_batch_text)
                 
-                # 检查是否所有需要翻译的块都有对应的翻译
+                # Check if all blocks that needed translation have corresponding translations
                 expected_blocks = batch_end - batch_start
                 actual_blocks = len(translated_blocks_map)
                 
-                if actual_blocks == expected_blocks:  # 不允许任何缺失
+                if actual_blocks == expected_blocks:  # Don't allow any missing blocks
                     batch_successful = True
-                    print(f"批次翻译成功！翻译了 {actual_blocks}/{expected_blocks} 个字幕块")
+                    print(f"Batch translation successful! Translated {actual_blocks}/{expected_blocks} subtitle blocks")
                     
-                    # 合并翻译结果到总结果
+                    # Merge translation results to total results
                     all_translated_blocks_map.update(translated_blocks_map)
                 else:
-                    print(f"警告：翻译后存在缺失字幕块，实际：{actual_blocks}，预期：{expected_blocks}")
+                    print(f"Warning: Missing subtitle blocks after translation, actual: {actual_blocks}, expected: {expected_blocks}")
                     missing_blocks = [f"BLOCK_{i+1}" for i in range(batch_start, batch_end) 
                                      if f"BLOCK_{i+1}" not in translated_blocks_map]
                     if missing_blocks:
-                        print(f"缺失的块: {', '.join(missing_blocks[:10])}{' 等...' if len(missing_blocks) > 10 else ''}")
+                        print(f"Missing blocks: {', '.join(missing_blocks[:10])}{' etc...' if len(missing_blocks) > 10 else ''}")
                     retry_count += 1
             except Exception as e:
-                print(f"批次翻译过程中出现错误: {str(e)}")
+                print(f"Error during batch translation: {str(e)}")
                 retry_count += 1
         
-        # 如果这个批次的所有重试都失败
+        # If all retries for this batch fail
         if not batch_successful:
-            print(f"批次 {batch_start//batch_size + 1} 的所有翻译尝试均失败！")
+            print(f"All translation attempts for batch {batch_start//batch_size + 1} failed!")
             failed_batches.append((batch_start, batch_end))
     
-    # 处理所有失败的批次，尝试逐块翻译
+    # Process all failed batches, try translating block by block
     if failed_batches:
-        print(f"有 {len(failed_batches)} 个批次翻译失败，尝试逐块翻译这些批次...")
+        print(f"There are {len(failed_batches)} failed batches, trying to translate these batches block by block...")
         
         for batch_start, batch_end in failed_batches:
-            print(f"逐块翻译失败的批次: {batch_start+1}-{batch_end}...")
+            print(f"Translating failed batch block by block: {batch_start+1}-{batch_end}...")
             
             for i in range(batch_start, batch_end):
                 block_id = f"BLOCK_{i+1}"
                 if block_id not in all_translated_blocks_map:
                     try:
-                        # 尝试单独翻译这个块
+                        # Try translating this block separately
                         single_text = text_with_ids[i]
                         translated_single = translate_single_block(single_text, target_language, max_retry)
                         if translated_single:
-                            # 提取ID和翻译后的文本
+                            # Extract ID and translated text
                             block_match = re.match(r'\[BLOCK_(\d+)\]\s*\n([\s\S]*)', translated_single)
                             if block_match:
                                 block_num = block_match.group(1)
                                 block_text = block_match.group(2).strip()
                                 all_translated_blocks_map[f"BLOCK_{block_num}"] = block_text
                     except Exception as e:
-                        print(f"单块翻译失败 ({block_id}): {str(e)}")
+                        print(f"Single block translation failed ({block_id}): {str(e)}")
     
-    # 检查总体翻译完成度
+    # Check overall translation completion
     total_expected = len(subtitle_blocks)
     total_translated = len(all_translated_blocks_map)
     
-    if total_translated < total_expected:  # 不允许任何缺失
-        print(f"警告：翻译存在缺失 ({total_translated}/{total_expected})！")
+    if total_translated < total_expected:  # Don't allow any missing blocks
+        print(f"Warning: Translation has missing blocks ({total_translated}/{total_expected})!")
         missing_blocks = [f"BLOCK_{i+1}" for i in range(len(subtitle_blocks)) 
                          if f"BLOCK_{i+1}" not in all_translated_blocks_map]
         if len(missing_blocks) <= 10:
-            print(f"缺失的块: {', '.join(missing_blocks)}")
+            print(f"Missing blocks: {', '.join(missing_blocks)}")
         else:
-            print(f"缺失的块数量: {len(missing_blocks)}")
+            print(f"Number of missing blocks: {len(missing_blocks)}")
             
-        print("尝试使用备用逐块翻译方法来填补缺失部分...")
+        print("Trying to use backup block-by-block translation method to fill in missing parts...")
         try:
             return translate_srt_file_by_block(input_path, output_path, log_file, target_language, max_retry)
         except Exception as e:
-            print(f"备用翻译方法也失败了。错误: {str(e)}")
-            print("所有翻译方法均失败，返回空字符串。")
+            print(f"Backup translation method also failed. Error: {str(e)}")
+            print("All translation methods failed, returning empty string.")
             return ""
     
-    # 记录日志
+    # Record logs
     if log_file:
         with open(log_file, 'w', encoding='utf-8') as f:
             for i, (idx, timestamp, original_text) in enumerate(subtitle_blocks):
                 block_id = f"BLOCK_{i+1}"
-                translated_text = all_translated_blocks_map.get(block_id, "翻译缺失")
-                f.write(f"字幕块 {i+1} (ID: {idx}):\n原文: {original_text}\n翻译: {translated_text}\n\n")
+                translated_text = all_translated_blocks_map.get(block_id, "Translation missing")
+                f.write(f"Subtitle block {i+1} (ID: {idx}):\nOriginal: {original_text}\nTranslation: {translated_text}\n\n")
     
-    # 组合翻译后的字幕块
+    # Combine translated subtitle blocks
     translated_blocks = []
     for i, (idx, timestamp, original_text) in enumerate(subtitle_blocks):
         block_id = f"BLOCK_{i+1}"
-        translated_text = all_translated_blocks_map.get(block_id, original_text)  # 如果没有翻译，使用原文
+        translated_text = all_translated_blocks_map.get(block_id, original_text)  # Use original text if no translation
         translated_blocks.append((idx, timestamp, translated_text))
     
-    # 将翻译后的字幕块重新组合成SRT格式
+    # Recombine translated subtitle blocks into SRT format
     translated_content = format_srt(translated_blocks)
     
-    # 写入输出文件
+    # Write output file
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(translated_content)
     
-    print(f"翻译完成！已保存到: {output_path}")
-    print(f"翻译完成度: {total_translated}/{total_expected} ({total_translated/total_expected*100:.1f}%)")
+    print(f"Translation complete! Saved to: {output_path}")
+    print(f"Translation completion: {total_translated}/{total_expected} ({total_translated/total_expected*100:.1f}%)")
     if log_file:
-        print(f"翻译日志已保存到: {log_file}")
+        print(f"Translation log saved to: {log_file}")
     
     return output_path
 
 
 def translate_single_block(block_text: str, target_language: str, max_retry: int=3) -> str:
     """
-    翻译单个字幕块
+    Translate a single subtitle block
     
     Args:
-        block_text: 字幕块文本（包含ID标记）
-        target_language: 目标语言
-        max_retry: 最大重试次数
+        block_text: Subtitle block text (with ID marker)
+        target_language: Target language
+        max_retry: Maximum number of retry attempts
         
     Returns:
-        翻译后的字幕块文本（包含ID标记）
+        Translated subtitle block text (with ID marker)
     """
     template = """
-    你是一位精通{target_language}的专业字幕翻译。请将以下字幕翻译成{target_language}：
-    
+    You are a professional subtitle translator fluent in {target_language}, especially skilled at translating conversational content into accurate and natural subtitles.
+
+    Rules:
+    - Accurately convey facts, context, and emotions from the original text
+    - Preserve technical terms, brand names, and person names
+    - Make translations conform to {target_language} expression habits
+    - Keep subtitles concise for quick reading by viewers
+    - Each subtitle block has a unique identifier like [BLOCK_1], [BLOCK_2], etc., which must be preserved during translation
+    - Only translate the parts marked as "Need to translate", the parts marked as "Context" are for reference only and should not be translated
+    - Maintain the original number and order of paragraphs
+    - Only return translation results, don't include any explanations or original text
+
+    Below is the subtitle content, where the "Need to translate" part needs translation, and the "Context" part is provided for reference:
+
     {text}
     
-    翻译结果（保留BLOCK标识符）：
+    Translation result (only return translation results for the "Need to translate" part):
     """
     
     prompt = PromptTemplate(
@@ -262,7 +274,7 @@ def translate_single_block(block_text: str, target_language: str, max_retry: int
         template=template
     )
     
-    # 初始化LangChain模型和链
+    # Initialize LangChain model and chain
     llm = ChatDeepSeek(
         model="deepseek-reasoner",
         temperature=0.4,
@@ -272,10 +284,10 @@ def translate_single_block(block_text: str, target_language: str, max_retry: int
         api_key=os.getenv("DEEPSEEK_API_KEY"),
     )
     
-    # 使用RunnableSequence代替LLMChain
+    # Use RunnableSequence instead of LLMChain
     chain = prompt | llm | StrOutputParser()
     
-    # 添加重试逻辑
+    # Add retry logic
     retry_count = 0
     while retry_count < max_retry:
         try:
@@ -291,15 +303,15 @@ def translate_single_block(block_text: str, target_language: str, max_retry: int
 
 def extract_translations_by_id(translated_text: str) -> Dict[str, str]:
     """
-    从翻译文本中提取各个带ID的字幕块
+    Extract translated text by block ID from translated batch text
     
     Args:
-        translated_text: 翻译后的带ID文本
+        translated_text: The translated text returned by the LLM
         
     Returns:
-        字典，键为块ID，值为翻译后的文本
+        Dictionary mapping block IDs to translated text
     """
-    # 用正则表达式匹配 [BLOCK_数字] 开头的文本块
+    # Use regular expression to match text blocks starting with [BLOCK_number]
     pattern = r'\[BLOCK_(\d+)\]\s*\n([\s\S]*?)(?=\n\s*\[BLOCK_\d+\]|\s*$)'
     matches = re.findall(pattern, translated_text)
     
@@ -311,45 +323,45 @@ def extract_translations_by_id(translated_text: str) -> Dict[str, str]:
     return result
 
 
-def translate_srt_file_by_block(input_path: str, output_path: str, log_file=None, target_language:str="中文", max_retry:int=5) -> str:
+def translate_srt_file_by_block(input_path: str, output_path: str, log_file=None, target_language:str="Chinese", max_retry:int=5) -> str:
     """
-    逐块翻译SRT字幕文件（备用方法）
+    Translate SRT file block by block (fallback method)
     
     Args:
-        input_path: 输入SRT文件路径
-        output_path: 输出SRT文件路径
-        log_file: 日志文件路径，如果不为None则会记录翻译日志
-        target_language: 目标语言，默认为中文
-        max_retry: 翻译失败时的最大重试次数，默认为5
+        input_path: Input SRT file path
+        output_path: Output SRT file path
+        log_file: Log file path
+        target_language: Target language
+        max_retry: Maximum retry attempts
         
     Returns:
-        输出文件路径，如果所有重试都失败则返回空字符串
+        Output file path
     """
-    print("切换到逐块翻译模式...")
+    print("Switching to block-by-block translation mode...")
     
-    # 读取SRT文件
+    # Read SRT file
     with open(input_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # 解析SRT文件
+    # Parse SRT file
     subtitle_blocks = parse_srt(content)
     
-    # 设置翻译提示模板
+    # Set up translation prompt template
     template = """
-    你是一位精通{target_language}的专业字幕翻译，尤其擅长将口语化的内容翻译成准确、自然的字幕。
+    You are a professional subtitle translator fluent in {target_language}, especially skilled at translating conversational content into accurate and natural subtitles.
 
-    规则：
-    - 准确传达原文的事实、背景和情感
-    - 保留专业术语、品牌名称和人名
-    - 使译文符合{target_language}的表达习惯
-    - 保持字幕简洁，适合观众快速阅读
-    - 只返回翻译结果，不要包含任何解释或原文
+    Rules:
+    - Accurately convey facts, context, and emotions from the original text
+    - Preserve technical terms, brand names, and person names
+    - Make translations conform to {target_language} expression habits
+    - Keep subtitles concise for quick reading by viewers
+    - Only return translation results, don't include any explanations or original text
 
-    请将以下英文字幕翻译成{target_language}：
+    Please translate the following English subtitle into {target_language}:
 
     {text}
     
-    翻译结果：
+    Translation result:
     """
     
     prompt = PromptTemplate(
@@ -357,7 +369,7 @@ def translate_srt_file_by_block(input_path: str, output_path: str, log_file=None
         template=template
     )
     
-    # 初始化LangChain模型和链
+    # Initialize LangChain model and chain
     llm = ChatDeepSeek(
         model="deepseek-reasoner",
         temperature=0.6,
@@ -368,89 +380,90 @@ def translate_srt_file_by_block(input_path: str, output_path: str, log_file=None
         # other params...
     )
     
-    # 使用RunnableSequence代替LLMChain
+    # Use RunnableSequence instead of LLMChain
     chain = prompt | llm | StrOutputParser()
     
-    # 翻译每个字幕块
+    # Translate each subtitle block
     translated_blocks = []
     
     if log_file:
         log_mode = 'a' if os.path.exists(log_file) else 'w'
         with open(log_file, log_mode, encoding='utf-8') as f:
-            f.write("=== 逐块翻译模式 ===\n\n")
+            f.write("=== Block-by-block translation mode ===\n\n")
     
-    # 跟踪失败的翻译块
+    # Track failed translation blocks
     failed_blocks = 0
     
     for i, (idx, timestamp, text) in enumerate(subtitle_blocks):
-        print(f"正在翻译第 {i+1}/{len(subtitle_blocks)} 个字幕块 (ID: {idx})...")
+        print(f"Translating subtitle block {i+1}/{len(subtitle_blocks)} (ID: {idx})...")
         
-        # 添加重试逻辑
+        # Add retry logic
         block_retry_count = 0
         block_successful = False
-        translated_text = text  # 默认使用原文
+        translated_text = text  # Default to use original text
         
         while block_retry_count < max_retry and not block_successful:
             try:
-                # 调用模型进行翻译
-                print(f"块 {i+1} 的翻译尝试 {block_retry_count + 1}/{max_retry}...")
+                # Call model for translation
+                print(f"Translation attempt {block_retry_count + 1}/{max_retry} for block {i+1}...")
                 translated_text = chain.invoke({"text": text, "target_language": target_language})
                 translated_text = translated_text.strip()
                 
-                # 检查翻译是否有效（至少不为空）
+                # Check if translation is valid (at least not empty)
                 if translated_text:
                     block_successful = True
                 else:
-                    print(f"块 {i+1} 的翻译为空，重试...")
+                    print(f"Block {i+1} translation is empty, retrying...")
                     block_retry_count += 1
             except Exception as e:
-                print(f"块 {i+1} 翻译出错: {str(e)}，重试...")
+                print(f"Block {i+1} translation error: {str(e)}, retrying...")
                 block_retry_count += 1
         
-        # 如果所有重试都失败
+        # If all retries fail
         if not block_successful:
-            print(f"块 {i+1} 的所有翻译尝试都失败！")
+            print(f"All translation attempts for block {i+1} failed!")
             failed_blocks += 1
         
-        # 记录日志
+        # Record log
         if log_file:
             with open(log_file, 'a', encoding='utf-8') as f:
-                f.write(f"字幕块 {i+1} (ID: {idx}):\n原文: {text}\n翻译: {translated_text}\n\n")
+                f.write(f"Subtitle block {i+1} (ID: {idx}):\nOriginal: {text}\nTranslation: {translated_text}\n\n")
         
-        # 将翻译后的字幕块添加到结果列表
+        # Add translated subtitle block to result list
         translated_blocks.append((idx, timestamp, translated_text))
     
-    # 检查是否翻译大部分失败
-    if failed_blocks > len(subtitle_blocks) * 0.5:  # 如果超过一半的块翻译失败
-        print(f"警告：超过一半的字幕块翻译失败 ({failed_blocks}/{len(subtitle_blocks)})！")
-        print("翻译质量可能不可接受，放弃翻译。")
+    # Check if translation failed for most blocks
+    if failed_blocks > len(subtitle_blocks) * 0.5:  # If more than half of blocks fail translation
+        print(f"Warning: More than half of subtitle blocks failed translation ({failed_blocks}/{len(subtitle_blocks)})!")
+        print("Translation quality may not be acceptable, translation aborted.")
         return ""
     
-    # 将翻译后的字幕块重新组合成SRT格式
+    # Recombine translated subtitle blocks into SRT format
     translated_content = format_srt(translated_blocks)
     
-    # 写入输出文件
+    # Write output file
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(translated_content)
     
-    print(f"逐块翻译完成！已保存到: {output_path}")
-    print(f"成功翻译: {len(subtitle_blocks) - failed_blocks}/{len(subtitle_blocks)} 个字幕块")
+    print(f"Block-by-block translation complete! Saved to: {output_path}")
+    print(f"Successfully translated: {len(subtitle_blocks) - failed_blocks}/{len(subtitle_blocks)} subtitle blocks")
     if log_file:
-        print(f"翻译日志已保存到: {log_file}")
+        print(f"Translation log saved to: {log_file}")
     
     return output_path
 
 
 def parse_srt(content: str) -> List[Tuple[str, str, str]]:
     """
-    解析SRT文件内容
+    Parse SRT file content
     
     Args:
-        content: SRT文件内容
+        content: SRT file content
         
     Returns:
-        解析后的字幕块列表，每个元素为(序号, 时间戳, 文本)的元组
+        List of tuples (index, timestamp, text)
     """
+    # Use regular expression to match SRT file parts
     # 使用正则表达式匹配SRT文件的各个部分
     pattern = r'(\d+)\n(\d{2}:\d{2}:\d{2},\d{3} --> \d{2}:\d{2}:\d{2},\d{3})\n((?:.+\n)+?)(?:\n|$)'
     matches = re.findall(pattern, content, re.MULTILINE)
