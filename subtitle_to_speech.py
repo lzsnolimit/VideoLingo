@@ -110,12 +110,13 @@ def text_to_speech(
         request = TTSRequest(
             prosody=Prosody(speed=1.0),  # 控制音频速度
             text=text,
-            references=[
-                ReferenceAudio(
-                    audio=open(reference_audio_path, "rb").read(),
-                    text=reference_text
-                )
-            ]
+            reference_id="59cb5986671546eaa6ca8ae6f29f6d22",
+            # references=[
+            #     ReferenceAudio(
+            #         audio=open(reference_audio_path, "rb").read(),
+            #         text=reference_text
+            #     )
+            # ]
         )
         
         # 生成语音并保存到文件
